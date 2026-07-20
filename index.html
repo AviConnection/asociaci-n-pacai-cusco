@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Asociación Pacai Cusco · Donde la esperanza crece y el cáncer decrece</title>
+
+    <!-- Meta para SEO multidioma -->
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de">
+    <link rel="alternate" hreflang="x-default" href="https://asociacionpacaicusco.com">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(4deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        .text-glow-color {
+            text-shadow: 0 0 30px rgba(255, 193, 7, 0.5);
+        }
+        .btn-glow {
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 50px rgba(255, 193, 7, 0.8);
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        /* Preloader */
+        #preloader {
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+        }
+        .hidden-preloader {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #FF9800, #E53935);
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E53935;
+        }
+
+        /* Scroll horizontal oculto */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Masonry */
+        .masonry {
+            column-count: 2;
+            column-gap: 1.2rem;
+        }
+        @media (min-width: 768px) {
+            .masonry {
+                column-count: 3;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry {
+                column-count: 4;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.2rem;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+
+        /* FAQ */
+        details>summary {
+            list-style: none;
+        }
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary~* {
+            animation: slideDown 0.4s ease-in-out;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Efecto 3D en tarjetas */
+        .card-3d {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+        .card-3d:hover {
+            transform: translateY(-12px) rotateX(3deg) rotateY(3deg) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Partículas de fondo */
+        .particle-field {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float-particle 12s ease-in-out infinite;
+        }
+        @keyframes float-particle {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translateY(-120px) translateX(60px) scale(1.6);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-240px) translateX(-40px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        /* Botón Donar */
+        .btn-donate {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-donate:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 14px 45px rgba(229, 57, 53, 0.6);
+        }
+
+        /* Testimonios Scroll Snap */
+        .testimonial-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 1rem 0.5rem 2rem;
+            scroll-snap-type: x mandatory;
+        }
+        .testimonial-scroll .testimonial-item {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 2rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 2px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+        .testimonial-scroll .testimonial-item:hover {
+            transform: translateY(-8px);
+            border-color: #FFC107;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        @media (min-width: 768px) {
+            .testimonial-scroll .testimonial-item {
+                flex: 0 0 320px;
+            }
+        }
+
+        /* ===== SELECTOR DE IDIOMAS ===== */
+        .lang-selector {
+            position: relative;
+            z-index: 100;
+        }
+        .lang-selector button {
+            background: transparent;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 60px;
+            padding: 4px 12px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-selector button:hover {
+            border-color: #FF9800;
+            background: rgba(255, 152, 0, 0.08);
+        }
+        .lang-selector .dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+            padding: 6px;
+            min-width: 130px;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .lang-selector .dropdown.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .lang-selector .dropdown button {
+            background: transparent;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 6px 14px;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+        .lang-selector .dropdown button:hover {
+            background: #FFF8F0;
+            color: #FF9800;
+        }
+        .lang-selector .dropdown button.active {
+            background: #FF9800;
+            color: white;
+        }
+
+        /* Ocultar/mostrar contenido por idioma */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
+
+        /* ===== MENÚ MÓVIL ===== */
+        #mobileMenu {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #mobileMenu.open {
+            transform: translateX(0);
+        }
+
+        /* ===== RESPONSIVE AVANZADO ===== */
+        @media (max-width: 360px) {
+            .hero-content h1 {
+                font-size: 1.8rem !important;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.5rem !important;
+            }
+            .stat-card {
+                padding: 12px 8px !important;
+            }
+            .stat-card .numero {
+                font-size: 1.4rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem !important;
+            }
+            .hero-content .subtitle {
+                font-size: 0.95rem !important;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons a {
+                width: 100%;
+                justify-content: center;
+            }
+            .grid-proyectos {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-ayudar {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-equipo {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.75rem !important;
+            }
+            .grid-calendario {
+                grid-template-columns: 1fr !important;
+            }
+            .galeria-masonry {
+                column-count: 2 !important;
+                gap: 0.6rem !important;
+            }
+            .testimonial-scroll .testimonial-item {
+                flex: 0 0 240px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            .footer-grid .social-icons {
+                justify-content: center;
+            }
+            .seccion-titulo {
+                font-size: 1.8rem !important;
+            }
+            .tagline-mobile {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-andino {
+                padding: 120px 16px 60px !important;
+                border-radius: 0 0 40px 40px !important;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+                gap: 2rem !important;
+            }
+            .hero-content .subtitle {
+                margin: 0 auto 1.5rem !important;
+            }
+            .hero-image .img-principal {
+                max-width: 80% !important;
+                margin: 0 auto;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.75rem !important;
+                margin-top: -30px !important;
+            }
+            .stat-card {
+                padding: 16px 12px !important;
+                border-radius: 1.5rem !important;
+            }
+            .seccion-titulo {
+                font-size: 2rem !important;
+            }
+            .grid-quienes {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-mision-vision {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-programas {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-cultura {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-equipo {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-calendario {
+                grid-template-columns: 1fr !important;
+            }
+            .galeria-masonry {
+                column-count: 2 !important;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .nav-desktop {
+                display: none !important;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            .hide-on-mobile {
+                display: none !important;
+            }
+            .show-on-mobile {
+                display: flex !important;
+            }
+            .logo-img {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .logo-text {
+                font-size: 0.9rem !important;
+            }
+            .tagline-text {
+                font-size: 0.5rem !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .grid-programas {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-ayudar {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-calendario {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        /* Utilidades responsive */
+        .hide-on-mobile {
+            display: block;
+        }
+        .show-on-mobile {
+            display: none;
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .particle-field {
+                display: none !important;
+            }
+        }
+
+        /* ============================================================ */
+        /* ===== NAVBAR MEJORADA ===== */
+        /* ============================================================ */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            height: 76px;
+            overflow: visible;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        #navbar.scrolled {
+            height: 64px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.04);
+        }
+
+        /* ===== LOGO EN NAVBAR ===== */
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #navbar.scrolled .nav-logo-img {
+            width: 44px;
+            height: 44px;
+        }
+
+        @media (max-width: 640px) {
+            #navbar {
+                height: 62px;
+            }
+            #navbar.scrolled {
+                height: 54px;
+            }
+            .nav-logo-img {
+                width: 44px;
+                height: 44px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #navbar {
+                height: 54px;
+            }
+            #navbar.scrolled {
+                height: 48px;
+            }
+            .nav-logo-img {
+                width: 38px;
+                height: 38px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        /* ===== LOGO TEXTO ===== */
+        .logo-text {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #navbar.scrolled .logo-text {
+            font-size: 0.9rem !important;
+        }
+
+        @media (min-width: 1024px) {
+            #navbar.scrolled .logo-text {
+                font-size: 1.1rem !important;
+            }
+        }
+
+        /* ===== ENLACES DE NAVEGACIÓN ===== */
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            padding: 0.4rem 0;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2.5px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #FF9800, #E53935);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FF9800;
+        }
+
+        .nav-link[href="#programas"]:hover {
+            color: #2196F3;
+        }
+        .nav-link[href="#programas"]::after {
+            background: linear-gradient(90deg, #2196F3, #009688);
+        }
+
+        .nav-link[href="#cultura"]:hover {
+            color: #9C27B0;
+        }
+        .nav-link[href="#cultura"]::after {
+            background: linear-gradient(90deg, #9C27B0, #E91E63);
+        }
+
+        /* ===== BOTÓN DONAR EN NAVBAR ===== */
+        .nav-donate-btn {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-donate-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.5);
+        }
+
+        #navbar.scrolled .nav-donate-btn {
+            padding: 0.35rem 1rem;
+            font-size: 0.7rem;
+        }
+
+        /* ===== CONTENEDOR DE LA BARRA ===== */
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .navbar-inner {
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* ===== SCROLL PADDING ===== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 80px;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden bg-slate-50 selection:bg-andes-orange selection:text-white relative">
+
+    <!-- ===== PARTÍCULAS ===== -->
+    <div class="particle-field" aria-hidden="true">
+        <div class="particle" style="left:5%; width:12px; height:12px; background:#FFC107; animation-delay:0s;"></div>
+        <div class="particle" style="left:15%; width:18px; height:18px; background:#E53935; animation-delay:1.5s;"></div>
+        <div class="particle" style="left:25%; width:10px; height:10px; background:#4CAF50; animation-delay:3s;"></div>
+        <div class="particle" style="left:35%; width:16px; height:16px; background:#2196F3; animation-delay:4.5s;"></div>
+        <div class="particle" style="left:45%; width:8px; height:8px; background:#9C27B0; animation-delay:6s;"></div>
+        <div class="particle" style="left:55%; width:20px; height:20px; background:#FF9800; animation-delay:1s;"></div>
+        <div class="particle" style="left:65%; width:14px; height:14px; background:#E91E63; animation-delay:2.5s;"></div>
+        <div class="particle" style="left:75%; width:11px; height:11px; background:#009688; animation-delay:4s;"></div>
+        <div class="particle" style="left:85%; width:17px; height:17px; background:#FFC107; animation-delay:5.5s;"></div>
+        <div class="particle" style="left:95%; width:9px; height:9px; background:#E53935; animation-delay:7s;"></div>
+    </div>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-gradient-to-br from-andes-red via-andes-orange to-andes-yellow flex flex-col justify-center items-center text-white">
+        <div class="text-center animate-bounce">
+            <i class="fa-solid fa-flag text-7xl mb-4 text-white drop-shadow-lg"></i>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-display font-extrabold text-center px-4 mb-2 drop-shadow-lg" data-lang="es">¡Felices Fiestas Patrias! 🇵🇪</h1>
+        <h1 class="text-4xl md:text-6xl font-display font-extrabold text-center px-4 mb-2 drop-shadow-lg" data-lang="en">Happy Independence Day! 🇵🇪</h1>
+        <h1 class="text-4xl md:text-6xl font-display font-extrabold text-center px-4 mb-2 drop-shadow-lg" data-lang="de">Fröhlichen Unabhängigkeitstag! 🇵🇪</h1>
+        <p class="text-lg md:text-xl font-medium text-center px-6 max-w-lg drop-shadow-md" data-lang="es">En este mes de orgullo peruano, te agradecemos por sumar tu granito de arena a nuestra causa.</p>
+        <p class="text-lg md:text-xl font-medium text-center px-6 max-w-lg drop-shadow-md" data-lang="en">In this month of Peruvian pride, we thank you for contributing to our cause.</p>
+        <p class="text-lg md:text-xl font-medium text-center px-6 max-w-lg drop-shadow-md" data-lang="de">In diesem Monat des peruanischen Stolzes danken wir dir für deinen Beitrag zu unserer Sache.</p>
+        <div class="mt-8 flex gap-3">
+            <div class="w-4 h-4 bg-white rounded-full animate-ping"></div>
+            <div class="w-4 h-4 bg-white rounded-full animate-ping delay-150"></div>
+            <div class="w-4 h-4 bg-white rounded-full animate-ping delay-300"></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== BARRA DE NAVEGACIÓN MEJORADA ===== -->
+    <!-- ============================================================ -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-gradient-to-r from-andes-red via-andes-yellow to-andes-blue z-[60]"></div>
+
+    <nav id="navbar" class="transition-all duration-300">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+            <div class="navbar-inner">
+
+                <!-- === LOGO + NOMBRE (IZQUIERDA) === -->
+                <a href="#inicio" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                    <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                    alt="Logo Pacai Cusco"
+                    class="nav-logo-img">
+                    <div>
+                        <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i</span>
+                            <span class="text-andes-blue ml-0.5">Cusco</span>
+                        </div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="es">🌾 Esperanza Andina</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="en">🌾 Andean Hope</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="de">🌾 Andine Hoffnung</div>
+                    </div>
+                </a>
+
+                <!-- === MENÚ CENTRAL (DESKTOP) === -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-7 text-gray-600 text-xs xl:text-sm">
+                    <a href="#inicio" class="nav-link" data-lang="es">Inicio</a>
+                    <a href="#inicio" class="nav-link" data-lang="en">Home</a>
+                    <a href="#inicio" class="nav-link" data-lang="de">Start</a>
+
+                    <a href="#programas" class="nav-link" data-lang="es">Programas</a>
+                    <a href="#programas" class="nav-link" data-lang="en">Programs</a>
+                    <a href="#programas" class="nav-link" data-lang="de">Programme</a>
+
+                    <a href="#cultura" class="nav-link" data-lang="es">Cultura</a>
+                    <a href="#cultura" class="nav-link" data-lang="en">Culture</a>
+                    <a href="#cultura" class="nav-link" data-lang="de">Kultur</a>
+
+                    <a href="#donar" class="nav-donate-btn" data-lang="es">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donar
+                    </a>
+                    <a href="#donar" class="nav-donate-btn" data-lang="en">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donate
+                    </a>
+                    <a href="#donar" class="nav-donate-btn" data-lang="de">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Spenden
+                    </a>
+                </div>
+
+                <!-- === SELECTOR DE IDIOMAS + MENÚ MÓVIL (DERECHA) === -->
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                    <!-- Selector de idiomas -->
+                    <div class="lang-selector">
+                        <button id="langToggle" class="text-[10px] sm:text-xs font-bold text-gray-700 border-2 border-gray-200 hover:border-andes-orange rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all">
+                            <i class="fa-solid fa-globe text-andes-orange text-[8px] sm:text-xs"></i>
+                            <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                            <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                        </button>
+                        <div id="langDropdown" class="dropdown">
+                            <button class="lang-option active" data-lang-code="es">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang-code="en">🇬🇧 English</button>
+                            <button class="lang-option" data-lang-code="de">🇩🇪 Deutsch</button>
+                        </div>
+                    </div>
+
+                    <!-- Botón Menú Móvil -->
+                    <button id="mobileMenuBtn" class="lg:hidden text-gray-700 text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 hover:text-andes-orange transition-colors" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MENÚ MÓVIL ===== -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white/98 backdrop-blur-2xl z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden">
+        <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-gray-600 hover:text-andes-red transition-colors p-2" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="flex flex-col items-center gap-4 text-xl font-display font-extrabold text-gray-800 px-4">
+            <a href="#inicio" class="mobile-link hover:text-andes-orange transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-house text-andes-orange"></i> Inicio</a>
+            <a href="#inicio" class="mobile-link hover:text-andes-orange transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-house text-andes-orange"></i> Home</a>
+            <a href="#inicio" class="mobile-link hover:text-andes-orange transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-house text-andes-orange"></i> Start</a>
+
+            <a href="#programas" class="mobile-link hover:text-andes-blue transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-ribbon text-andes-blue"></i> Programas</a>
+            <a href="#programas" class="mobile-link hover:text-andes-blue transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-ribbon text-andes-blue"></i> Programs</a>
+            <a href="#programas" class="mobile-link hover:text-andes-blue transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-ribbon text-andes-blue"></i> Programme</a>
+
+            <a href="#cultura" class="mobile-link hover:text-andes-purple transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-palette text-andes-purple"></i> Cultura</a>
+            <a href="#cultura" class="mobile-link hover:text-andes-purple transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-palette text-andes-purple"></i> Culture</a>
+            <a href="#cultura" class="mobile-link hover:text-andes-purple transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-palette text-andes-purple"></i> Kultur</a>
+
+            <a href="#donar" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="es"><i class="fa-solid fa-heart animate-pulse"></i> Donar</a>
+            <a href="#donar" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="en"><i class="fa-solid fa-heart animate-pulse"></i> Donate</a>
+            <a href="#donar" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="de"><i class="fa-solid fa-heart animate-pulse"></i> Spenden</a>
+        </div>
+
+        <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm hover:bg-blue-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm hover:bg-pink-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm hover:bg-green-600 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="videos/pacai hero.mp4" onerror="this.src='https://cdn.pixabay.com/video/2023/10/22/186064-876938927_large.mp4'" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70 z-10"></div>
+        </div>
+
+        <i class="fa-solid fa-star text-andes-yellow absolute top-1/4 left-5 md:left-20 text-3xl md:text-4xl opacity-80 animate-float-slow z-20"></i>
+        <i class="fa-solid fa-heart text-andes-red absolute top-1/3 right-10 md:right-32 text-4xl md:text-5xl opacity-70 animate-float-fast z-20"></i>
+        <i class="fa-solid fa-wand-magic-sparkles text-white absolute bottom-1/4 left-1/4 text-4xl md:text-5xl opacity-30 animate-spin-slow z-20"></i>
+
+        <div class="container mx-auto px-4 relative z-30 text-center flex flex-col items-center justify-center h-full">
+            <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-6 sm:mb-8 border border-white/40 shadow-lg" data-aos="fade-down">
+                <i class="fa-solid fa-hand-holding-medical text-andes-yellow text-base sm:text-xl"></i>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="es">ONG Oficial Cusco</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="en">Official NGO Cusco</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="de">Offizielle NGO Cusco</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[1.1] text-white mb-4 sm:mb-6 md:mb-8 drop-shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <span data-lang="es">Donde la <span class="text-transparent bg-clip-text bg-gradient-to-r from-andes-yellow via-andes-orange to-andes-red text-glow-color">esperanza crece</span></span>
+                <span data-lang="en">Where <span class="text-transparent bg-clip-text bg-gradient-to-r from-andes-yellow via-andes-orange to-andes-red text-glow-color">hope grows</span></span>
+                <span data-lang="de">Wo <span class="text-transparent bg-clip-text bg-gradient-to-r from-andes-yellow via-andes-orange to-andes-red text-glow-color">Hoffnung wächst</span></span>
+                <br/>
+                <span class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl opacity-90 mt-2 block" data-lang="es">y el cáncer decrece.</span>
+                <span class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl opacity-90 mt-2 block" data-lang="en">and cancer declines.</span>
+                <span class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl opacity-90 mt-2 block" data-lang="de">und Krebs zurückgeht.</span>
+            </h1>
+
+            <p class="text-base sm:text-lg md:text-2xl text-white/90 mb-8 sm:mb-10 md:mb-12 font-medium max-w-3xl mx-auto drop-shadow-md leading-relaxed px-2" data-aos="fade-up" data-aos-delay="400">
+                <span data-lang="es">Somos una gran familia de corazones nobles luchando en el <strong class="text-andes-yellow font-bold">Hospital Antonio Lorena</strong> para que ningún pequeño héroe se rinda.</span>
+                <span data-lang="en">We are a big family of noble hearts fighting at <strong class="text-andes-yellow font-bold">Hospital Antonio Lorena</strong> so that no little hero gives up.</span>
+                <span data-lang="de">Wir sind eine große Familie edler Herzen, die im <strong class="text-andes-yellow font-bold">Hospital Antonio Lorena</strong> kämpft, damit kein kleiner Held aufgibt.</span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center w-full px-4 max-w-lg sm:max-w-none" data-aos="fade-up" data-aos-delay="600">
+                <a href="#donar" class="btn-glow bg-gradient-to-r from-andes-red to-andes-orange text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full flex items-center justify-center gap-3 w-full sm:w-auto transform hover:scale-105 shadow-lg">
+                    <i class="fa-solid fa-heart-pulse text-2xl sm:text-3xl"></i> <span data-lang="es">¡Dona Magia Hoy!</span><span data-lang="en">Donate Magic Today!</span><span data-lang="de">Spende Magie Heute!</span>
+                </a>
+                <a href="#cultura" class="bg-white/20 backdrop-blur-md border-2 border-white text-white text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full flex items-center justify-center gap-3 hover:bg-white hover:text-andes-blue transition-all duration-300 w-full sm:w-auto">
+                    <i class="fa-solid fa-play"></i> <span data-lang="es">Ver Nuestro Trabajo</span><span data-lang="en">See Our Work</span><span data-lang="de">Unsere Arbeit Sehen</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#impacto" class="text-white/70 hover:text-white transition-colors" aria-label="Scroll down">
+                <i class="fa-solid fa-chevron-down text-3xl sm:text-4xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== RESTO DEL CONTENIDO (sin cambios) ===== -->
+    <!-- Onda separadora -->
+    <div class="relative -mt-1 z-20">
+        <svg class="w-full h-12 md:h-24 text-white fill-current drop-shadow-sm" viewBox="0 0 1440 74" xmlns="http://www.w3.org/2000/svg"><path d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,32C840,21,960,11,1080,16C1200,21,1320,43,1380,53.3L1440,64L1440,74L1380,74C1320,74,1200,74,1080,74C960,74,840,74,720,74C600,74,480,74,360,74C240,74,120,74,60,74L0,74Z"></path></svg>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== CONTADORES ===== -->
+    <!-- ============================================================ -->
+    <section id="impacto" class="bg-white py-12 sm:py-16 md:py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="stats-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 text-center">
+                <div class="stat-card bg-gradient-to-br from-yellow-50 to-white border-2 border-yellow-100 p-6 sm:p-8 rounded-[2rem] shadow-lg hover:-translate-y-2 transition-all duration-300 group card-3d" data-aos="flip-up">
+                    <div class="bg-andes-yellow w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:rotate-12 transition-transform shadow-md">
+                        <i class="fa-regular fa-face-laugh-squint text-3xl sm:text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-gray-800 mb-1">+<span class="counter" data-target="350">0</span></h3>
+                    <p class="font-bold text-andes-orange text-xs sm:text-sm uppercase tracking-widest" data-lang="es">Sonrisas Recuperadas</p>
+                    <p class="font-bold text-andes-orange text-xs sm:text-sm uppercase tracking-widest" data-lang="en">Smiles Recovered</p>
+                    <p class="font-bold text-andes-orange text-xs sm:text-sm uppercase tracking-widest" data-lang="de">Wiedergewonnene Lächeln</p>
+                </div>
+                <div class="stat-card bg-gradient-to-br from-blue-50 to-white border-2 border-blue-100 p-6 sm:p-8 rounded-[2rem] shadow-lg hover:-translate-y-2 transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="100">
+                    <div class="bg-andes-blue w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:animate-wiggle shadow-md">
+                        <i class="fa-solid fa-cake-candles text-3xl sm:text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-gray-800 mb-1">+<span class="counter" data-target="6">0</span></h3>
+                    <p class="font-bold text-andes-blue text-xs sm:text-sm uppercase tracking-widest" data-lang="es">Años de Puro Amor</p>
+                    <p class="font-bold text-andes-blue text-xs sm:text-sm uppercase tracking-widest" data-lang="en">Years of Pure Love</p>
+                    <p class="font-bold text-andes-blue text-xs sm:text-sm uppercase tracking-widest" data-lang="de">Jahre reiner Liebe</p>
+                </div>
+                <div class="stat-card bg-gradient-to-br from-green-50 to-white border-2 border-green-100 p-6 sm:p-8 rounded-[2rem] shadow-lg hover:-translate-y-2 transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="200">
+                    <div class="bg-andes-green w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform shadow-md">
+                        <i class="fa-solid fa-hand-holding-medical text-3xl sm:text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl sm:text-5xl font-display font-extrabold text-gray-800 mb-1"><span class="counter" data-target="100">0</span>%</h3>
+                    <p class="font-bold text-andes-green text-xs sm:text-sm uppercase tracking-widest" data-lang="es">Compromiso Real</p>
+                    <p class="font-bold text-andes-green text-xs sm:text-sm uppercase tracking-widest" data-lang="en">Real Commitment</p>
+                    <p class="font-bold text-andes-green text-xs sm:text-sm uppercase tracking-widest" data-lang="de">Echtes Engagement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section id="nosotros" class="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-[500px] md:h-[500px] bg-gradient-to-bl from-andes-yellow/10 to-transparent rounded-bl-full"></div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10 flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-20">
+            <div class="w-full lg:w-1/2" data-aos="fade-right">
+                <span class="bg-red-100 text-andes-red font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full mb-4 inline-block">
+                    <span data-lang="es">Conócenos</span>
+                    <span data-lang="en">About Us</span>
+                    <span data-lang="de">Über Uns</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mb-4 md:mb-8 leading-tight">
+                    <span data-lang="es">El inicio de nuestra <span class="text-andes-orange">gran familia.</span></span>
+                    <span data-lang="en">The beginning of our <span class="text-andes-orange">big family.</span></span>
+                    <span data-lang="de">Der Beginn unserer <span class="text-andes-orange">großen Familie.</span></span>
+                </h2>
+
+                <p class="text-gray-600 mb-4 md:mb-6 text-base sm:text-lg leading-relaxed" data-lang="es">Todo empezó con una idea sencilla: <strong>nadie debería luchar contra el cáncer infantil estando solo</strong>. Cuando una familia en Cusco recibe este diagnóstico, el desgaste emocional y económico es abrumador.</p>
+                <p class="text-gray-600 mb-4 md:mb-6 text-base sm:text-lg leading-relaxed" data-lang="en">It all started with a simple idea: <strong>no one should fight childhood cancer alone</strong>. When a family in Cusco receives this diagnosis, the emotional and financial toll is overwhelming.</p>
+                <p class="text-gray-600 mb-4 md:mb-6 text-base sm:text-lg leading-relaxed" data-lang="de">Alles begann mit einer einfachen Idee: <strong>niemand sollte allein gegen Kinderkrebs kämpfen</strong>. Wenn eine Familie in Cusco diese Diagnose erhält, ist die emotionale und finanzielle Belastung überwältigend.</p>
+
+                <p class="text-gray-600 mb-6 md:mb-8 text-base sm:text-lg leading-relaxed" data-lang="es">Por eso, nos convertimos en sus aliados. Garantizamos sus medicinas, los llevamos seguros a sus terapias y armamos fiestas inolvidables en las habitaciones del hospital. ¡Queremos que nunca dejen de reír!</p>
+                <p class="text-gray-600 mb-6 md:mb-8 text-base sm:text-lg leading-relaxed" data-lang="en">That's why we became their allies. We guarantee their medicines, take them safely to their therapies, and organize unforgettable parties in the hospital rooms. We want them to never stop laughing!</p>
+                <p class="text-gray-600 mb-6 md:mb-8 text-base sm:text-lg leading-relaxed" data-lang="de">Deshalb wurden wir ihre Verbündeten. Wir garantieren ihre Medikamente, bringen sie sicher zu ihren Therapien und organisieren unvergessliche Partys in den Krankenzimmern. Wir wollen, dass sie nie aufhören zu lachen!</p>
+
+                <div class="flex flex-wrap gap-3 sm:gap-4 mb-6 md:mb-8">
+                    <div class="bg-slate-50 p-3 sm:p-4 rounded-2xl border-2 border-slate-100 flex-1 min-w-[80px] sm:min-w-[100px] text-center hover:border-andes-blue transition-all shadow-sm hover:shadow-md">
+                        <i class="fa-solid fa-van-shuttle text-2xl sm:text-3xl text-andes-blue mb-1 sm:mb-2"></i>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="es">Traslados</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="en">Transport</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="de">Transport</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 sm:p-4 rounded-2xl border-2 border-slate-100 flex-1 min-w-[80px] sm:min-w-[100px] text-center hover:border-andes-green transition-all shadow-sm hover:shadow-md">
+                        <i class="fa-solid fa-pills text-2xl sm:text-3xl text-andes-green mb-1 sm:mb-2"></i>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="es">Medicinas</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="en">Medicines</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="de">Medikamente</p>
+                    </div>
+                    <div class="bg-slate-50 p-3 sm:p-4 rounded-2xl border-2 border-slate-100 flex-1 min-w-[80px] sm:min-w-[100px] text-center hover:border-andes-purple transition-all shadow-sm hover:shadow-md">
+                        <i class="fa-solid fa-puzzle-piece text-2xl sm:text-3xl text-andes-purple mb-1 sm:mb-2"></i>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="es">Juegos</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="en">Games</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm" data-lang="de">Spiele</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 relative" data-aos="fade-left">
+                <div class="relative w-full max-w-lg mx-auto">
+                    <img src="imágenes/imagen 1.jpg" onerror="this.src='https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" alt="Actividad en el hospital" class="expandable-img cursor-zoom-in rounded-[2rem] md:rounded-[3rem] shadow-2xl w-full aspect-[4/5] md:aspect-square object-cover border-4 border-white">
+                    <div class="absolute -bottom-6 sm:-bottom-10 -left-2 sm:-left-4 md:-left-12 w-2/3">
+                        <img src="imágenes/imagen 2.jpg" onerror="this.src='https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" alt="Niños riendo" class="expandable-img cursor-zoom-in rounded-[2rem] shadow-2xl border-8 border-white w-full aspect-video object-cover transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                    </div>
+                    <div class="absolute -top-4 -right-2 sm:-top-6 sm:-right-4 bg-white px-3 sm:px-6 py-2 sm:py-3 rounded-full shadow-xl flex items-center gap-2 sm:gap-3 border-2 border-andes-yellow animate-bounce">
+                        <i class="fa-solid fa-face-grin-stars text-xl sm:text-2xl text-andes-yellow"></i>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm md:text-base" data-lang="es">¡Pura Alegría!</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm md:text-base" data-lang="en">Pure Joy!</p>
+                        <p class="font-bold text-gray-800 text-xs sm:text-sm md:text-base" data-lang="de">Reine Freude!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROGRAMAS ===== -->
+    <section id="programas" class="py-16 sm:py-20 md:py-24 bg-slate-50 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="bg-blue-100 text-andes-blue font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-ribbon mr-2"></i> <span data-lang="es">Nuestro Trabajo</span><span data-lang="en">Our Work</span><span data-lang="de">Unsere Arbeit</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4 mb-4">
+                    <span data-lang="es">Programas que <span class="text-andes-orange">transforman vidas</span></span>
+                    <span data-lang="en">Programs that <span class="text-andes-orange">transform lives</span></span>
+                    <span data-lang="de">Programme, die <span class="text-andes-orange">Leben verändern</span></span>
+                </h2>
+            </div>
+
+            <div class="grid-programas grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Programa 1 -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden border-2 border-transparent hover:border-andes-blue transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="100">
+                    <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-4 sm:p-6 text-center">
+                        <i class="fa-solid fa-truck-medical text-4xl sm:text-5xl text-andes-blue group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Traslados Seguros</h3>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Safe Transport</h3>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Sicherer Transport</h3>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="es">Garantizamos el transporte de los niños y sus familias desde sus comunidades al hospital.</p>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="en">We guarantee transport for children and their families from their communities to the hospital.</p>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="de">Wir garantieren den Transport für Kinder und ihre Familien von ihren Gemeinden zum Krankenhaus.</p>
+                    </div>
+                </div>
+
+                <!-- Programa 2 -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden border-2 border-transparent hover:border-andes-green transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-br from-green-100 to-green-50 p-4 sm:p-6 text-center">
+                        <i class="fa-solid fa-pills text-4xl sm:text-5xl text-andes-green group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Apoyo Farmacéutico</h3>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Pharmaceutical Support</h3>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Pharmazeutische Unterstützung</h3>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="es">Proveemos medicamentos oncológicos y suplementos no cubiertos por el sistema de salud.</p>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="en">We provide oncology medications and supplements not covered by the healthcare system.</p>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="de">Wir stellen Onkologie-Medikamente und Nahrungsergänzungsmittel zur Verfügung, die nicht vom Gesundheitssystem abgedeckt werden.</p>
+                    </div>
+                </div>
+
+                <!-- Programa 3 -->
+                <div class="bg-white rounded-[2rem] shadow-lg overflow-hidden border-2 border-transparent hover:border-andes-purple transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-br from-purple-100 to-purple-50 p-4 sm:p-6 text-center">
+                        <i class="fa-solid fa-puzzle-piece text-4xl sm:text-5xl text-andes-purple group-hover:scale-110 transition-transform duration-300"></i>
+                    </div>
+                    <div class="p-4 sm:p-6">
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Talleres Lúdicos</h3>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Play Workshops</h3>
+                        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Spielworkshops</h3>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="es">Realizamos talleres de arte, música, teatro y juegos terapéuticos dentro del hospital.</p>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="en">We hold art, music, theater, and therapeutic play workshops inside the hospital.</p>
+                        <p class="text-gray-600 text-sm sm:text-base" data-lang="de">Wir veranstalten Kunst-, Musik-, Theater- und therapeutische Spielworkshops im Krankenhaus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CULTURA Y RECREACIÓN ===== -->
+    <section id="cultura" class="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="bg-purple-100 text-andes-purple font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-palette mr-2"></i> <span data-lang="es">Cultura y Recreación</span><span data-lang="en">Culture & Recreation</span><span data-lang="de">Kultur & Freizeit</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4 mb-4">
+                    <span data-lang="es">Arte, risas y <span class="text-andes-purple">tradición andina</span></span>
+                    <span data-lang="en">Art, laughter & <span class="text-andes-purple">Andean tradition</span></span>
+                    <span data-lang="de">Kunst, Lachen & <span class="text-andes-purple">Andine Tradition</span></span>
+                </h2>
+            </div>
+
+            <div class="grid-cultura grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-[2rem] p-6 sm:p-8 shadow-lg border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 group card-3d" data-aos="flip-left">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="bg-purple-100 p-3 sm:p-4 rounded-full">
+                            <i class="fa-solid fa-mask-face text-2xl sm:text-3xl text-andes-purple"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Talleres de Arte y Teatro</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Art and Theater Workshops</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Kunst- und Theaterworkshops</h3>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="es">Los niños exploran su creatividad a través de la pintura, el modelado y la actuación.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="en">Children explore their creativity through painting, sculpting, and acting.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="de">Kinder entdecken ihre Kreativität durch Malen, Modellieren und Schauspiel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-[2rem] p-6 sm:p-8 shadow-lg border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300 group card-3d" data-aos="flip-right" data-aos-delay="100">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="bg-yellow-100 p-3 sm:p-4 rounded-full">
+                            <i class="fa-solid fa-drumstick-bite text-2xl sm:text-3xl text-andes-orange"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Música y Danza Andina</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Andean Music and Dance</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Andine Musik und Tanz</h3>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="es">A través de la música y la danza, los niños conectan con sus raíces culturales.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="en">Through music and dance, children connect with their cultural roots.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="de">Durch Musik und Tanz verbinden sich Kinder mit ihren kulturellen Wurzeln.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-[2rem] p-6 sm:p-8 shadow-lg border-2 border-green-100 hover:border-green-300 transition-all duration-300 group card-3d" data-aos="flip-left" data-aos-delay="200">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="bg-green-100 p-3 sm:p-4 rounded-full">
+                            <i class="fa-solid fa-tree text-2xl sm:text-3xl text-andes-green"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Juegos al Aire Libre</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Outdoor Games</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Spiele im Freien</h3>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="es">Organizamos salidas a espacios naturales cercanos a Cusco.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="en">We organize outings to natural spaces near Cusco.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="de">Wir organisieren Ausflüge zu natürlichen Orten in der Nähe von Cusco.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-[2rem] p-6 sm:p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 group card-3d" data-aos="flip-right" data-aos-delay="300">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="bg-blue-100 p-3 sm:p-4 rounded-full">
+                            <i class="fa-solid fa-calendar-check text-2xl sm:text-3xl text-andes-blue"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Celebraciones Especiales</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Special Celebrations</h3>
+                            <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Besondere Feiern</h3>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="es">Cumpleaños, Navidad, Día del Niño y otras fechas especiales son celebradas.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="en">Birthdays, Christmas, Children's Day, and other special dates are celebrated.</p>
+                            <p class="text-gray-600 text-sm sm:text-base" data-lang="de">Geburtstage, Weihnachten, Kindertag und andere besondere Anlässe werden gefeiert.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section id="testimonios" class="py-16 sm:py-20 md:py-24 bg-slate-50 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="bg-pink-100 text-andes-pink font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-quote-right mr-2"></i> <span data-lang="es">Voces que inspiran</span><span data-lang="en">Inspiring Voices</span><span data-lang="de">Inspirierende Stimmen</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4 mb-4">
+                    <span data-lang="es">Lo que dicen <span class="text-andes-pink">nuestras familias</span></span>
+                    <span data-lang="en">What our <span class="text-andes-pink">families say</span></span>
+                    <span data-lang="de">Was unsere <span class="text-andes-pink">Familien sagen</span></span>
+                </h2>
+            </div>
+
+            <div class="testimonial-scroll hide-scroll" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-item">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&crop=face" alt="María" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-andes-yellow">
+                        <div>
+                            <h4 class="font-bold text-gray-800">María, mamá de Luis</h4>
+                            <div class="flex text-andes-yellow text-xs sm:text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="es">"Cuando mi hijo fue diagnosticado, no sabía cómo íbamos a pagar los viajes al hospital. Pacai nos dio movilidad, medicinas y lo más importante: esperanza."</p>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="en">"When my son was diagnosed, I didn't know how we would pay for trips to the hospital. Pacai gave us mobility, medicines, and most importantly: hope."</p>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="de">"Als mein Sohn diagnostiziert wurde, wusste ich nicht, wie wir die Fahrten ins Krankenhaus bezahlen sollten. Pacai gab uns Mobilität, Medikamente und vor allem: Hoffnung."</p>
+                    <div class="mt-4 text-xs text-gray-400 flex items-center gap-2"><i class="fa-regular fa-heart text-andes-red"></i> <span data-lang="es">Testimonio real</span><span data-lang="en">Real testimonial</span><span data-lang="de">Echter Erfahrungsbericht</span></div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Carlos" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-andes-blue">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Carlos, <span data-lang="es">voluntario</span><span data-lang="en">volunteer</span><span data-lang="de">Freiwilliger</span></h4>
+                            <div class="flex text-andes-yellow text-xs sm:text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="es">"Ser parte de Pacai me ha cambiado la vida. Ver la resiliencia de estos niños te hace valorar cada instante. No doy mi tiempo, recibo mucho más a cambio."</p>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="en">"Being part of Pacai has changed my life. Seeing the resilience of these children makes you value every moment. I don't give my time, I receive much more in return."</p>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="de">"Teil von Pacai zu sein, hat mein Leben verändert. Die Widerstandsfähigkeit dieser Kinder zu sehen, lässt dich jeden Moment schätzen."</p>
+                    <div class="mt-4 text-xs text-gray-400 flex items-center gap-2"><i class="fa-regular fa-heart text-andes-red"></i> <span data-lang="es">Testimonio real</span><span data-lang="en">Real testimonial</span><span data-lang="de">Echter Erfahrungsbericht</span></div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Ana" class="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-4 border-andes-green">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ana, <span data-lang="es">abuela de Sofía</span><span data-lang="en">grandmother of Sofía</span><span data-lang="de">Großmutter von Sofía</span></h4>
+                            <div class="flex text-andes-yellow text-xs sm:text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="es">"Nunca imaginé que existiría un lugar que te abrace tanto. Nos dieron techo, comida y mucho cariño. Los talleres de arte hicieron que mi nieta volviera a reír."</p>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="en">"I never imagined there would be a place that embraces you so much. They gave us shelter, food, and so much love."</p>
+                    <p class="text-gray-600 italic text-xs sm:text-sm leading-relaxed" data-lang="de">"Ich hätte nie gedacht, dass es einen Ort gibt, der einen so umarmt. Sie gaben uns Unterkunft, Essen und so viel Liebe."</p>
+                    <div class="mt-4 text-xs text-gray-400 flex items-center gap-2"><i class="fa-regular fa-heart text-andes-red"></i> <span data-lang="es">Testimonio real</span><span data-lang="en">Real testimonial</span><span data-lang="de">Echter Erfahrungsbericht</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EQUIPO ===== -->
+    <section id="equipo" class="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="bg-blue-100 text-andes-blue font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-users mr-2"></i> <span data-lang="es">Nuestra Familia</span><span data-lang="en">Our Family</span><span data-lang="de">Unsere Familie</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4 mb-4">
+                    <span data-lang="es">El equipo detrás de <span class="text-andes-blue">la sonrisa</span></span>
+                    <span data-lang="en">The team behind <span class="text-andes-blue">the smile</span></span>
+                    <span data-lang="de">Das Team hinter <span class="text-andes-blue">dem Lächeln</span></span>
+                </h2>
+            </div>
+
+            <div class="grid-equipo grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+                <div class="bg-slate-50 rounded-2xl p-4 sm:p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-andes-yellow group card-3d" data-aos="flip-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Fundador" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full object-cover mx-auto border-4 border-andes-yellow group-hover:border-andes-orange transition-colors">
+                    <h4 class="font-display font-extrabold text-base sm:text-lg text-gray-800 mt-3 sm:mt-4">Dr. Juan Pérez</h4>
+                    <p class="text-xs sm:text-sm text-andes-blue font-semibold" data-lang="es">Fundador y Oncólogo</p>
+                    <p class="text-xs sm:text-sm text-andes-blue font-semibold" data-lang="en">Founder & Oncologist</p>
+                    <p class="text-xs sm:text-sm text-andes-blue font-semibold" data-lang="de">Gründer & Onkologe</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-4 sm:p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-andes-green group card-3d" data-aos="flip-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Coordinadora" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full object-cover mx-auto border-4 border-andes-green group-hover:border-andes-teal transition-colors">
+                    <h4 class="font-display font-extrabold text-base sm:text-lg text-gray-800 mt-3 sm:mt-4">Lic. Rosa Quispe</h4>
+                    <p class="text-xs sm:text-sm text-andes-green font-semibold" data-lang="es">Coordinadora de Voluntarios</p>
+                    <p class="text-xs sm:text-sm text-andes-green font-semibold" data-lang="en">Volunteer Coordinator</p>
+                    <p class="text-xs sm:text-sm text-andes-green font-semibold" data-lang="de">Freiwilligen-Koordinatorin</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-4 sm:p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-andes-purple group card-3d" data-aos="flip-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Psicólogo" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full object-cover mx-auto border-4 border-andes-purple group-hover:border-andes-pink transition-colors">
+                    <h4 class="font-display font-extrabold text-base sm:text-lg text-gray-800 mt-3 sm:mt-4">Psic. Carlos Mamani</h4>
+                    <p class="text-xs sm:text-sm text-andes-purple font-semibold" data-lang="es">Psicólogo Infantil</p>
+                    <p class="text-xs sm:text-sm text-andes-purple font-semibold" data-lang="en">Child Psychologist</p>
+                    <p class="text-xs sm:text-sm text-andes-purple font-semibold" data-lang="de">Kinderpsychologe</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-4 sm:p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-andes-red group card-3d" data-aos="flip-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face" alt="Voluntaria" class="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 rounded-full object-cover mx-auto border-4 border-andes-red group-hover:border-andes-orange transition-colors">
+                    <h4 class="font-display font-extrabold text-base sm:text-lg text-gray-800 mt-3 sm:mt-4">Sra. Elena Huamán</h4>
+                    <p class="text-xs sm:text-sm text-andes-red font-semibold" data-lang="es">Voluntaria y Artista</p>
+                    <p class="text-xs sm:text-sm text-andes-red font-semibold" data-lang="en">Volunteer & Artist</p>
+                    <p class="text-xs sm:text-sm text-andes-red font-semibold" data-lang="de">Freiwillige & Künstlerin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CALENDARIO ===== -->
+    <section id="calendario" class="py-16 sm:py-20 md:py-24 bg-slate-50 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="bg-orange-100 text-andes-orange font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-calendar-days mr-2"></i> <span data-lang="es">Próximas Actividades</span><span data-lang="en">Upcoming Activities</span><span data-lang="de">Kommende Aktivitäten</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4 mb-4">
+                    <span data-lang="es">Eventos <span class="text-andes-orange">para compartir</span></span>
+                    <span data-lang="en">Events <span class="text-andes-orange">to share</span></span>
+                    <span data-lang="de">Veranstaltungen <span class="text-andes-orange">zum Teilen</span></span>
+                </h2>
+            </div>
+
+            <div class="grid-calendario grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-andes-yellow card-3d" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <div class="bg-andes-yellow/20 p-2 sm:p-3 rounded-full">
+                            <i class="fa-solid fa-paintbrush text-xl sm:text-2xl text-andes-orange"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="es">Taller</span>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="en">Workshop</span>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="de">Workshop</span>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="es">Arte y Alegría</h4>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="en">Art and Joy</h4>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="de">Kunst und Freude</h4>
+                        </div>
+                    </div>
+                    <div class="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 text-xs text-gray-500">
+                        <span class="bg-slate-100 px-2 sm:px-3 py-1 rounded-full"><i class="fa-regular fa-calendar mr-1"></i> <span data-lang="es">25 de Julio, 3pm</span><span data-lang="en">July 25, 3pm</span><span data-lang="de">25. Juli, 15 Uhr</span></span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-andes-green card-3d" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <div class="bg-andes-green/20 p-2 sm:p-3 rounded-full">
+                            <i class="fa-solid fa-music text-xl sm:text-2xl text-andes-green"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="es">Concierto</span>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="en">Concert</span>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="de">Konzert</span>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="es">Música Andina</h4>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="en">Andean Music</h4>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="de">Andine Musik</h4>
+                        </div>
+                    </div>
+                    <div class="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 text-xs text-gray-500">
+                        <span class="bg-slate-100 px-2 sm:px-3 py-1 rounded-full"><i class="fa-regular fa-calendar mr-1"></i> <span data-lang="es">1 de Agosto, 6pm</span><span data-lang="en">August 1, 6pm</span><span data-lang="de">1. August, 18 Uhr</span></span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-andes-purple card-3d" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <div class="bg-andes-purple/20 p-2 sm:p-3 rounded-full">
+                            <i class="fa-solid fa-cake-candles text-xl sm:text-2xl text-andes-purple"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="es">Celebración</span>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="en">Celebration</span>
+                            <span class="text-xs font-bold text-andes-red uppercase" data-lang="de">Feier</span>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="es">Fiesta de Cumpleaños</h4>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="en">Birthday Party</h4>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base" data-lang="de">Geburtstagsfeier</h4>
+                        </div>
+                    </div>
+                    <div class="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 text-xs text-gray-500">
+                        <span class="bg-slate-100 px-2 sm:px-3 py-1 rounded-full"><i class="fa-regular fa-calendar mr-1"></i> <span data-lang="es">15 de Agosto, 4pm</span><span data-lang="en">August 15, 4pm</span><span data-lang="de">15. August, 16 Uhr</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALERÍA ===== -->
+    <section id="galeria" class="py-16 sm:py-20 md:py-24 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="text-andes-purple font-bold tracking-widest uppercase text-xs"><i class="fa-solid fa-camera-retro"></i> <span data-lang="es">Capturas de celular</span><span data-lang="en">Phone captures</span><span data-lang="de">Handy-Fotos</span></span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-2 mb-4" data-lang="es">Nuestro Muro de Sonrisas</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-2 mb-4" data-lang="en">Our Wall of Smiles</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-2 mb-4" data-lang="de">Unsere Wand der Lächeln</h2>
+            </div>
+
+            <div class="galeria-masonry masonry">
+                <div class="masonry-item group relative cursor-zoom-in" data-aos="fade-up">
+                    <img src="imágenes/imagen 3.jpg" onerror="this.src='https://images.unsplash.com/photo-1542810634-71277d95dc8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="expandable-img w-full h-auto rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-md">
+                    <div class="absolute inset-0 bg-andes-red/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-center justify-center pointer-events-none">
+                        <i class="fa-solid fa-expand text-white text-3xl sm:text-4xl animate-pulse"></i>
+                    </div>
+                </div>
+                <div class="masonry-item group relative cursor-zoom-in" data-aos="fade-up" data-aos-delay="100">
+                    <img src="imágenes/imagen 4.jpg" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="expandable-img w-full h-auto rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-md">
+                    <div class="absolute inset-0 bg-andes-orange/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-center justify-center pointer-events-none"><i class="fa-solid fa-expand text-white text-3xl sm:text-4xl"></i></div>
+                </div>
+                <div class="masonry-item group relative cursor-zoom-in" data-aos="fade-up" data-aos-delay="200">
+                    <img src="imágenes/imagen 5.jpg" onerror="this.src='https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="expandable-img w-full h-auto rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-md">
+                    <div class="absolute inset-0 bg-andes-blue/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-center justify-center pointer-events-none"><i class="fa-solid fa-expand text-white text-3xl sm:text-4xl"></i></div>
+                </div>
+                <div class="masonry-item group relative cursor-zoom-in" data-aos="fade-up">
+                    <img src="imágenes/imagen 6.jpg" onerror="this.src='https://images.unsplash.com/photo-1603398938378-e54eab446dde?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="expandable-img w-full h-auto rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-md">
+                    <div class="absolute inset-0 bg-andes-green/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-center justify-center pointer-events-none"><i class="fa-solid fa-expand text-white text-3xl sm:text-4xl"></i></div>
+                </div>
+                <div class="masonry-item group relative cursor-zoom-in" data-aos="fade-up" data-aos-delay="100">
+                    <img src="imágenes/imagen 7.jpg" onerror="this.src='https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="expandable-img w-full h-auto rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-md">
+                    <div class="absolute inset-0 bg-andes-purple/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-center justify-center pointer-events-none"><i class="fa-solid fa-expand text-white text-3xl sm:text-4xl"></i></div>
+                </div>
+                <div class="masonry-item group relative cursor-zoom-in" data-aos="fade-up" data-aos-delay="200">
+                    <img src="imágenes/imagen 8.jpg" onerror="this.src='https://images.unsplash.com/photo-1608686207856-001b95cf60ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'" class="expandable-img w-full h-auto rounded-2xl group-hover:scale-105 transition-transform duration-500 shadow-md">
+                    <div class="absolute inset-0 bg-andes-red/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-center justify-center pointer-events-none"><i class="fa-solid fa-expand text-white text-3xl sm:text-4xl"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DONAR ===== -->
+    <section id="donar" class="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-andes-red via-andes-orange to-andes-yellow relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="bg-white/20 backdrop-blur-sm text-white font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block"><i class="fa-solid fa-hand-holding-heart mr-2"></i> <span data-lang="es">Ayuda</span><span data-lang="en">Help</span><span data-lang="de">Hilfe</span></span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white mt-4 mb-4 drop-shadow-lg">
+                    <span data-lang="es">Tu donación <span class="text-andes-yellow">cambia vidas</span></span>
+                    <span data-lang="en">Your donation <span class="text-andes-yellow">changes lives</span></span>
+                    <span data-lang="de">Deine Spende <span class="text-andes-yellow">verändert Leben</span></span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-[2rem] p-5 sm:p-6 md:p-8 shadow-2xl text-center transform hover:-translate-y-4 transition-all duration-300 border-4 border-transparent hover:border-andes-yellow card-3d" data-aos="flip-up" data-aos-delay="100">
+                    <div class="bg-andes-yellow/20 w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa-solid fa-hand-holding-dollar text-3xl sm:text-4xl text-andes-orange"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Donación Única</h3>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">One-time Donation</h3>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Einmalige Spende</h3>
+                    <a href="https://wa.me/51987654321?text=Hola,%20quiero%20donar%20una%20cantidad%20única" target="_blank" class="btn-donate text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full inline-block w-full text-center shadow-md hover:shadow-xl transition-all text-xs sm:text-sm">
+                        <i class="fa-brands fa-whatsapp mr-1 sm:mr-2"></i> <span data-lang="es">Donar por WhatsApp</span><span data-lang="en">Donate via WhatsApp</span><span data-lang="de">Per WhatsApp spenden</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-[2rem] p-5 sm:p-6 md:p-8 shadow-2xl text-center transform hover:-translate-y-4 transition-all duration-300 border-4 border-transparent hover:border-andes-yellow card-3d" data-aos="flip-up" data-aos-delay="200">
+                    <div class="bg-andes-green/20 w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa-solid fa-calendar-check text-3xl sm:text-4xl text-andes-green"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Donación Mensual</h3>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">Monthly Donation</h3>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Monatliche Spende</h3>
+                    <a href="https://wa.me/51987654321?text=Hola,%20quiero%20ser%20socio%20mensual" target="_blank" class="btn-donate text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full inline-block w-full text-center shadow-md hover:shadow-xl transition-all text-xs sm:text-sm">
+                        <i class="fa-brands fa-whatsapp mr-1 sm:mr-2"></i> <span data-lang="es">Hazte Socio</span><span data-lang="en">Become a Partner</span><span data-lang="de">Werde Partner</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-[2rem] p-5 sm:p-6 md:p-8 shadow-2xl text-center transform hover:-translate-y-4 transition-all duration-300 border-4 border-transparent hover:border-andes-yellow card-3d" data-aos="flip-up" data-aos-delay="300">
+                    <div class="bg-andes-purple/20 w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full flex items-center justify-center mb-3 sm:mb-4">
+                        <i class="fa-solid fa-gift text-3xl sm:text-4xl text-andes-purple"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="es">Donación en Especie</h3>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="en">In-kind Donation</h3>
+                    <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mb-2" data-lang="de">Sachspende</h3>
+                    <a href="https://wa.me/51987654321?text=Hola,%20quiero%20donar%20en%20especie" target="_blank" class="btn-donate text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full inline-block w-full text-center shadow-md hover:shadow-xl transition-all text-xs sm:text-sm">
+                        <i class="fa-brands fa-whatsapp mr-1 sm:mr-2"></i> <span data-lang="es">Coordinar Donación</span><span data-lang="en">Coordinate Donation</span><span data-lang="de">Spende koordinieren</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="py-16 sm:py-20 md:py-24 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl relative z-10">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <span class="text-andes-blue font-bold tracking-widest uppercase text-xs"><i class="fa-solid fa-scale-balanced"></i> <span data-lang="es">Transparencia Total</span><span data-lang="en">Total Transparency</span><span data-lang="de">Totale Transparenz</span></span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-2" data-lang="es">Dudas Frecuentes</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-2" data-lang="en">Frequently Asked Questions</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-2" data-lang="de">Häufig gestellte Fragen</h2>
+            </div>
+
+            <div class="space-y-3 sm:space-y-4">
+                <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <summary class="flex justify-between items-center font-bold font-display text-sm sm:text-lg text-gray-800 p-4 sm:p-6">
+                        <span data-lang="es">¿A dónde va exactamente el dinero de mi donación?</span>
+                        <span data-lang="en">Where exactly does my donation money go?</span>
+                        <span data-lang="de">Wohin geht das Geld meiner Spende genau?</span>
+                        <span class="transition group-open:rotate-180 text-andes-orange"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 p-4 sm:p-6 pt-0 leading-relaxed border-t border-slate-200 mt-2 text-sm sm:text-base">
+                        <p data-lang="es">El 100% de los fondos recaudados se destina a nuestro programa de apoyo directo: compra de medicinas oncológicas, movilidad segura, y materiales para talleres.</p>
+                        <p data-lang="en">100% of the funds raised go to our direct support program: purchase of oncology medicines, safe mobility, and materials for workshops.</p>
+                        <p data-lang="de">100 % der gesammelten Mittel fließen in unser Programm zur direkten Unterstützung: Kauf von Onkologie-Medikamenten, sicherer Transport und Materialien für Workshops.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <summary class="flex justify-between items-center font-bold font-display text-sm sm:text-lg text-gray-800 p-4 sm:p-6">
+                        <span data-lang="es">¿Puedo donar juguetes, ropa o insumos en lugar de dinero?</span>
+                        <span data-lang="en">Can I donate toys, clothes, or supplies instead of money?</span>
+                        <span data-lang="de">Kann ich Spielzeug, Kleidung oder Hilfsmittel anstelle von Geld spenden?</span>
+                        <span class="transition group-open:rotate-180 text-andes-blue"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 p-4 sm:p-6 pt-0 leading-relaxed border-t border-slate-200 mt-2 text-sm sm:text-base">
+                        <p data-lang="es">¡Por supuesto! Aceptamos juguetes nuevos, materiales de arte, cuentos infantiles y pañales. Coordina con nosotros por WhatsApp.</p>
+                        <p data-lang="en">Of course! We accept new toys, art materials, children's stories, and diapers. Coordinate with us via WhatsApp.</p>
+                        <p data-lang="de">Natürlich! Wir nehmen neues Spielzeug, Kunstmaterialien, Kindergeschichten und Windeln an. Koordiniere mit uns per WhatsApp.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                    <summary class="flex justify-between items-center font-bold font-display text-sm sm:text-lg text-gray-800 p-4 sm:p-6">
+                        <span data-lang="es">No vivo en Cusco, ¿puedo ser voluntario desde mi ciudad?</span>
+                        <span data-lang="en">I don't live in Cusco, can I volunteer from my city?</span>
+                        <span data-lang="de">Ich lebe nicht in Cusco, kann ich von meiner Stadt aus ehrenamtlich arbeiten?</span>
+                        <span class="transition group-open:rotate-180 text-andes-green"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="text-gray-600 p-4 sm:p-6 pt-0 leading-relaxed border-t border-slate-200 mt-2 text-sm sm:text-base">
+                        <p data-lang="es">¡Claro! Tenemos un "Escuadrón Digital" de voluntarios desde todo el Perú y el extranjero. ¡Escríbenos!</p>
+                        <p data-lang="en">Of course! We have a "Digital Squad" of volunteers from all over Peru and abroad. Write to us!</p>
+                        <p data-lang="de">Natürlich! Wir haben ein "Digitales Team" von Freiwilligen aus ganz Peru und dem Ausland. Schreib uns!</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contacto" class="bg-slate-950 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-8 border-andes-yellow">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo.png" onerror="this.style.display='none'" alt="Logo" class="w-10 h-10 sm:w-12 sm:h-12 object-contain bg-white rounded-full p-1">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-andes-red">Pa</span><span class="text-andes-orange">ca</span><span class="text-andes-green">i </span><span class="text-white ml-1">Cusco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="es">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="en">Where hope grows and cancer declines. Together we build a future full of light and health for our children in Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="de">Wo Hoffnung wächst und Krebs zurückgeht. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-blue-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-pink-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:-translate-y-1 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Navegación</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Navigation</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Navigation</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-gray-400 font-medium text-sm sm:text-base">
+                        <li><a href="#inicio" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Inicio</span><span data-lang="en">Home</span><span data-lang="de">Start</span></a></li>
+                        <li><a href="#programas" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Programas</span><span data-lang="en">Programs</span><span data-lang="de">Programme</span></a></li>
+                        <li><a href="#cultura" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Cultura</span><span data-lang="en">Culture</span><span data-lang="de">Kultur</span></a></li>
+                        <li><a href="#donar" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Donar</span><span data-lang="en">Donate</span><span data-lang="de">Spenden</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Nuestra Casa</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Our Home</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Unser Zuhause</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-andes-red"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-blue"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-green"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium">+51 987 654 321</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> Asociación Pacai Cusco. <span data-lang="es">Hecho con el corazón.</span><span data-lang="en">Made with heart.</span><span data-lang="de">Mit Herz gemacht.</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-andes-red animate-pulse"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL ===== -->
+    <div id="imageModal" class="fixed inset-0 z-[200] hidden bg-black/95 flex items-center justify-center backdrop-blur-md opacity-0 transition-opacity duration-300">
+        <button id="closeModalBtn" class="absolute top-4 sm:top-6 right-4 sm:right-6 text-white text-3xl sm:text-4xl hover:text-andes-orange transition-colors z-50 focus:outline-none w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-black/30 rounded-full hover:bg-black/60">
+            &times;
+        </button>
+        <img id="modalImageSrc" src="" alt="Vista ampliada" class="max-w-[95%] max-h-[90vh] object-contain rounded-2xl shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-4 sm:right-6 z-40 bg-white text-andes-blue w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-base sm:text-xl shadow-[0_4px_15px_rgba(0,0,0,0.15)] opacity-0 translate-y-10 transition-all duration-300 focus:outline-none hover:bg-slate-100 border border-gray-200" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== WHATSAPP FLOTANTE ===== -->
+    <a href="https://wa.me/51987654321" target="_blank" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-3xl sm:text-4xl shadow-[0_4px_20px_rgba(37,211,102,0.6)] hover:scale-110 transition-transform animate-pulse-slow border-2 border-white">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js">
+    </script>
+
+    <script>
+        (function() {
+            'use strict';
+
+            AOS.init({ duration: 700, once: true, offset: 40 });
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const preloader = document.getElementById('preloader');
+                if (!sessionStorage.getItem('pacai_preloader_visto')) {
+                    const myCanvas = document.createElement('canvas');
+                    myCanvas.style.cssText =
+                        'position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:200;';
+                    document.body.appendChild(myCanvas);
+                    const customConfetti = confetti.create(myCanvas, { resize: true, useWorker: false });
+                    const duration = 2500;
+                    const end = Date.now() + duration;
+                    const colors = ['#ff0000', '#ffffff', '#FFC107'];
+                    (function frame() {
+                        customConfetti({ particleCount: 30, startVelocity: 25, spread: 360, ticks: 50,
+                            colors, origin: { x: Math.random() * 0.4 + 0.3, y: Math.random() * 0.3 } });
+                        if (Date.now() < end) requestAnimationFrame(frame);
+                        else { myCanvas.remove(); }
+                    })();
+                    setTimeout(function() {
+                        preloader.classList.add('hidden-preloader');
+                        setTimeout(function() { preloader.style.display = 'none'; }, 800);
+                        sessionStorage.setItem('pacai_preloader_visto', 'true');
+                    }, 3000);
+                } else {
+                    preloader.style.display = 'none';
+                }
+
+                const counters = document.querySelectorAll('.counter');
+                const speed = 100;
+                const counterObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            const counter = entry.target;
+                            const target = +counter.getAttribute('data-target');
+                            let current = 0;
+                            const inc = Math.max(1, Math.ceil(target / speed));
+
+                            function updateCount() {
+                                current += inc;
+                                if (current >= target) {
+                                    counter.textContent = target;
+                                    return;
+                                }
+                                counter.textContent = current;
+                                requestAnimationFrame(updateCount);
+                            }
+                            updateCount();
+                            counterObserver.unobserve(counter);
+                        }
+                    });
+                }, { threshold: 0.4 });
+                counters.forEach(function(c) { counterObserver.observe(c); });
+            });
+
+            const nav = document.getElementById('navbar');
+            const scrollTopBtn = document.getElementById('scrollToTopBtn');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+                if (window.scrollY > 400) {
+                    scrollTopBtn.classList.remove('opacity-0', 'translate-y-10');
+                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'translate-y-10');
+                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImageSrc');
+            const closeBtn = document.getElementById('closeModalBtn');
+            document.querySelectorAll('.expandable-img').forEach(function(img) {
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    modalImg.src = img.src;
+                    modal.classList.remove('hidden');
+                    setTimeout(function() {
+                        modal.classList.remove('opacity-0');
+                        modalImg.classList.remove('scale-95');
+                        modalImg.classList.add('scale-100');
+                    }, 10);
+                });
+            });
+
+            function closeModalFn() {
+                modal.classList.add('opacity-0');
+                modalImg.classList.remove('scale-100');
+                modalImg.classList.add('scale-95');
+                setTimeout(function() {
+                    modal.classList.add('hidden');
+                    modalImg.src = '';
+                }, 300);
+            }
+            closeBtn.addEventListener('click', closeModalFn);
+            modal.addEventListener('click', function(e) { if (e.target === modal) closeModalFn(); });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && !modal.classList.contains(
+                    'hidden')) closeModalFn(); });
+
+            document.querySelectorAll('.btn-donate, .btn-glow').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 }, colors: ['#FFC107',
+                            '#E53935', '#4CAF50', '#2196F3'
+                        ] });
+                });
+            });
+
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+            function setLanguage(langCode) {
+                currentLang = langCode;
+                localStorage.setItem('pacai_lang', langCode);
+
+                const labels = { 'es': '🇪🇸 ES', 'en': '🇬🇧 EN', 'de': '🇩🇪 DE' };
+                currentLangLabel.textContent = labels[langCode] || '🇪🇸 ES';
+
+                langOptions.forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                });
+
+                document.querySelectorAll('[data-lang]').forEach(function(el) {
+                    el.style.display = el.getAttribute('data-lang') === langCode ? 'block' : 'none';
+                });
+
+                langDropdown.classList.remove('open');
+                document.documentElement.lang = langCode;
+            }
+
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('open');
+            });
+
+            langOptions.forEach(function(opt) {
+                opt.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    setLanguage(opt.dataset.langCode);
+                });
+            });
+
+            setLanguage(currentLang);
+
+            console.log('🌈 Pacai Cusco · Donde la esperanza crece y el cáncer decrece.');
+            console.log('💛 Gracias por visitarnos. ¡Juntos hacemos la diferencia!');
+            console.log('🌐 Disponible en Español, Inglés y Alemán.');
+
+        })();
+    </script>
+
+</body>
+</html>
