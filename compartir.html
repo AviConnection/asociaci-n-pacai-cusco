@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Compartir · Asociación Pacai Cusco</title>
+
+    <!-- Meta para SEO -->
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de">
+    <link rel="alternate" hreflang="x-default" href="https://asociacionpacaicusco.com">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite',
+                        'float-up': 'floatUp 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(4deg)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        },
+                        floatUp: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-20px) scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        .text-glow-color {
+            text-shadow: 0 0 30px rgba(255, 193, 7, 0.5);
+        }
+        .btn-glow {
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 50px rgba(255, 193, 7, 0.8);
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #f97316, #fb923c);
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fb923c;
+        }
+
+        /* ===== SELECTOR DE IDIOMAS ===== */
+        .lang-selector {
+            position: relative;
+            z-index: 100;
+        }
+        .lang-selector button {
+            background: transparent;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 60px;
+            padding: 4px 12px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-selector button:hover {
+            border-color: #fb923c;
+            background: rgba(251, 146, 60, 0.08);
+        }
+        .lang-selector .dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+            padding: 6px;
+            min-width: 130px;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .lang-selector .dropdown.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .lang-selector .dropdown button {
+            background: transparent;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 6px 14px;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+        .lang-selector .dropdown button:hover {
+            background: #FFF7ED;
+            color: #fb923c;
+        }
+        .lang-selector .dropdown button.active {
+            background: #fb923c;
+            color: white;
+        }
+
+        /* Ocultar/mostrar contenido por idioma */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
+
+        /* ===== MENÚ MÓVIL ===== */
+        #mobileMenu {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #mobileMenu.open {
+            transform: translateX(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons a {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            .footer-grid .social-icons {
+                justify-content: center;
+            }
+            .tagline-mobile {
+                display: none !important;
+            }
+            .program-hero h1 {
+                font-size: 2rem !important;
+            }
+            .grid-valores {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-galeria {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-historia {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .nav-desktop {
+                display: none !important;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            .hide-on-mobile {
+                display: none !important;
+            }
+            .show-on-mobile {
+                display: flex !important;
+            }
+            .logo-img {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .logo-text {
+                font-size: 0.9rem !important;
+            }
+            .tagline-text {
+                font-size: 0.5rem !important;
+            }
+            .program-hero h1 {
+                font-size: 2.5rem !important;
+            }
+            .program-hero .subtitle {
+                font-size: 1rem !important;
+            }
+            .grid-valores {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-galeria {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-historia {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .grid-valores {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-historia {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        /* Utilidades responsive */
+        .hide-on-mobile {
+            display: block;
+        }
+        .show-on-mobile {
+            display: none;
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ============================================================ */
+        /* ===== NAVBAR MEJORADA ===== */
+        /* ============================================================ */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            height: 76px;
+            overflow: visible;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        #navbar.scrolled {
+            height: 64px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.04);
+        }
+
+        /* ===== LOGO EN NAVBAR ===== */
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin-top: -30px;
+            margin-bottom: -30px;
+        }
+
+        #navbar.scrolled .nav-logo-img {
+            width: 90px;
+            height: 90px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+
+        @media (max-width: 640px) {
+            #navbar {
+                height: 62px;
+            }
+            #navbar.scrolled {
+                height: 54px;
+            }
+            .nav-logo-img {
+                width: 90px;
+                height: 90px;
+                margin-top: -25px;
+                margin-bottom: -25px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 70px;
+                height: 70px;
+                margin-top: -18px;
+                margin-bottom: -18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #navbar {
+                height: 54px;
+            }
+            #navbar.scrolled {
+                height: 48px;
+            }
+            .nav-logo-img {
+                width: 75px;
+                height: 75px;
+                margin-top: -20px;
+                margin-bottom: -20px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 60px;
+                height: 60px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+        }
+
+        /* ===== LOGO TEXTO ===== */
+        .logo-text {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #navbar.scrolled .logo-text {
+            font-size: 0.9rem !important;
+        }
+
+        @media (min-width: 1024px) {
+            #navbar.scrolled .logo-text {
+                font-size: 1.1rem !important;
+            }
+        }
+
+        /* ===== ENLACES DE NAVEGACIÓN ===== */
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            padding: 0.4rem 0;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2.5px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #f97316, #fb923c);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #fb923c;
+        }
+
+        .nav-link[href="programas.html"]:hover {
+            color: #2196F3;
+        }
+        .nav-link[href="programas.html"]::after {
+            background: linear-gradient(90deg, #2196F3, #009688);
+        }
+
+        .nav-link[href="cultura.html"]:hover {
+            color: #9C27B0;
+        }
+        .nav-link[href="cultura.html"]::after {
+            background: linear-gradient(90deg, #9C27B0, #E91E63);
+        }
+
+        /* ===== BOTÓN DONAR EN NAVBAR ===== */
+        .nav-donate-btn {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-donate-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.5);
+        }
+
+        #navbar.scrolled .nav-donate-btn {
+            padding: 0.35rem 1rem;
+            font-size: 0.7rem;
+        }
+
+        /* ===== CONTENEDOR DE LA BARRA ===== */
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .navbar-inner {
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* ===== SCROLL PADDING ===== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 80px;
+            }
+        }
+
+        /* ===== FOOTER - LOGO SIN CÍRCULO ===== */
+        .footer-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        @media (max-width: 640px) {
+            .footer-logo-img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .footer-heart {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ============================================================ */
+        /* ===== ESTILOS DE LA PÁGINA DE COMPARTIR ===== */
+        /* ============================================================ */
+
+        /* Hero con gradiente cálido */
+        .hero-gradient-compartir {
+            background: linear-gradient(135deg, #451a03 0%, #78350f 20%, #d97706 40%, #f59e0b 60%, #fb923c 80%, #f97316 100%);
+            background-size: 400% 400%;
+            animation: gradientMoveCompartir 10s ease-in-out infinite;
+        }
+
+        @keyframes gradientMoveCompartir {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Círculos decorativos flotantes */
+        .circulo-flotante {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            animation: flotarCirculo 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes flotarCirculo {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-60px) scale(1.3); opacity: 0.6; }
+        }
+
+        /* Tarjeta de valor con efecto */
+        .valor-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .valor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f97316, #fb923c, #f59e0b);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .valor-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .valor-card:hover {
+            transform: translateY(-8px);
+            border-color: #fb923c;
+            box-shadow: 0 16px 48px rgba(251, 146, 60, 0.15);
+        }
+
+        .valor-card .icono-wrapper {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .valor-card:hover .icono-wrapper {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Tarjeta de historia */
+        .historia-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .historia-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Galería con efecto */
+        .galeria-item-compartir {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .galeria-item-compartir img {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .galeria-item-compartir:hover img {
+            transform: scale(1.08);
+        }
+
+        .galeria-item-compartir .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(251, 146, 60, 0.8));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .galeria-item-compartir:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Botón CTA con shimmer */
+        .btn-shimmer-compartir {
+            background: linear-gradient(135deg, #f97316, #fb923c, #f59e0b);
+            background-size: 200% auto;
+            animation: shimmer 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .btn-shimmer-compartir:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(251, 146, 60, 0.4);
+        }
+
+        /* Cita flotante */
+        .cita-flotante {
+            animation: floatUp 3s ease-in-out infinite;
+        }
+
+        /* Testimonios */
+        .testimonio-card-compartir {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid transparent;
+        }
+
+        .testimonio-card-compartir:hover {
+            transform: translateY(-6px);
+            border-color: #fb923c;
+            box-shadow: 0 16px 48px rgba(251, 146, 60, 0.12);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden bg-slate-50 selection:bg-orange-500 selection:text-white relative">
+
+    <!-- ============================================================ -->
+    <!-- ===== BARRA DE NAVEGACIÓN ===== -->
+    <!-- ============================================================ -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 z-[60]"></div>
+
+    <nav id="navbar" class="transition-all duration-300">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+            <div class="navbar-inner">
+
+                <!-- === LOGO + NOMBRE (IZQUIERDA) === -->
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                    <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                    alt="Logo Pacai Cusco"
+                    class="nav-logo-img">
+                    <div>
+                        <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i</span>
+                            <span class="text-andes-blue ml-0.5">Cusco</span>
+                        </div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="es">🌾 Esperanza Andina</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="en">🌾 Andean Hope</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="de">🌾 Andine Hoffnung</div>
+                    </div>
+                </a>
+
+                <!-- === MENÚ CENTRAL (DESKTOP) === -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-7 text-gray-600 text-xs xl:text-sm">
+                    <a href="index.html" class="nav-link" data-lang="es">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="en">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="de">Pacai</a>
+
+                    <a href="programas.html" class="nav-link" data-lang="es">Programas de Pacai</a>
+                    <a href="programas.html" class="nav-link" data-lang="en">Pacai Programs</a>
+                    <a href="programas.html" class="nav-link" data-lang="de">Pacai Programme</a>
+
+                    <a href="cultura.html" class="nav-link" data-lang="es">Cultura y Recreación</a>
+                    <a href="cultura.html" class="nav-link" data-lang="en">Culture</a>
+                    <a href="cultura.html" class="nav-link" data-lang="de">Kultur</a>
+
+                    <a href="donar.html" class="nav-donate-btn" data-lang="es">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donar
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="en">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donate
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="de">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Spenden
+                    </a>
+                </div>
+
+                <!-- === SELECTOR DE IDIOMAS + MENÚ MÓVIL (DERECHA) === -->
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                    <div class="lang-selector">
+                        <button id="langToggle" class="text-[10px] sm:text-xs font-bold text-gray-700 border-2 border-gray-200 hover:border-orange-400 rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all">
+                            <i class="fa-solid fa-globe text-orange-500 text-[8px] sm:text-xs"></i>
+                            <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                            <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                        </button>
+                        <div id="langDropdown" class="dropdown">
+                            <button class="lang-option active" data-lang-code="es">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang-code="en">🇬🇧 English</button>
+                            <button class="lang-option" data-lang-code="de">🇩🇪 Deutsch</button>
+                        </div>
+                    </div>
+
+                    <button id="mobileMenuBtn" class="lg:hidden text-gray-700 text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 hover:text-orange-500 transition-colors" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MENÚ MÓVIL ===== -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white/98 backdrop-blur-2xl z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden">
+        <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-gray-600 hover:text-orange-500 transition-colors p-2" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="flex flex-col items-center gap-4 text-xl font-display font-extrabold text-gray-800 px-4">
+            <a href="index.html" class="mobile-link hover:text-orange-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-house text-orange-500"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-orange-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-house text-orange-500"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-orange-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-house text-orange-500"></i> Pacai</a>
+
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-ribbon text-blue-500"></i> Programas de Pacai</a>
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-ribbon text-blue-500"></i> Pacai Programs</a>
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-ribbon text-blue-500"></i> Pacai Programme</a>
+
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-palette text-purple-500"></i> Cultura y Recreación</a>
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-palette text-purple-500"></i> Culture</a>
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-palette text-purple-500"></i> Kultur</a>
+
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="es"><i class="fa-solid fa-heart animate-pulse"></i> Donar</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="en"><i class="fa-solid fa-heart animate-pulse"></i> Donate</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="de"><i class="fa-solid fa-heart animate-pulse"></i> Spenden</a>
+        </div>
+
+        <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm hover:bg-blue-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm hover:bg-pink-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm hover:bg-green-600 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== HERO - COMPARTIR ===== -->
+    <!-- ============================================================ -->
+    <section class="program-hero relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28 hero-gradient-compartir">
+        <!-- Círculos decorativos -->
+        <div class="circulo-flotante" style="width:200px;height:200px;top:-50px;left:-80px;animation-delay:0s;"></div>
+        <div class="circulo-flotante" style="width:300px;height:300px;bottom:-100px;right:-120px;animation-delay:2s;"></div>
+        <div class="circulo-flotante" style="width:150px;height:150px;top:40%;left:60%;animation-delay:4s;"></div>
+
+        <div class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
+
+        <div class="container mx-auto px-4 relative z-30 text-center">
+            <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-4 sm:mb-6 border border-white/40 shadow-lg" data-aos="fade-down">
+                <i class="fa-solid fa-hand-holding-heart text-white text-base sm:text-xl"></i>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="es">Programa Compartir</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="en">Sharing Program</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="de">Teilen Programm</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[1.1] text-white mb-4 drop-shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <span data-lang="es">Compartir <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200">para sanar</span></span>
+                <span data-lang="en">Sharing <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200">to heal</span></span>
+                <span data-lang="de">Teilen <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200">um zu heilen</span></span>
+            </h1>
+
+            <p class="subtitle text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-2" data-aos="fade-up" data-aos-delay="400">
+                <span data-lang="es">Espacios de encuentro donde las familias comparten experiencias, se apoyan mutuamente y encuentran consuelo en la comunidad. <strong class="text-yellow-300">Juntos, la carga se hace más liviana.</strong></span>
+                <span data-lang="en">Meeting spaces where families share experiences, support each other, and find comfort in community. <strong class="text-yellow-300">Together, the burden becomes lighter.</strong></span>
+                <span data-lang="de">Begegnungsräume, in denen Familien Erfahrungen austauschen, sich gegenseitig unterstützen und Trost in der Gemeinschaft finden. <strong class="text-yellow-300">Gemeinsam wird die Last leichter.</strong></span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8" data-aos="fade-up" data-aos-delay="600">
+                <a href="#valores" class="btn-shimmer-compartir text-white font-bold px-8 py-4 rounded-full shadow-lg flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-down"></i> <span data-lang="es">Descubrir más</span><span data-lang="en">Learn more</span><span data-lang="de">Mehr erfahren</span>
+                </a>
+                <a href="programas.html" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-lang="es">Volver a programas</span><span data-lang="en">Back to programs</span><span data-lang="de">Zurück zu Programmen</span>
+                </a>
+            </div>
+
+       </div>
+
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#valores" class="text-white/60 hover:text-white transition-colors" aria-label="Scroll down">
+                <i class="fa-solid fa-chevron-down text-2xl sm:text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Onda separadora -->
+    <div class="relative -mt-1 z-20">
+        <svg class="w-full h-12 md:h-20 text-white fill-current drop-shadow-sm" viewBox="0 0 1440 74" xmlns="http://www.w3.org/2000/svg"><path d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,32C840,21,960,11,1080,16C1200,21,1320,43,1380,53.3L1440,64L1440,74L1380,74C1320,74,1200,74,1080,74C960,74,840,74,720,74C600,74,480,74,360,74C240,74,120,74,60,74L0,74Z"></path></svg>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: INTRODUCCIÓN ===== -->
+    <!-- ============================================================ -->
+    <section class="py-12 sm:py-16 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="text-center" data-aos="fade-up">
+                <span class="bg-orange-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-heart-circle-plus mr-2"></i> <span data-lang="es">Nuestra Esencia</span><span data-lang="en">Our Essence</span><span data-lang="de">Unsere Essenz</span>
+                </span>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="es">
+                    El programa <strong class="text-orange-600">Compartir</strong> nace de la necesidad de crear espacios donde las familias que atraviesan el cáncer infantil encuentren <strong class="text-orange-600">apoyo, comprensión y consuelo</strong>. Sabemos que compartir las experiencias, las alegrías y las tristezas con otras personas que viven lo mismo es una de las herramientas más poderosas para sanar.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="en">
+                    The <strong class="text-orange-600">Sharing</strong> program was born from the need to create spaces where families going through childhood cancer find <strong class="text-orange-600">support, understanding and comfort</strong>. We know that sharing experiences, joys and sorrows with others who are going through the same thing is one of the most powerful tools for healing.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="de">
+                    Das Programm <strong class="text-orange-600">Teilen</strong> entstand aus der Notwendigkeit, Räume zu schaffen, in denen Familien, die mit Kinderkrebs konfrontiert sind, <strong class="text-orange-600">Unterstützung, Verständnis und Trost</strong> finden. Wir wissen, dass das Teilen von Erfahrungen, Freuden und Sorgen mit anderen, die dasselbe durchmachen, eines der mächtigsten Werkzeuge zur Heilung ist.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: VALORES ===== -->
+    <!-- ============================================================ -->
+    <section id="valores" class="py-16 sm:py-20 bg-slate-50 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="grid-compartir" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="1.5" fill="#fb923c"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#grid-compartir)"/>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-orange-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-star mr-2"></i> <span data-lang="es">Nuestros Valores</span><span data-lang="en">Our Values</span><span data-lang="de">Unsere Werte</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Lo que nos <span class="text-orange-600">une y fortalece</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">What <span class="text-orange-600">unites and strengthens</span> us</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Was uns <span class="text-orange-600">eint und stärkt</span></h2>
+            </div>
+
+            <div class="grid-valores grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <div class="valor-card bg-white p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="100">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center text-2xl text-orange-600 mb-4">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Apoyo Mutuo</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Mutual Support</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Gegenseitige Unterstützung</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Creemos que el apoyo entre familias es fundamental para sobrellevar el proceso. Nadie debería sentirse solo.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">We believe that support between families is essential to get through the process. No one should feel alone.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Wir glauben, dass die Unterstützung zwischen Familien unerlässlich ist, um den Prozess zu bewältigen. Niemand sollte sich allein fühlen.</p>
+                </div>
+
+                <div class="valor-card bg-white p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="200">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center text-2xl text-amber-600 mb-4">
+                        <i class="fa-solid fa-people-arrows"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Comunidad</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Community</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Gemeinschaft</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Construimos una red de apoyo donde cada familia encuentra un espacio seguro para compartir sus vivencias.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">We build a support network where every family finds a safe space to share their experiences.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Wir bauen ein Unterstützungsnetzwerk auf, in dem jede Familie einen sicheren Raum findet, um ihre Erfahrungen zu teilen.</p>
+                </div>
+
+                <div class="valor-card bg-white p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="300">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-2xl text-yellow-600 mb-4">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Esperanza Compartida</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Shared Hope</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Geteilte Hoffnung</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Compartir historias de superación nos da fuerzas para seguir adelante y creer en un futuro mejor.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Sharing stories of overcoming gives us strength to move forward and believe in a better future.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Das Teilen von Geschichten der Überwindung gibt uns Kraft, weiterzumachen und an eine bessere Zukunft zu glauben.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: HISTORIAS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-orange-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-book-open mr-2"></i> <span data-lang="es">Historias que inspiran</span><span data-lang="en">Inspiring Stories</span><span data-lang="de">Inspirierende Geschichten</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Lo que <span class="text-orange-600">compartimos</span> nos fortalece</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">What we <span class="text-orange-600">share</span> strengthens us</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Was wir <span class="text-orange-600">teilen</span> stärkt uns</h2>
+            </div>
+
+            <div class="grid-historia grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="historia-card bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 hover:border-orange-300 transition-all duration-300" data-aos="flip-left" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center text-2xl text-orange-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Familia Quispe</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Compartiendo desde 2022</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Sharing since 2022</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Teilen seit 2022</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">"Cuando llegamos al grupo de compartir, sentimos que no estábamos solos. Escuchar a otras familias que habían pasado por lo mismo nos dio la fuerza que necesitábamos. Hoy, nosotros también damos apoyo a quienes comienzan este camino."</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">"When we arrived at the sharing group, we felt we were not alone. Listening to other families who had been through the same thing gave us the strength we needed. Today, we also support those who are beginning this journey."</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">"Als wir zu der Teilgruppe kamen, hatten wir das Gefühl, nicht allein zu sein. Das Hören anderer Familien, die dasselbe durchgemacht hatten, gab uns die Kraft, die wir brauchten. Heute unterstützen auch wir diejenigen, die diesen Weg beginnen."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="historia-card bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 hover:border-orange-300 transition-all duration-300" data-aos="flip-right" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center text-2xl text-amber-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Familia Huamán</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Compartiendo desde 2021</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Sharing since 2021</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Teilen seit 2021</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">"Compartir nuestras experiencias nos ha enseñado que la fuerza no está en uno mismo, sino en la unión. Cada reunión es un recordatorio de que juntos podemos enfrentar cualquier desafío."</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">"Sharing our experiences has taught us that strength is not in oneself, but in unity. Each meeting is a reminder that together we can face any challenge."</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">"Das Teilen unserer Erfahrungen hat uns gelehrt, dass die Stärke nicht in einem selbst liegt, sondern in der Einheit. Jedes Treffen ist eine Erinnerung daran, dass wir gemeinsam jede Herausforderung bewältigen können."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: ESTADÍSTICAS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-orange-600 via-amber-600 to-orange-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">45+</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Familias acompañadas</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Families accompanied</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Begleitete Familien</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">120+</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Reuniones realizadas</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Meetings held</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Durchgeführte Treffen</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="300">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">100%</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Compromiso real</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Real commitment</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Echtes Engagement</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="400">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">350+</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Sonrisas recuperadas</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Smiles recovered</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Wiedergewonnene Lächeln</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: GALERÍA ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-orange-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-images mr-2"></i> <span data-lang="es">Galería</span><span data-lang="en">Gallery</span><span data-lang="de">Galerie</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Momentos de <span class="text-orange-600">comunidad</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Moments of <span class="text-orange-600">community</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Momente der <span class="text-orange-600">Gemeinschaft</span></h2>
+            </div>
+
+            <div class="grid-galeria grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="galeria-item-compartir group relative aspect-square" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400&h=400&fit=crop" alt="Grupo compartiendo" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Encuentro de familias</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Family gathering</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Familientreffen</span>
+                    </div>
+                </div>
+                <div class="galeria-item-compartir group relative aspect-square" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400&h=400&fit=crop" alt="Compartiendo experiencias" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Compartiendo experiencias</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Sharing experiences</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Erfahrungen teilen</span>
+                    </div>
+                </div>
+                <div class="galeria-item-compartir group relative aspect-square" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=400&fit=crop" alt="Niños jugando" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Niños compartiendo</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Children sharing</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Kinder teilen</span>
+                    </div>
+                </div>
+                <div class="galeria-item-compartir group relative aspect-square" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1542810634-71277d95dc8c?w=400&h=400&fit=crop" alt="Momento de alegría" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Momento de alegría</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Moment of joy</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Moment der Freude</span>
+                    </div>
+                </div>
+                <div class="galeria-item-compartir group relative aspect-square" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=400&h=400&fit=crop" alt="Apoyo entre familias" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Apoyo entre familias</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Support between families</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Unterstützung zwischen Familien</span>
+                    </div>
+                </div>
+                <div class="galeria-item-compartir group relative aspect-square" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=400&fit=crop" alt="Unidos por la esperanza" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Unidos por la esperanza</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">United by hope</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Vereint durch Hoffnung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: TESTIMONIOS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-orange-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-quote-right mr-2"></i> <span data-lang="es">Voces que inspiran</span><span data-lang="en">Inspiring Voices</span><span data-lang="de">Inspirierende Stimmen</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Lo que dicen <span class="text-orange-600">nuestras familias</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">What our <span class="text-orange-600">families say</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Was unsere <span class="text-orange-600">Familien sagen</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="testimonio-card-compartir bg-slate-50 p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center text-2xl text-orange-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">María</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Madre de Luis</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Mother of Luis</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Mutter von Luis</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"El grupo de compartir se convirtió en mi segunda familia. Allí encontré personas que entendían mi dolor y mi alegría. Compartir nuestras historias nos hizo más fuertes."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"The sharing group became my second family. There I found people who understood my pain and my joy. Sharing our stories made us stronger."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Die Teilgruppe wurde meine zweite Familie. Dort fand ich Menschen, die meinen Schmerz und meine Freude verstanden. Das Teilen unserer Geschichten machte uns stärker."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="testimonio-card-compartir bg-slate-50 p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center text-2xl text-amber-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Carlos</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Voluntario</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Volunteer</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Freiwilliger</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Ver cómo las familias se apoyan mutuamente en los grupos de compartir es algo que te llena el alma. Cada testimonio es una lección de vida."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"Seeing how families support each other in sharing groups is something that fills your soul. Each testimony is a life lesson."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Zu sehen, wie sich Familien in den Teilgruppen gegenseitig unterstützen, erfüllt die Seele. Jedes Zeugnis ist eine Lektion fürs Leben."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="testimonio-card-compartir bg-slate-50 p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-2xl text-yellow-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ana</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Abuela de Sofía</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Grandmother of Sofía</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Großmutter von Sofía</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Compartir mi historia me ayudó a sanar heridas que creía cerradas. Ahora soy yo quien escucha y abraza a quienes están comenzando este viaje."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"Sharing my story helped me heal wounds I thought were closed. Now I am the one who listens and embraces those who are beginning this journey."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Das Teilen meiner Geschichte half mir, Wunden zu heilen, die ich für geschlossen hielt. Jetzt bin ich diejenige, die zuhört und diejenigen umarmt, die diese Reise beginnen."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: CÓMO PARTICIPAR ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-orange-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-circle-plus mr-2"></i> <span data-lang="es">Cómo Participar</span><span data-lang="en">How to Participate</span><span data-lang="de">Wie man teilnimmt</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Únete a <span class="text-orange-600">nuestra comunidad</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Join <span class="text-orange-600">our community</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Tritt <span class="text-orange-600">unserer Gemeinschaft</span> bei</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center" data-aos="flip-up" data-aos-delay="100">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-100 to-amber-100 flex items-center justify-center text-2xl text-orange-600 mx-auto mb-4">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Grupos de Apoyo</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Support Groups</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Unterstützungsgruppen</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Participa en nuestros encuentros presenciales y virtuales donde compartimos experiencias y nos apoyamos mutuamente.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Participate in our in-person and virtual meetings where we share experiences and support each other.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Nimm an unseren persönlichen und virtuellen Treffen teil, bei denen wir Erfahrungen austauschen und uns gegenseitig unterstützen.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center" data-aos="flip-up" data-aos-delay="200">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center text-2xl text-amber-600 mx-auto mb-4">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Voluntariado</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Volunteering</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Ehrenamt</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Conviértete en voluntario y ayuda a facilitar los espacios de compartir, organizando actividades y acompañando a las familias.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Become a volunteer and help facilitate sharing spaces, organizing activities and accompanying families.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Werde Freiwilliger und hilf bei der Gestaltung von Teilräumen, organisiere Aktivitäten und begleite Familien.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center" data-aos="flip-up" data-aos-delay="300">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-2xl text-yellow-600 mx-auto mb-4">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Donaciones</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Donations</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Spenden</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Tu apoyo nos permite mantener estos espacios de encuentro y seguir fortaleciendo la red de apoyo entre familias.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Your support allows us to maintain these meeting spaces and continue strengthening the support network among families.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Deine Unterstützung ermöglicht es uns, diese Begegnungsräume zu erhalten und das Unterstützungsnetzwerk zwischen Familien weiter zu stärken.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== CTA FINAL ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-orange-600 via-amber-600 to-orange-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white drop-shadow-lg" data-aos="fade-up">
+                <span data-lang="es">¿Quieres <span class="text-yellow-300">compartir</span> con nosotros?</span>
+                <span data-lang="en">Do you want to <span class="text-yellow-300">share</span> with us?</span>
+                <span class="text-yellow-300" data-lang="de">Möchtest du mit uns <span class="text-yellow-300">teilen</span>?</span>
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="es">Tu historia, tu experiencia y tu apoyo son fundamentales para construir una comunidad más fuerte. Juntos podemos hacer la diferencia.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="en">Your story, your experience and your support are essential to build a stronger community. Together we can make a difference.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="de">Deine Geschichte, deine Erfahrung und deine Unterstützung sind unerlässlich, um eine stärkere Gemeinschaft aufzubauen. Gemeinsam können wir etwas bewegen.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="donar.html" class="bg-white text-orange-600 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-heart-pulse"></i> <span data-lang="es">Donar ahora</span><span data-lang="en">Donate now</span><span data-lang="de">Jetzt spenden</span>
+                </a>
+                <a href="programas.html" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-orange-600 transition-all duration-300 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-lang="es">Volver a programas</span><span data-lang="en">Back to programs</span><span data-lang="de">Zurück zu Programmen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== FOOTER ===== -->
+    <!-- ============================================================ -->
+    <footer id="contacto" class="bg-slate-950 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-8 border-orange-500">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo footer.jpg" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                        alt="Logo Pacai Cusco"
+                        class="footer-logo-img">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i </span>
+                            <span class="text-white ml-1">Cusco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="es">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="en">Where hope grows and cancer declines. Together we build a future full of light and health for our children in Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="de">Wo Hoffnung wächst und Krebs zurückgeht. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-blue-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-pink-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:-translate-y-1 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Navegación</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Navigation</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Navigation</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-gray-400 font-medium text-sm sm:text-base">
+                        <li><a href="index.html" class="hover:text-orange-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Pacai</span><span data-lang="en">Pacai</span><span data-lang="de">Pacai</span></a></li>
+                        <li><a href="programas.html" class="hover:text-orange-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Programas de Pacai</span><span data-lang="en">Pacai Programs</span><span data-lang="de">Pacai Programme</span></a></li>
+                        <li><a href="cultura.html" class="hover:text-orange-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Cultura y Recreación</span><span data-lang="en">Culture</span><span data-lang="de">Kultur</span></a></li>
+                        <li><a href="donar.html" class="hover:text-orange-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Donar</span><span data-lang="en">Donate</span><span data-lang="de">Spenden</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Nuestra Casa</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Our Home</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Unser Zuhause</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-andes-red"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-blue"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-green"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium">+51 987 654 321</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> Asociación Pacai Cusco. <span data-lang="es">Hecho con el corazón.</span><span data-lang="en">Made with heart.</span><span data-lang="de">Mit Herz gemacht.</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-orange-400 footer-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        (function() {
+            'use strict';
+
+            AOS.init({ duration: 700, once: true, offset: 40 });
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ===== SCROLL =====
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // ===== MENÚ MÓVIL =====
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // ===== SELECTOR DE IDIOMAS =====
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+            function setLanguage(langCode) {
+                currentLang = langCode;
+                localStorage.setItem('pacai_lang', langCode);
+
+                const labels = { 'es': '🇪🇸 ES', 'en': '🇬🇧 EN', 'de': '🇩🇪 DE' };
+                currentLangLabel.textContent = labels[langCode] || '🇪🇸 ES';
+
+                langOptions.forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                });
+
+                document.querySelectorAll('[data-lang]').forEach(function(el) {
+                    el.style.display = el.getAttribute('data-lang') === langCode ? 'block' : 'none';
+                });
+
+                langDropdown.classList.remove('open');
+                document.documentElement.lang = langCode;
+            }
+
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('open');
+            });
+
+            langOptions.forEach(function(opt) {
+                opt.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    setLanguage(opt.dataset.langCode);
+                });
+            });
+
+            setLanguage(currentLang);
+
+            console.log('🌈 Pacai Cusco · Compartir');
+            console.log('🧡 Juntos, la carga se hace más liviana.');
+
+        })();
+    </script>
+
+</body>
+</html>

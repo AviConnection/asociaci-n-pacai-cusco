@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Casa de Acogida · Asociación Pacai Cusco</title>
+
+    <!-- Meta para SEO -->
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de">
+    <link rel="alternate" hreflang="x-default" href="https://asociacionpacaicusco.com">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite',
+                        'float-up': 'floatUp 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(4deg)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        },
+                        floatUp: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-20px) scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        .text-glow-color {
+            text-shadow: 0 0 30px rgba(255, 193, 7, 0.5);
+        }
+        .btn-glow {
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 50px rgba(255, 193, 7, 0.8);
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8b5cf6, #7c3aed);
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7c3aed;
+        }
+
+        /* ===== SELECTOR DE IDIOMAS ===== */
+        .lang-selector {
+            position: relative;
+            z-index: 100;
+        }
+        .lang-selector button {
+            background: transparent;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 60px;
+            padding: 4px 12px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-selector button:hover {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.08);
+        }
+        .lang-selector .dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+            padding: 6px;
+            min-width: 130px;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .lang-selector .dropdown.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .lang-selector .dropdown button {
+            background: transparent;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 6px 14px;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+        .lang-selector .dropdown button:hover {
+            background: #F5F3FF;
+            color: #8b5cf6;
+        }
+        .lang-selector .dropdown button.active {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        /* Ocultar/mostrar contenido por idioma */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
+
+        /* ===== MENÚ MÓVIL ===== */
+        #mobileMenu {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #mobileMenu.open {
+            transform: translateX(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons a {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            .footer-grid .social-icons {
+                justify-content: center;
+            }
+            .tagline-mobile {
+                display: none !important;
+            }
+            .program-hero h1 {
+                font-size: 2rem !important;
+            }
+            .grid-servicios {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-galeria {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-espacios {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .nav-desktop {
+                display: none !important;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            .hide-on-mobile {
+                display: none !important;
+            }
+            .show-on-mobile {
+                display: flex !important;
+            }
+            .logo-img {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .logo-text {
+                font-size: 0.9rem !important;
+            }
+            .tagline-text {
+                font-size: 0.5rem !important;
+            }
+            .program-hero h1 {
+                font-size: 2.5rem !important;
+            }
+            .program-hero .subtitle {
+                font-size: 1rem !important;
+            }
+            .grid-servicios {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-galeria {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-espacios {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .grid-servicios {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-espacios {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        /* Utilidades responsive */
+        .hide-on-mobile {
+            display: block;
+        }
+        .show-on-mobile {
+            display: none;
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ============================================================ */
+        /* ===== NAVBAR MEJORADA ===== */
+        /* ============================================================ */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            height: 76px;
+            overflow: visible;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        #navbar.scrolled {
+            height: 64px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.04);
+        }
+
+        /* ===== LOGO EN NAVBAR ===== */
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin-top: -30px;
+            margin-bottom: -30px;
+        }
+
+        #navbar.scrolled .nav-logo-img {
+            width: 90px;
+            height: 90px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+
+        @media (max-width: 640px) {
+            #navbar {
+                height: 62px;
+            }
+            #navbar.scrolled {
+                height: 54px;
+            }
+            .nav-logo-img {
+                width: 90px;
+                height: 90px;
+                margin-top: -25px;
+                margin-bottom: -25px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 70px;
+                height: 70px;
+                margin-top: -18px;
+                margin-bottom: -18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #navbar {
+                height: 54px;
+            }
+            #navbar.scrolled {
+                height: 48px;
+            }
+            .nav-logo-img {
+                width: 75px;
+                height: 75px;
+                margin-top: -20px;
+                margin-bottom: -20px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 60px;
+                height: 60px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+        }
+
+        /* ===== LOGO TEXTO ===== */
+        .logo-text {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #navbar.scrolled .logo-text {
+            font-size: 0.9rem !important;
+        }
+
+        @media (min-width: 1024px) {
+            #navbar.scrolled .logo-text {
+                font-size: 1.1rem !important;
+            }
+        }
+
+        /* ===== ENLACES DE NAVEGACIÓN ===== */
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            padding: 0.4rem 0;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2.5px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #8b5cf6;
+        }
+
+        .nav-link[href="programas.html"]:hover {
+            color: #2196F3;
+        }
+        .nav-link[href="programas.html"]::after {
+            background: linear-gradient(90deg, #2196F3, #009688);
+        }
+
+        .nav-link[href="cultura.html"]:hover {
+            color: #9C27B0;
+        }
+        .nav-link[href="cultura.html"]::after {
+            background: linear-gradient(90deg, #9C27B0, #E91E63);
+        }
+
+        /* ===== BOTÓN DONAR EN NAVBAR ===== */
+        .nav-donate-btn {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-donate-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.5);
+        }
+
+        #navbar.scrolled .nav-donate-btn {
+            padding: 0.35rem 1rem;
+            font-size: 0.7rem;
+        }
+
+        /* ===== CONTENEDOR DE LA BARRA ===== */
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .navbar-inner {
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* ===== SCROLL PADDING ===== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 80px;
+            }
+        }
+
+        /* ===== FOOTER - LOGO SIN CÍRCULO ===== */
+        .footer-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        @media (max-width: 640px) {
+            .footer-logo-img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .footer-heart {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ============================================================ */
+        /* ===== ESTILOS DE LA PÁGINA DE CASA DE ACOGIDA ===== */
+        /* ============================================================ */
+
+        /* Hero con gradiente acogedor */
+        .hero-gradient-casa {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 20%, #4f46e5 40%, #7c3aed 60%, #8b5cf6 80%, #a78bfa 100%);
+            background-size: 400% 400%;
+            animation: gradientMoveCasa 10s ease-in-out infinite;
+        }
+
+        @keyframes gradientMoveCasa {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Casas flotantes decorativas */
+        .casa-flotante {
+            position: absolute;
+            font-size: 3.5rem;
+            opacity: 0.08;
+            animation: flotarCasa 12s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes flotarCasa {
+            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-50px) rotate(3deg) scale(1.1); }
+        }
+
+        /* Tarjeta de servicio */
+        .servicio-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5cf6, #a78bfa, #c4b5fd);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .servicio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            border-color: #8b5cf6;
+            box-shadow: 0 16px 48px rgba(139, 92, 246, 0.15);
+        }
+
+        .servicio-card .icono-wrapper {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .servicio-card:hover .icono-wrapper {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Espacio card */
+        .espacio-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .espacio-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Galería */
+        .galeria-item-casa {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .galeria-item-casa img {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .galeria-item-casa:hover img {
+            transform: scale(1.08);
+        }
+
+        .galeria-item-casa .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(139, 92, 246, 0.8));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .galeria-item-casa:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Botón CTA */
+        .btn-shimmer-casa {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed, #a78bfa);
+            background-size: 200% auto;
+            animation: shimmer 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .btn-shimmer-casa:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Testimonios */
+        .testimonio-card-casa {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid transparent;
+        }
+
+        .testimonio-card-casa:hover {
+            transform: translateY(-6px);
+            border-color: #8b5cf6;
+            box-shadow: 0 16px 48px rgba(139, 92, 246, 0.12);
+        }
+
+        /* Beneficio card */
+        .beneficio-card-casa {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .beneficio-card-casa:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden bg-slate-50 selection:bg-purple-500 selection:text-white relative">
+
+    <!-- ============================================================ -->
+    <!-- ===== BARRA DE NAVEGACIÓN ===== -->
+    <!-- ============================================================ -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-gradient-to-r from-purple-500 via-purple-400 to-purple-500 z-[60]"></div>
+
+    <nav id="navbar" class="transition-all duration-300">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+            <div class="navbar-inner">
+
+                <!-- === LOGO + NOMBRE (IZQUIERDA) === -->
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                    <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                    alt="Logo Pacai Cusco"
+                    class="nav-logo-img">
+                    <div>
+                        <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i</span>
+                            <span class="text-andes-blue ml-0.5">Cusco</span>
+                        </div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="es">🌾 Esperanza Andina</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="en">🌾 Andean Hope</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="de">🌾 Andine Hoffnung</div>
+                    </div>
+                </a>
+
+                <!-- === MENÚ CENTRAL (DESKTOP) === -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-7 text-gray-600 text-xs xl:text-sm">
+                    <a href="index.html" class="nav-link" data-lang="es">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="en">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="de">Pacai</a>
+
+                    <a href="programas.html" class="nav-link" data-lang="es">Programas de Pacai</a>
+                    <a href="programas.html" class="nav-link" data-lang="en">Pacai Programs</a>
+                    <a href="programas.html" class="nav-link" data-lang="de">Pacai Programme</a>
+
+                    <a href="cultura.html" class="nav-link" data-lang="es">Cultura y Recreación</a>
+                    <a href="cultura.html" class="nav-link" data-lang="en">Culture</a>
+                    <a href="cultura.html" class="nav-link" data-lang="de">Kultur</a>
+
+                    <a href="donar.html" class="nav-donate-btn" data-lang="es">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donar
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="en">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donate
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="de">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Spenden
+                    </a>
+                </div>
+
+                <!-- === SELECTOR DE IDIOMAS + MENÚ MÓVIL (DERECHA) === -->
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                    <div class="lang-selector">
+                        <button id="langToggle" class="text-[10px] sm:text-xs font-bold text-gray-700 border-2 border-gray-200 hover:border-purple-400 rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all">
+                            <i class="fa-solid fa-globe text-purple-500 text-[8px] sm:text-xs"></i>
+                            <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                            <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                        </button>
+                        <div id="langDropdown" class="dropdown">
+                            <button class="lang-option active" data-lang-code="es">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang-code="en">🇬🇧 English</button>
+                            <button class="lang-option" data-lang-code="de">🇩🇪 Deutsch</button>
+                        </div>
+                    </div>
+
+                    <button id="mobileMenuBtn" class="lg:hidden text-gray-700 text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 hover:text-purple-500 transition-colors" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MENÚ MÓVIL ===== -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white/98 backdrop-blur-2xl z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden">
+        <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-gray-600 hover:text-purple-500 transition-colors p-2" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="flex flex-col items-center gap-4 text-xl font-display font-extrabold text-gray-800 px-4">
+            <a href="index.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-house text-purple-500"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-house text-purple-500"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-house text-purple-500"></i> Pacai</a>
+
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-ribbon text-blue-500"></i> Programas de Pacai</a>
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-ribbon text-blue-500"></i> Pacai Programs</a>
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-ribbon text-blue-500"></i> Pacai Programme</a>
+
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-palette text-purple-500"></i> Cultura y Recreación</a>
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-palette text-purple-500"></i> Culture</a>
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-palette text-purple-500"></i> Kultur</a>
+
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="es"><i class="fa-solid fa-heart animate-pulse"></i> Donar</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="en"><i class="fa-solid fa-heart animate-pulse"></i> Donate</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="de"><i class="fa-solid fa-heart animate-pulse"></i> Spenden</a>
+        </div>
+
+        <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm hover:bg-blue-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm hover:bg-pink-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm hover:bg-green-600 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== HERO - CASA DE ACOGIDA ===== -->
+    <!-- ============================================================ -->
+    <section class="program-hero relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28 hero-gradient-casa">
+        <!-- Casas flotantes decorativas -->
+        <div class="casa-flotante" style="top:10%;left:5%;animation-delay:0s;">🏠</div>
+        <div class="casa-flotante" style="top:15%;right:8%;animation-delay:3s;">🏡</div>
+        <div class="casa-flotante" style="bottom:20%;left:12%;animation-delay:6s;">🏘️</div>
+        <div class="casa-flotante" style="bottom:25%;right:15%;animation-delay:2s;">🏠</div>
+        <div class="casa-flotante" style="top:50%;left:50%;animation-delay:4s;">🏡</div>
+
+        <div class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-black/20"></div>
+
+        <div class="container mx-auto px-4 relative z-30 text-center">
+            <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-4 sm:mb-6 border border-white/40 shadow-lg" data-aos="fade-down">
+                <i class="fa-solid fa-house-chimney text-white text-base sm:text-xl"></i>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="es">Casa de Acogida</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="en">Host Home</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="de">Gästehaus</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[1.1] text-white mb-4 drop-shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <span data-lang="es">Un hogar <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-purple-200 to-pink-200">lejos del hogar</span></span>
+                <span data-lang="en">A home <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-purple-200 to-pink-200">away from home</span></span>
+                <span data-lang="de">Ein Zuhause <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-purple-200 to-pink-200">fern von zu Hause</span></span>
+            </h1>
+
+            <p class="subtitle text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-2" data-aos="fade-up" data-aos-delay="400">
+                <span data-lang="es">Un hogar temporal para las familias que vienen de comunidades lejanas. <strong class="text-yellow-300">Les brindamos alojamiento, alimentación y un espacio de calidez y contención.</strong></span>
+                <span data-lang="en">A temporary home for families coming from remote communities. <strong class="text-yellow-300">We provide lodging, food, and a warm, supportive space.</strong></span>
+                <span data-lang="de">Ein vorübergehendes Zuhause für Familien aus abgelegenen Gemeinden. <strong class="text-yellow-300">Wir bieten Unterkunft, Verpflegung und einen warmen, unterstützenden Raum.</strong></span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8" data-aos="fade-up" data-aos-delay="600">
+                <a href="#servicios" class="btn-shimmer-casa text-white font-bold px-8 py-4 rounded-full shadow-lg flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-down"></i> <span data-lang="es">Descubrir más</span><span data-lang="en">Learn more</span><span data-lang="de">Mehr erfahren</span>
+                </a>
+                <a href="programas.html" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-lang="es">Volver a programas</span><span data-lang="en">Back to programs</span><span data-lang="de">Zurück zu Programmen</span>
+                </a>
+            </div>
+            
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#servicios" class="text-white/60 hover:text-white transition-colors" aria-label="Scroll down">
+                <i class="fa-solid fa-chevron-down text-2xl sm:text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Onda separadora -->
+    <div class="relative -mt-1 z-20">
+        <svg class="w-full h-12 md:h-20 text-white fill-current drop-shadow-sm" viewBox="0 0 1440 74" xmlns="http://www.w3.org/2000/svg"><path d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,32C840,21,960,11,1080,16C1200,21,1320,43,1380,53.3L1440,64L1440,74L1380,74C1320,74,1200,74,1080,74C960,74,840,74,720,74C600,74,480,74,360,74C240,74,120,74,60,74L0,74Z"></path></svg>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: INTRODUCCIÓN ===== -->
+    <!-- ============================================================ -->
+    <section class="py-12 sm:py-16 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="text-center" data-aos="fade-up">
+                <span class="bg-purple-100 text-purple-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-heart mr-2"></i> <span data-lang="es">Nuestro Hogar</span><span data-lang="en">Our Home</span><span data-lang="de">Unser Zuhause</span>
+                </span>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="es">
+                    La <strong class="text-purple-600">Casa de Acogida</strong> es un espacio diseñado para brindar <strong class="text-purple-600">alojamiento temporal, alimentación y contención emocional</strong> a las familias que vienen de comunidades lejanas para el tratamiento de sus hijos. Un lugar donde encuentran <strong class="text-purple-600">calidez, seguridad y esperanza</strong>.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="en">
+                    The <strong class="text-purple-600">Host Home</strong> is a space designed to provide <strong class="text-purple-600">temporary lodging, food and emotional support</strong> to families coming from remote communities for their children's treatment. A place where they find <strong class="text-purple-600">warmth, safety and hope</strong>.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="de">
+                    Das <strong class="text-purple-600">Gästehaus</strong> ist ein Raum, der darauf ausgelegt ist, <strong class="text-purple-600">vorübergehende Unterkunft, Verpflegung und emotionale Unterstützung</strong> für Familien aus abgelegenen Gemeinden zu bieten, die zur Behandlung ihrer Kinder kommen. Ein Ort, an dem sie <strong class="text-purple-600">Wärme, Geborgenheit und Hoffnung</strong> finden.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: SERVICIOS ===== -->
+    <!-- ============================================================ -->
+    <section id="servicios" class="py-16 sm:py-20 bg-slate-50 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="grid-casa" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="1.5" fill="#8b5cf6"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#grid-casa)"/>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-purple-100 text-purple-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-list-check mr-2"></i> <span data-lang="es">Nuestros Servicios</span><span data-lang="en">Our Services</span><span data-lang="de">Unsere Dienstleistungen</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Todo lo que <span class="text-purple-600">necesita una familia</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Everything a <span class="text-purple-600">family needs</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Alles, was eine <span class="text-purple-600">Familie braucht</span></h2>
+            </div>
+
+            <div class="grid-servicios grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <div class="servicio-card bg-white p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="100">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-purple-100 to-violet-100 flex items-center justify-center text-2xl text-purple-600 mb-4">
+                        <i class="fa-solid fa-bed"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Alojamiento</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Lodging</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Unterkunft</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Habitaciones cómodas y acogedoras para que las familias descansen durante el tratamiento de sus hijos.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Comfortable and cozy rooms for families to rest during their children's treatment.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Komfortable und gemütliche Zimmer für Familien zur Erholung während der Behandlung ihrer Kinder.</p>
+                </div>
+
+                <div class="servicio-card bg-white p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="200">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center text-2xl text-violet-600 mb-4">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Alimentación</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Food</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Verpflegung</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Ofrecemos comidas nutritivas y balanceadas, preparadas con amor para mantener la energía y la salud de las familias.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">We offer nutritious and balanced meals, prepared with love to keep families energized and healthy.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Wir bieten nahrhafte und ausgewogene Mahlzeiten, die mit Liebe zubereitet werden, um die Familien energiegeladen und gesund zu halten.</p>
+                </div>
+
+                <div class="servicio-card bg-white p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="300">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-2xl text-indigo-600 mb-4">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Contención Emocional</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Emotional Support</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Emotionale Unterstützung</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Un equipo de voluntarios y psicólogos brinda acompañamiento y escucha activa a las familias durante su estancia.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">A team of volunteers and psychologists provides support and active listening to families during their stay.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Ein Team von Freiwilligen und Psychologen bietet den Familien während ihres Aufenthalts Unterstützung und aktives Zuhören.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: BENEFICIOS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-purple-100 text-purple-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-star mr-2"></i> <span data-lang="es">Beneficios</span><span data-lang="en">Benefits</span><span data-lang="de">Vorteile</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Por qué <span class="text-purple-600">importa</span> la casa de acogida</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Why <span class="text-purple-600">the host home matters</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Warum <span class="text-purple-600">das Gästehaus wichtig ist</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="beneficio-card-casa bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 hover:border-purple-300 transition-all duration-300" data-aos="flip-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-100 to-violet-100 flex items-center justify-center text-2xl text-purple-600 mb-4">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Seguridad y Confianza</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Safety and Trust</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Sicherheit und Vertrauen</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Las familias encuentran un entorno seguro donde pueden concentrarse en lo más importante: la salud de sus hijos.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Families find a safe environment where they can focus on what matters most: their children's health.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Familien finden eine sichere Umgebung, in der sie sich auf das Wichtigste konzentrieren können: die Gesundheit ihrer Kinder.</p>
+                </div>
+
+                <div class="beneficio-card-casa bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 hover:border-purple-300 transition-all duration-300" data-aos="flip-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center text-2xl text-violet-600 mb-4">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Comunidad y Apoyo</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Community and Support</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Gemeinschaft und Unterstützung</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Compartir el espacio con otras familias crea lazos de solidaridad y un sentido de comunidad que fortalece a todos.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Sharing the space with other families creates bonds of solidarity and a sense of community that strengthens everyone.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Das Teilen des Raums mit anderen Familien schafft Bande der Solidarität und ein Gemeinschaftsgefühl, das alle stärkt.</p>
+                </div>
+
+                <div class="beneficio-card-casa bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 hover:border-purple-300 transition-all duration-300" data-aos="flip-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-2xl text-indigo-600 mb-4">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Bienestar Integral</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Comprehensive Well-being</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Ganzheitliches Wohlbefinden</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">La combinación de alojamiento, alimentación y apoyo emocional garantiza el bienestar físico y mental de las familias.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">The combination of lodging, food and emotional support guarantees the physical and mental well-being of families.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Die Kombination aus Unterkunft, Verpflegung und emotionaler Unterstützung garantiert das körperliche und seelische Wohlbefinden der Familien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: ESTADÍSTICAS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-purple-600 via-violet-600 to-purple-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">25+</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Familias alojadas</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Families housed</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Untergebrachte Familien</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">1.200+</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Noches de alojamiento</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Nights of lodging</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Übernachtungen</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="300">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">100%</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Compromiso real</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Real commitment</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Echtes Engagement</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="400">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">350+</div>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Sonrisas recuperadas</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Smiles recovered</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Wiedergewonnene Lächeln</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: ESPACIOS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-purple-100 text-purple-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-building mr-2"></i> <span data-lang="es">Nuestros Espacios</span><span data-lang="en">Our Spaces</span><span data-lang="de">Unsere Räume</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Un hogar <span class="text-purple-600">con alma</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">A home <span class="text-purple-600">with soul</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Ein Zuhause <span class="text-purple-600">mit Seele</span></h2>
+            </div>
+
+            <div class="grid-espacios grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="espacio-card bg-white p-6 rounded-2xl shadow-lg text-center" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-5xl mb-4">🛏️</div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Habitaciones</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Bedrooms</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Schlafzimmer</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Espacios cómodos y acogedores para el descanso de las familias.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Comfortable and cozy spaces for families to rest.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Komfortable und gemütliche Räume für Familien zur Erholung.</p>
+                </div>
+
+                <div class="espacio-card bg-white p-6 rounded-2xl shadow-lg text-center" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-5xl mb-4">🍳</div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Comedor</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Dining Room</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Esszimmer</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Un espacio para compartir comidas y momentos de convivencia familiar.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">A space to share meals and family moments.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Ein Raum zum Teilen von Mahlzeiten und Familienmomenten.</p>
+                </div>
+
+                <div class="espacio-card bg-white p-6 rounded-2xl shadow-lg text-center" data-aos="flip-up" data-aos-delay="300">
+                    <div class="text-5xl mb-4">🌿</div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Zona Verde</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Green Area</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Grünfläche</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Un espacio al aire libre para que los niños jueguen y las familias disfruten de momentos de tranquilidad.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">An outdoor space for children to play and families to enjoy moments of tranquility.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Ein Außenbereich für Kinder zum Spielen und für Familien, um Momente der Ruhe zu genießen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: GALERÍA ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-purple-100 text-purple-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-images mr-2"></i> <span data-lang="es">Galería</span><span data-lang="en">Gallery</span><span data-lang="de">Galerie</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Momentos de <span class="text-purple-600">hogar</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Moments of <span class="text-purple-600">home</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Momente <span class="text-purple-600">zu Hause</span></h2>
+            </div>
+
+            <div class="grid-galeria grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="galeria-item-casa group relative aspect-square" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=400&fit=crop" alt="Casa de acogida" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Nuestra casa</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Our home</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Unser Zuhause</span>
+                    </div>
+                </div>
+                <div class="galeria-item-casa group relative aspect-square" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&h=400&fit=crop" alt="Habitación acogedora" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Habitación acogedora</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Cozy room</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Gemütliches Zimmer</span>
+                    </div>
+                </div>
+                <div class="galeria-item-casa group relative aspect-square" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=400&fit=crop" alt="Familia en casa" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Familia en casa</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Family at home</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Familie zu Hause</span>
+                    </div>
+                </div>
+                <div class="galeria-item-casa group relative aspect-square" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=400&h=400&fit=crop" alt="Comedor" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Comedor familiar</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Family dining room</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Familien-Esszimmer</span>
+                    </div>
+                </div>
+                <div class="galeria-item-casa group relative aspect-square" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?w=400&h=400&fit=crop" alt="Jardín" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Jardín</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Garden</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Garten</span>
+                    </div>
+                </div>
+                <div class="galeria-item-casa group relative aspect-square" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=400&h=400&fit=crop" alt="Cocina" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Cocina</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Kitchen</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Küche</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: TESTIMONIOS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-purple-100 text-purple-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-quote-right mr-2"></i> <span data-lang="es">Voces que inspiran</span><span data-lang="en">Inspiring Voices</span><span data-lang="de">Inspirierende Stimmen</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Lo que dicen <span class="text-purple-600">nuestras familias</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">What our <span class="text-purple-600">families say</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Was unsere <span class="text-purple-600">Familien sagen</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="testimonio-card-casa bg-white p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-purple-100 to-violet-100 flex items-center justify-center text-2xl text-purple-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">María</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Madre de Luis</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Mother of Luis</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Mutter von Luis</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Llegamos de una comunidad lejana sin saber dónde quedarnos. La casa de acogida nos abrió sus puertas y nos dio un hogar. No tengo palabras para agradecer tanto amor."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"We came from a remote community not knowing where to stay. The host home opened its doors and gave us a home. I have no words to thank so much love."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Wir kamen aus einer abgelegenen Gemeinde und wussten nicht, wo wir bleiben sollten. Das Gästehaus öffnete uns seine Türen und gab uns ein Zuhause. Ich habe keine Worte, um so viel Liebe zu danken."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="testimonio-card-casa bg-white p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-violet-100 to-indigo-100 flex items-center justify-center text-2xl text-violet-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Carlos</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Voluntario</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Volunteer</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Freiwilliger</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Ser parte de la casa de acogida me ha llenado el alma. Ver cómo las familias encuentran consuelo y esperanza en este lugar es algo que no se puede describir con palabras."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"Being part of the host home has filled my soul. Seeing how families find comfort and hope in this place is something that cannot be described in words."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Teil des Gästehauses zu sein, hat meine Seele erfüllt. Zu sehen, wie Familien in diesem Ort Trost und Hoffnung finden, ist etwas, das sich nicht in Worte fassen lässt."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="testimonio-card-casa bg-white p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-2xl text-indigo-600">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ana</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Abuela de Sofía</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Grandmother of Sofía</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Großmutter von Sofía</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"La casa de acogida se convirtió en nuestro hogar durante los meses de tratamiento. Aquí encontramos no solo techo y comida, sino también una familia que nos abrazó."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"The host home became our home during the months of treatment. Here we found not only shelter and food, but also a family that embraced us."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Das Gästehaus wurde während der Behandlungsmonate zu unserem Zuhause. Hier fanden wir nicht nur Unterkunft und Essen, sondern auch eine Familie, die uns umarmte."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== CTA FINAL ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-purple-600 via-violet-600 to-purple-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white drop-shadow-lg" data-aos="fade-up">
+                <span data-lang="es">¿Quieres <span class="text-yellow-300">apoyar</span> nuestro hogar?</span>
+                <span data-lang="en">Do you want to <span class="text-yellow-300">support</span> our home?</span>
+                <span data-lang="de">Möchtest du <span class="text-yellow-300">unser Zuhause</span> unterstützen?</span>
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="es">Tu donación nos permite seguir abriendo las puertas de nuestra casa a más familias que necesitan un lugar donde sentirse en hogar durante el tratamiento de sus hijos.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="en">Your donation allows us to continue opening the doors of our home to more families who need a place to feel at home during their children's treatment.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="de">Deine Spende ermöglicht es uns, die Türen unseres Hauses für mehr Familien zu öffnen, die während der Behandlung ihrer Kinder einen Ort brauchen, an dem sie sich zu Hause fühlen können.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="donar.html" class="bg-white text-purple-600 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-heart-pulse"></i> <span data-lang="es">Donar ahora</span><span data-lang="en">Donate now</span><span data-lang="de">Jetzt spenden</span>
+                </a>
+                <a href="programas.html" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-purple-600 transition-all duration-300 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-lang="es">Volver a programas</span><span data-lang="en">Back to programs</span><span data-lang="de">Zurück zu Programmen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== FOOTER ===== -->
+    <!-- ============================================================ -->
+    <footer id="contacto" class="bg-slate-950 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-8 border-purple-500">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo footer.jpg" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                        alt="Logo Pacai Cusco"
+                        class="footer-logo-img">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i </span>
+                            <span class="text-white ml-1">Cusco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="es">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="en">Where hope grows and cancer declines. Together we build a future full of light and health for our children in Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="de">Wo Hoffnung wächst und Krebs zurückgeht. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-blue-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-pink-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:-translate-y-1 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Navegación</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Navigation</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Navigation</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-gray-400 font-medium text-sm sm:text-base">
+                        <li><a href="index.html" class="hover:text-purple-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Pacai</span><span data-lang="en">Pacai</span><span data-lang="de">Pacai</span></a></li>
+                        <li><a href="programas.html" class="hover:text-purple-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Programas de Pacai</span><span data-lang="en">Pacai Programs</span><span data-lang="de">Pacai Programme</span></a></li>
+                        <li><a href="cultura.html" class="hover:text-purple-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Cultura y Recreación</span><span data-lang="en">Culture</span><span data-lang="de">Kultur</span></a></li>
+                        <li><a href="donar.html" class="hover:text-purple-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Donar</span><span data-lang="en">Donate</span><span data-lang="de">Spenden</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Nuestra Casa</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Our Home</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Unser Zuhause</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-andes-red"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-blue"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-green"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium">+51 987 654 321</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> Asociación Pacai Cusco. <span data-lang="es">Hecho con el corazón.</span><span data-lang="en">Made with heart.</span><span data-lang="de">Mit Herz gemacht.</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-purple-400 footer-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        (function() {
+            'use strict';
+
+            AOS.init({ duration: 700, once: true, offset: 40 });
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ===== SCROLL =====
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // ===== MENÚ MÓVIL =====
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // ===== SELECTOR DE IDIOMAS =====
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+            function setLanguage(langCode) {
+                currentLang = langCode;
+                localStorage.setItem('pacai_lang', langCode);
+
+                const labels = { 'es': '🇪🇸 ES', 'en': '🇬🇧 EN', 'de': '🇩🇪 DE' };
+                currentLangLabel.textContent = labels[langCode] || '🇪🇸 ES';
+
+                langOptions.forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                });
+
+                document.querySelectorAll('[data-lang]').forEach(function(el) {
+                    el.style.display = el.getAttribute('data-lang') === langCode ? 'block' : 'none';
+                });
+
+                langDropdown.classList.remove('open');
+                document.documentElement.lang = langCode;
+            }
+
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('open');
+            });
+
+            langOptions.forEach(function(opt) {
+                opt.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    setLanguage(opt.dataset.langCode);
+                });
+            });
+
+            setLanguage(currentLang);
+
+            console.log('🌈 Pacai Cusco · Casa de Acogida');
+            console.log('🏠 Un hogar lejos del hogar para 25 familias.');
+
+        })();
+    </script>
+
+</body>
+</html>

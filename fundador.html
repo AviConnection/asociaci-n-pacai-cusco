@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Fundador · Asociación Pacai Cusco</title>
+
+    <!-- Meta para SEO -->
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de">
+    <link rel="alternate" hreflang="x-default" href="https://asociacionpacaicusco.com">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(4deg)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        .text-glow-color {
+            text-shadow: 0 0 30px rgba(255, 193, 7, 0.5);
+        }
+        .btn-glow {
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 50px rgba(255, 193, 7, 0.8);
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #FF9800, #E53935);
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E53935;
+        }
+
+        /* ===== SELECTOR DE IDIOMAS ===== */
+        .lang-selector {
+            position: relative;
+            z-index: 100;
+        }
+        .lang-selector button {
+            background: transparent;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 60px;
+            padding: 4px 12px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-selector button:hover {
+            border-color: #FF9800;
+            background: rgba(255, 152, 0, 0.08);
+        }
+        .lang-selector .dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+            padding: 6px;
+            min-width: 130px;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .lang-selector .dropdown.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .lang-selector .dropdown button {
+            background: transparent;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 6px 14px;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+        .lang-selector .dropdown button:hover {
+            background: #FFF8F0;
+            color: #FF9800;
+        }
+        .lang-selector .dropdown button.active {
+            background: #FF9800;
+            color: white;
+        }
+
+        /* Ocultar/mostrar contenido por idioma */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
+
+        /* ===== MENÚ MÓVIL ===== */
+        #mobileMenu {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #mobileMenu.open {
+            transform: translateX(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons a {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            .footer-grid .social-icons {
+                justify-content: center;
+            }
+            .tagline-mobile {
+                display: none !important;
+            }
+            .program-hero h1 {
+                font-size: 2rem !important;
+            }
+            .grid-logros {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-galeria {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .nav-desktop {
+                display: none !important;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            .hide-on-mobile {
+                display: none !important;
+            }
+            .show-on-mobile {
+                display: flex !important;
+            }
+            .logo-img {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .logo-text {
+                font-size: 0.9rem !important;
+            }
+            .tagline-text {
+                font-size: 0.5rem !important;
+            }
+            .program-hero h1 {
+                font-size: 2.5rem !important;
+            }
+            .program-hero .subtitle {
+                font-size: 1rem !important;
+            }
+            .grid-logros {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-galeria {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .grid-logros {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        /* Utilidades responsive */
+        .hide-on-mobile {
+            display: block;
+        }
+        .show-on-mobile {
+            display: none;
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ============================================================ */
+        /* ===== NAVBAR MEJORADA ===== */
+        /* ============================================================ */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            height: 76px;
+            overflow: visible;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        #navbar.scrolled {
+            height: 64px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.04);
+        }
+
+        /* ===== LOGO EN NAVBAR ===== */
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin-top: -30px;
+            margin-bottom: -30px;
+        }
+
+        #navbar.scrolled .nav-logo-img {
+            width: 90px;
+            height: 90px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+
+        @media (max-width: 640px) {
+            #navbar {
+                height: 62px;
+            }
+            #navbar.scrolled {
+                height: 54px;
+            }
+            .nav-logo-img {
+                width: 90px;
+                height: 90px;
+                margin-top: -25px;
+                margin-bottom: -25px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 70px;
+                height: 70px;
+                margin-top: -18px;
+                margin-bottom: -18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #navbar {
+                height: 54px;
+            }
+            #navbar.scrolled {
+                height: 48px;
+            }
+            .nav-logo-img {
+                width: 75px;
+                height: 75px;
+                margin-top: -20px;
+                margin-bottom: -20px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 60px;
+                height: 60px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+        }
+
+        /* ===== LOGO TEXTO ===== */
+        .logo-text {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #navbar.scrolled .logo-text {
+            font-size: 0.9rem !important;
+        }
+
+        @media (min-width: 1024px) {
+            #navbar.scrolled .logo-text {
+                font-size: 1.1rem !important;
+            }
+        }
+
+        /* ===== ENLACES DE NAVEGACIÓN ===== */
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            padding: 0.4rem 0;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2.5px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #FF9800, #E53935);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FF9800;
+        }
+
+        .nav-link[href="programas.html"]:hover {
+            color: #2196F3;
+        }
+        .nav-link[href="programas.html"]::after {
+            background: linear-gradient(90deg, #2196F3, #009688);
+        }
+
+        .nav-link[href="cultura.html"]:hover {
+            color: #9C27B0;
+        }
+        .nav-link[href="cultura.html"]::after {
+            background: linear-gradient(90deg, #9C27B0, #E91E63);
+        }
+
+        /* ===== BOTÓN DONAR EN NAVBAR ===== */
+        .nav-donate-btn {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-donate-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.5);
+        }
+
+        #navbar.scrolled .nav-donate-btn {
+            padding: 0.35rem 1rem;
+            font-size: 0.7rem;
+        }
+
+        /* ===== CONTENEDOR DE LA BARRA ===== */
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .navbar-inner {
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* ===== SCROLL PADDING ===== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 80px;
+            }
+        }
+
+        /* ===== FOOTER - LOGO SIN CÍRCULO ===== */
+        .footer-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        @media (max-width: 640px) {
+            .footer-logo-img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .footer-heart {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ============================================================ */
+        /* ===== ESTILOS DE LA PÁGINA FUNDADOR ===== */
+        /* ============================================================ */
+
+        /* Hero con gradiente dorado */
+        .hero-gradient-fundador {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 30%, #0f3460 50%, #e94560 75%, #f5a623 100%);
+            background-size: 400% 400%;
+            animation: gradientMoveFundador 10s ease-in-out infinite;
+        }
+
+        @keyframes gradientMoveFundador {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Partículas doradas flotantes */
+        .floating-particle-gold {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.15);
+            animation: floatParticleGold 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatParticleGold {
+            0% { transform: translateY(0) scale(1); opacity: 0.2; }
+            50% { transform: translateY(-60px) scale(1.8); opacity: 0.6; }
+            100% { transform: translateY(-120px) scale(0.8); opacity: 0; }
+        }
+
+        /* Tarjeta de logro */
+        .logro-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logro-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #f5a623, #e94560, #f5a623);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .logro-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .logro-card:hover {
+            transform: translateY(-8px);
+            border-color: #f5a623;
+            box-shadow: 0 16px 48px rgba(245, 166, 35, 0.15);
+        }
+
+        .logro-card .icono-wrapper {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logro-card:hover .icono-wrapper {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* Línea de tiempo */
+        .timeline-item-fundador {
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .timeline-item-fundador::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #f5a623, #e94560);
+            border-radius: 2px;
+        }
+
+        .timeline-item-fundador:last-child::before {
+            height: 50%;
+        }
+
+        .timeline-dot-fundador {
+            position: absolute;
+            left: -6px;
+            top: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #f5a623;
+            border: 3px solid white;
+            box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.3);
+            animation: pulse-dot-gold 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot-gold {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.3); }
+            50% { box-shadow: 0 0 0 8px rgba(245, 166, 35, 0.1); }
+        }
+
+        /* Galería */
+        .galeria-item-fundador {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .galeria-item-fundador img {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .galeria-item-fundador:hover img {
+            transform: scale(1.08);
+        }
+
+        .galeria-item-fundador .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(233, 69, 96, 0.8));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+
+        .galeria-item-fundador:hover .overlay {
+            opacity: 1;
+        }
+
+        /* Botón CTA */
+        .btn-shimmer-fundador {
+            background: linear-gradient(135deg, #f5a623, #e94560, #f5a623);
+            background-size: 200% auto;
+            animation: shimmer 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .btn-shimmer-fundador:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(233, 69, 96, 0.4);
+        }
+
+        /* Cita destacada */
+        .cita-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .cita-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(245, 166, 35, 0.12);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden bg-slate-50 selection:bg-yellow-500 selection:text-white relative">
+
+    <!-- ============================================================ -->
+    <!-- ===== BARRA DE NAVEGACIÓN ===== -->
+    <!-- ============================================================ -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 z-[60]"></div>
+
+    <nav id="navbar" class="transition-all duration-300">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+            <div class="navbar-inner">
+
+                <!-- === LOGO + NOMBRE (IZQUIERDA) === -->
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                    <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                    alt="Logo Pacai Cusco"
+                    class="nav-logo-img">
+                    <div>
+                        <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i</span>
+                            <span class="text-andes-blue ml-0.5">Cusco</span>
+                        </div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="es">🌾 Esperanza Andina</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="en">🌾 Andean Hope</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="de">🌾 Andine Hoffnung</div>
+                    </div>
+                </a>
+
+                <!-- === MENÚ CENTRAL (DESKTOP) === -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-7 text-gray-600 text-xs xl:text-sm">
+                    <a href="index.html" class="nav-link" data-lang="es">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="en">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="de">Pacai</a>
+
+                    <a href="programas.html" class="nav-link" data-lang="es">Programas de Pacai</a>
+                    <a href="programas.html" class="nav-link" data-lang="en">Pacai Programs</a>
+                    <a href="programas.html" class="nav-link" data-lang="de">Pacai Programme</a>
+
+                    <a href="cultura.html" class="nav-link" data-lang="es">Cultura y Recreación</a>
+                    <a href="cultura.html" class="nav-link" data-lang="en">Culture</a>
+                    <a href="cultura.html" class="nav-link" data-lang="de">Kultur</a>
+
+                    <a href="donar.html" class="nav-donate-btn" data-lang="es">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donar
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="en">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donate
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="de">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Spenden
+                    </a>
+                </div>
+
+                <!-- === SELECTOR DE IDIOMAS + MENÚ MÓVIL (DERECHA) === -->
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                    <div class="lang-selector">
+                        <button id="langToggle" class="text-[10px] sm:text-xs font-bold text-gray-700 border-2 border-gray-200 hover:border-yellow-500 rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all">
+                            <i class="fa-solid fa-globe text-yellow-500 text-[8px] sm:text-xs"></i>
+                            <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                            <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                        </button>
+                        <div id="langDropdown" class="dropdown">
+                            <button class="lang-option active" data-lang-code="es">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang-code="en">🇬🇧 English</button>
+                            <button class="lang-option" data-lang-code="de">🇩🇪 Deutsch</button>
+                        </div>
+                    </div>
+
+                    <button id="mobileMenuBtn" class="lg:hidden text-gray-700 text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 hover:text-yellow-500 transition-colors" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MENÚ MÓVIL ===== -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white/98 backdrop-blur-2xl z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden">
+        <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-gray-600 hover:text-yellow-500 transition-colors p-2" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="flex flex-col items-center gap-4 text-xl font-display font-extrabold text-gray-800 px-4">
+            <a href="index.html" class="mobile-link hover:text-yellow-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-house text-yellow-500"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-yellow-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-house text-yellow-500"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-yellow-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-house text-yellow-500"></i> Pacai</a>
+
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-ribbon text-blue-500"></i> Programas de Pacai</a>
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-ribbon text-blue-500"></i> Pacai Programs</a>
+            <a href="programas.html" class="mobile-link hover:text-blue-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-ribbon text-blue-500"></i> Pacai Programme</a>
+
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-palette text-purple-500"></i> Cultura y Recreación</a>
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-palette text-purple-500"></i> Culture</a>
+            <a href="cultura.html" class="mobile-link hover:text-purple-500 transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-palette text-purple-500"></i> Kultur</a>
+
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="es"><i class="fa-solid fa-heart animate-pulse"></i> Donar</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="en"><i class="fa-solid fa-heart animate-pulse"></i> Donate</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="de"><i class="fa-solid fa-heart animate-pulse"></i> Spenden</a>
+        </div>
+
+        <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm hover:bg-blue-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm hover:bg-pink-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm hover:bg-green-600 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== HERO - FUNDADOR ===== -->
+    <!-- ============================================================ -->
+    <section class="program-hero relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28 hero-gradient-fundador">
+        <!-- Partículas doradas flotantes -->
+        <div class="floating-particle-gold" style="width:60px;height:60px;top:10%;left:5%;animation-delay:0s;"></div>
+        <div class="floating-particle-gold" style="width:40px;height:40px;top:20%;right:10%;animation-delay:2s;"></div>
+        <div class="floating-particle-gold" style="width:80px;height:80px;bottom:20%;left:15%;animation-delay:4s;"></div>
+        <div class="floating-particle-gold" style="width:30px;height:30px;bottom:30%;right:20%;animation-delay:6s;"></div>
+        <div class="floating-particle-gold" style="width:50px;height:50px;top:50%;left:50%;animation-delay:3s;"></div>
+
+        <div class="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-black/30"></div>
+
+        <div class="container mx-auto px-4 relative z-30 text-center">
+            <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-4 sm:mb-6 border border-white/40 shadow-lg" data-aos="fade-down">
+                <i class="fa-solid fa-user-doctor text-white text-base sm:text-xl"></i>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="es">Fundador</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="en">Founder</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="de">Gründer</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[1.1] text-white mb-4 drop-shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <span data-lang="es">Dr. <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300">Karl Welte</span></span>
+                <span data-lang="en">Dr. <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300">Karl Welte</span></span>
+                <span data-lang="de">Dr. <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-orange-300 to-red-300">Karl Welte</span></span>
+            </h1>
+
+            <p class="subtitle text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-2" data-aos="fade-up" data-aos-delay="400">
+                <span data-lang="es">Pionero en el tratamiento de la leucemia infantil. <strong class="text-yellow-300">Su legado transformó la oncología pediátrica en Cusco y el mundo.</strong></span>
+                <span data-lang="en">Pioneer in childhood leukemia treatment. <strong class="text-yellow-300">His legacy transformed pediatric oncology in Cusco and the world.</strong></span>
+                <span data-lang="de">Pionier der Behandlung von Kinderleukämie. <strong class="text-yellow-300">Sein Vermächtnis veränderte die pädiatrische Onkologie in Cusco und der Welt.</strong></span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8" data-aos="fade-up" data-aos-delay="600">
+                <a href="#trayectoria" class="btn-shimmer-fundador text-white font-bold px-8 py-4 rounded-full shadow-lg flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-down"></i> <span data-lang="es">Conocer su historia</span><span data-lang="en">Learn his story</span><span data-lang="de">Seine Geschichte kennen</span>
+                </a>
+                <a href="index.html" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-yellow-600 transition-all duration-300 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-lang="es">Volver al inicio</span><span data-lang="en">Back to home</span><span data-lang="de">Zurück zur Startseite</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#trayectoria" class="text-white/60 hover:text-white transition-colors" aria-label="Scroll down">
+                <i class="fa-solid fa-chevron-down text-2xl sm:text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Onda separadora -->
+    <div class="relative -mt-1 z-20">
+        <svg class="w-full h-12 md:h-20 text-white fill-current drop-shadow-sm" viewBox="0 0 1440 74" xmlns="http://www.w3.org/2000/svg"><path d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,32C840,21,960,11,1080,16C1200,21,1320,43,1380,53.3L1440,64L1440,74L1380,74C1320,74,1200,74,1080,74C960,74,840,74,720,74C600,74,480,74,360,74C240,74,120,74,60,74L0,74Z"></path></svg>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: INTRODUCCIÓN ===== -->
+    <!-- ============================================================ -->
+    <section class="py-12 sm:py-16 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="text-center" data-aos="fade-up">
+                <span class="bg-yellow-100 text-yellow-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-star mr-2"></i> <span data-lang="es">Un Legado de Esperanza</span><span data-lang="en">A Legacy of Hope</span><span data-lang="de">Ein Vermächtnis der Hoffnung</span>
+                </span>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="es">
+                    El <strong class="text-yellow-600">Dr. Karl Welte</strong> es profesor de la <strong class="text-yellow-600">Universidad Médica de Hannover</strong> y profesor senior en la <strong class="text-yellow-600">Universidad Médica de Tübingen</strong>. Ha dedicado su carrera al estudio del desarrollo de los neutrófilos y su tratamiento, siendo reconocido mundialmente por sus investigaciones sobre el <strong class="text-yellow-600">factor estimulante de colonias de granulocitos (G-CSF)</strong>.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="en">
+                    <strong class="text-yellow-600">Dr. Karl Welte</strong> is a professor at <strong class="text-yellow-600">Hannover Medical University</strong> and senior professor at <strong class="text-yellow-600">Tübingen Medical University</strong>. He has dedicated his career to the study of neutrophil development and its treatment, being globally recognized for his research on <strong class="text-yellow-600">granulocyte colony-stimulating factor (G-CSF)</strong>.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="de">
+                    <strong class="text-yellow-600">Dr. Karl Welte</strong> ist Professor an der <strong class="text-yellow-600">Medizinischen Hochschule Hannover</strong> und Seniorprofessor an der <strong class="text-yellow-600">Universität Tübingen</strong>. Er hat seine Karriere der Erforschung der Neutrophilen-Entwicklung und deren Behandlung gewidmet und ist weltweit bekannt für seine Forschung zum <strong class="text-yellow-600">Granulozyten-Kolonie-stimulierenden Faktor (G-CSF)</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: TRAYECTORIA (Línea de tiempo) ===== -->
+    <!-- ============================================================ -->
+    <section id="trayectoria" class="py-16 sm:py-20 bg-slate-50 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <pattern id="grid-fundador" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="1.5" fill="#f5a623"/>
+                </pattern>
+                <rect width="100" height="100" fill="url(#grid-fundador)"/>
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-yellow-100 text-yellow-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-timeline mr-2"></i> <span data-lang="es">Trayectoria</span><span data-lang="en">Career</span><span data-lang="de">Werdegang</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Una vida dedicada a <span class="text-yellow-600">salvar vidas</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">A life dedicated to <span class="text-yellow-600">saving lives</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Ein Leben, das <span class="text-yellow-600">Leben rettet</span></h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+                    <div class="timeline-item-fundador" data-aos="fade-right" data-aos-delay="100">
+                        <div class="timeline-dot-fundador"></div>
+                        <div class="bg-white p-5 rounded-xl border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300 shadow-md hover:shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800" data-lang="es">Formación Académica</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="en">Academic Training</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="de">Akademische Ausbildung</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="es">Obtuvo su título de médico en la <strong>Universidad Libre de Berlín</strong>, sentando las bases de una carrera dedicada a la investigación oncológica.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="en">He obtained his medical degree from the <strong>Free University of Berlin</strong>, laying the foundations for a career dedicated to oncological research.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="de">Er erhielt seinen medizinischen Abschluss an der <strong>Freien Universität Berlin</strong> und legte damit den Grundstein für eine Karriere in der Krebsforschung.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item-fundador" data-aos="fade-right" data-aos-delay="200">
+                        <div class="timeline-dot-fundador"></div>
+                        <div class="bg-white p-5 rounded-xl border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300 shadow-md hover:shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+                                    <i class="fa-solid fa-flask"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800" data-lang="es">Investigación Pionera</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="en">Pioneering Research</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="de">Bahnbrechende Forschung</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="es">Participó en la <strong>purificación y caracterización del G-CSF</strong> y fue clave en la producción del <strong>G-CSF recombinante humano (filgrastim)</strong>.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="en">He participated in the <strong>purification and characterization of G-CSF</strong> and was key in the production of <strong>recombinant human G-CSF (filgrastim)</strong>.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="de">Er beteiligte sich an der <strong>Reinigung und Charakterisierung von G-CSF</strong> und war maßgeblich an der Produktion von <strong>rekombinantem humanem G-CSF (Filgrastim)</strong> beteiligt.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item-fundador" data-aos="fade-right" data-aos-delay="300">
+                        <div class="timeline-dot-fundador"></div>
+                        <div class="bg-white p-5 rounded-xl border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300 shadow-md hover:shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+                                    <i class="fa-solid fa-hospital-user"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800" data-lang="es">Estudios Clínicos</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="en">Clinical Studies</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="de">Klinische Studien</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="es">Participó en los <strong>estudios clínicos de fase I-III</strong> sobre el uso de G-CSF para la neutropenia inducida por quimioterapia, siendo <strong>pionero en Europa</strong> en su aplicación clínica para la neutropenia congénita.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="en">He participated in <strong>phase I-III clinical studies</strong> on the use of G-CSF for chemotherapy-induced neutropenia, being a <strong>pioneer in Europe</strong> in its clinical application for congenital neutropenia.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="de">Er nahm an <strong>klinischen Studien der Phasen I-III</strong> zur Anwendung von G-CSF bei chemotherapieinduzierter Neutropenie teil und war <strong>Pionier in Europa</strong> bei der klinischen Anwendung bei angeborener Neutropenie.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item-fundador" data-aos="fade-right" data-aos-delay="400">
+                        <div class="timeline-dot-fundador"></div>
+                        <div class="bg-white p-5 rounded-xl border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300 shadow-md hover:shadow-lg">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
+                                    <i class="fa-solid fa-dna"></i>
+                                </div>
+                                <h4 class="font-bold text-gray-800" data-lang="es">Genética y Descubrimientos</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="en">Genetics and Discoveries</h4>
+                                <h4 class="font-bold text-gray-800" data-lang="de">Genetik und Entdeckungen</h4>
+                            </div>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="es">Identificó mutaciones genéticas clave como <strong>ELANE, HAX1 y G6PC3</strong> y estudió los mecanismos moleculares que pueden conducir a <strong>leucemia</strong> en pacientes con neutropenia congénita grave.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="en">He identified key genetic mutations such as <strong>ELANE, HAX1 and G6PC3</strong> and studied the molecular mechanisms that can lead to <strong>leukemia</strong> in patients with severe congenital neutropenia.</p>
+                            <p class="text-gray-600 text-sm mt-2 ml-14" data-lang="de">Er identifizierte wichtige genetische Mutationen wie <strong>ELANE, HAX1 und G6PC3</strong> und untersuchte die molekularen Mechanismen, die bei Patienten mit schwerer angeborener Neutropenie zu <strong>Leukämie</strong> führen können.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: LOGROS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-yellow-100 text-yellow-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-trophy mr-2"></i> <span data-lang="es">Logros</span><span data-lang="en">Achievements</span><span data-lang="de">Errungenschaften</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Un legado que <span class="text-yellow-600">transformó la medicina</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">A legacy that <span class="text-yellow-600">transformed medicine</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Ein Vermächtnis, das die <span class="text-yellow-600">Medizin veränderte</span></h2>
+            </div>
+
+            <div class="grid-logros grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="logro-card bg-slate-50 p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="100">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-yellow-100 to-orange-100 flex items-center justify-center text-2xl text-yellow-600 mb-4">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Descubrimiento del G-CSF</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Discovery of G-CSF</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Entdeckung von G-CSF</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Pionero en la purificación y caracterización del factor estimulante de colonias de granulocitos.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Pioneer in the purification and characterization of granulocyte colony-stimulating factor.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Pionier bei der Reinigung und Charakterisierung des Granulozyten-Kolonie-stimulierenden Faktors.</p>
+                </div>
+
+                <div class="logro-card bg-slate-50 p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="200">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-orange-100 to-red-100 flex items-center justify-center text-2xl text-orange-600 mb-4">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Mutaciones Genéticas</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Genetic Mutations</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Genmutationen</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Identificación de mutaciones clave como ELANE, HAX1 y G6PC3 en neutropenia congénita.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Identification of key mutations such as ELANE, HAX1 and G6PC3 in congenital neutropenia.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Identifizierung wichtiger Mutationen wie ELANE, HAX1 und G6PC3 bei angeborener Neutropenie.</p>
+                </div>
+
+                <div class="logro-card bg-slate-50 p-6 rounded-2xl shadow-lg" data-aos="flip-up" data-aos-delay="300">
+                    <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-red-100 to-pink-100 flex items-center justify-center text-2xl text-red-600 mb-4">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="es">Tratamientos Salvadores</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="en">Life-saving Treatments</h3>
+                    <h3 class="font-display font-extrabold text-xl text-gray-800 mb-2" data-lang="de">Lebensrettende Behandlungen</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="es">Pionero en la aplicación clínica de G-CSF para neutropenia congénita en Europa.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="en">Pioneer in the clinical application of G-CSF for congenital neutropenia in Europe.</p>
+                    <p class="text-gray-600 text-sm leading-relaxed" data-lang="de">Pionier bei der klinischen Anwendung von G-CSF bei angeborener Neutropenie in Europa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: INSTITUCIONES ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-yellow-500 via-orange-500 to-red-500 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">🏛️</div>
+                    <h3 class="font-bold text-lg mt-3" data-lang="es">Universidad Médica de Hannover</h3>
+                    <h3 class="font-bold text-lg mt-3" data-lang="en">Hannover Medical University</h3>
+                    <h3 class="font-bold text-lg mt-3" data-lang="de">Medizinische Hochschule Hannover</h3>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Profesor Titular</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Full Professor</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Ordentlicher Professor</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">🏫</div>
+                    <h3 class="font-bold text-lg mt-3" data-lang="es">Universidad Médica de Tübingen</h3>
+                    <h3 class="font-bold text-lg mt-3" data-lang="en">Tübingen Medical University</h3>
+                    <h3 class="font-bold text-lg mt-3" data-lang="de">Universität Tübingen</h3>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Profesor Senior</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Senior Professor</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Seniorprofessor</p>
+                </div>
+                <div class="text-center text-white" data-aos="flip-up" data-aos-delay="300">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold">🎓</div>
+                    <h3 class="font-bold text-lg mt-3" data-lang="es">Universidad Libre de Berlín</h3>
+                    <h3 class="font-bold text-lg mt-3" data-lang="en">Free University of Berlin</h3>
+                    <h3 class="font-bold text-lg mt-3" data-lang="de">Freie Universität Berlin</h3>
+                    <p class="text-white/80 text-sm mt-1" data-lang="es">Título de Médico</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="en">Medical Degree</p>
+                    <p class="text-white/80 text-sm mt-1" data-lang="de">Medizinischer Abschluss</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: GALERÍA ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-yellow-100 text-yellow-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-images mr-2"></i> <span data-lang="es">Galería</span><span data-lang="en">Gallery</span><span data-lang="de">Galerie</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Imágenes de <span class="text-yellow-600">su legado</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Images of <span class="text-yellow-600">his legacy</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Bilder seines <span class="text-yellow-600">Vermächtnisses</span></h2>
+            </div>
+
+            <div class="grid-galeria grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="galeria-item-fundador group relative aspect-square" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop" alt="Dr. Karl Welte" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Dr. Karl Welte</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Dr. Karl Welte</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Dr. Karl Welte</span>
+                    </div>
+                </div>
+                <div class="galeria-item-fundador group relative aspect-square" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=400&fit=crop" alt="Investigación médica" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Investigación pionera</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Pioneering research</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Bahnbrechende Forschung</span>
+                    </div>
+                </div>
+                <div class="galeria-item-fundador group relative aspect-square" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=400&h=400&fit=crop" alt="Laboratorio" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Laboratorio</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Laboratory</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Labor</span>
+                    </div>
+                </div>
+                <div class="galeria-item-fundador group relative aspect-square" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=400&fit=crop" alt="Hospital" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Hospital Universitario</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">University Hospital</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Universitätsklinikum</span>
+                    </div>
+                </div>
+                <div class="galeria-item-fundador group relative aspect-square" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&h=400&fit=crop" alt="Microscopio" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Investigación celular</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Cell research</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Zellforschung</span>
+                    </div>
+                </div>
+                <div class="galeria-item-fundador group relative aspect-square" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=400&h=400&fit=crop" alt="Cuidado médico" class="w-full h-full object-cover">
+                    <div class="overlay">
+                        <span class="text-white font-bold text-sm" data-lang="es">Atención médica</span>
+                        <span class="text-white font-bold text-sm" data-lang="en">Medical care</span>
+                        <span class="text-white font-bold text-sm" data-lang="de">Medizinische Versorgung</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: CITAS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-yellow-100 text-yellow-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-quote-right mr-2"></i> <span data-lang="es">Inspiración</span><span data-lang="en">Inspiration</span><span data-lang="de">Inspiration</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Palabras que <span class="text-yellow-600">inspiran</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Words that <span class="text-yellow-600">inspire</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Worte, die <span class="text-yellow-600">inspirieren</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="cita-card bg-slate-50 p-6 rounded-2xl border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-2xl text-yellow-600">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"El conocimiento es la mejor medicina para el alma. Cada descubrimiento es un paso más hacia la esperanza."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"Knowledge is the best medicine for the soul. Every discovery is one more step towards hope."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Wissen ist die beste Medizin für die Seele. Jede Entdeckung ist ein weiterer Schritt in Richtung Hoffnung."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="cita-card bg-slate-50 p-6 rounded-2xl border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-2xl text-orange-600">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"La ciencia no tiene fronteras. Lo que aprendemos en un laboratorio puede cambiar vidas en cualquier rincón del mundo."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"Science has no borders. What we learn in a laboratory can change lives in any corner of the world."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Wissenschaft kennt keine Grenzen. Was wir im Labor lernen, kann Leben in jedem Winkel der Welt verändern."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="cita-card bg-slate-50 p-6 rounded-2xl border-2 border-yellow-100 hover:border-yellow-300 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-2xl text-red-600">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Cada niño que sobrevive es un testimonio del poder de la investigación y la dedicación médica."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"Every child who survives is a testament to the power of research and medical dedication."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Jedes Kind, das überlebt, ist ein Zeugnis für die Kraft der Forschung und medizinischen Hingabe."</p>
+                    <div class="mt-3 flex text-yellow-500 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== CTA FINAL ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-yellow-500 via-orange-500 to-red-500 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white drop-shadow-lg" data-aos="fade-up">
+                <span data-lang="es">Honra su legado <span class="text-yellow-300">apoyando nuestra causa</span></span>
+                <span data-lang="en">Honor his legacy <span class="text-yellow-300">by supporting our cause</span></span>
+                <span data-lang="de">Sein Vermächtnis ehren, <span class="text-yellow-300">indem du unsere Sache unterstützt</span></span>
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="es">El Dr. Karl Welte dedicó su vida a salvar niños. Tu donación continúa su misión en Cusco.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="en">Dr. Karl Welte dedicated his life to saving children. Your donation continues his mission in Cusco.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="de">Dr. Karl Welte widmete sein Leben der Rettung von Kindern. Deine Spende setzt seine Mission in Cusco fort.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="donar.html" class="bg-white text-yellow-600 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-heart-pulse"></i> <span data-lang="es">Donar ahora</span><span data-lang="en">Donate now</span><span data-lang="de">Jetzt spenden</span>
+                </a>
+                <a href="programas.html" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-yellow-600 transition-all duration-300 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-lang="es">Ver programas</span><span data-lang="en">See programs</span><span data-lang="de">Programme ansehen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== FOOTER ===== -->
+    <!-- ============================================================ -->
+    <footer id="contacto" class="bg-slate-950 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-8 border-yellow-500">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo footer.jpg" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                        alt="Logo Pacai Cusco"
+                        class="footer-logo-img">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i </span>
+                            <span class="text-white ml-1">Cusco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="es">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="en">Where hope grows and cancer declines. Together we build a future full of light and health for our children in Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="de">Wo Hoffnung wächst und Krebs zurückgeht. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-blue-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-pink-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:-translate-y-1 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Navegación</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Navigation</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Navigation</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-gray-400 font-medium text-sm sm:text-base">
+                        <li><a href="index.html" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Pacai</span><span data-lang="en">Pacai</span><span data-lang="de">Pacai</span></a></li>
+                        <li><a href="programas.html" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Programas de Pacai</span><span data-lang="en">Pacai Programs</span><span data-lang="de">Pacai Programme</span></a></li>
+                        <li><a href="cultura.html" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Cultura y Recreación</span><span data-lang="en">Culture</span><span data-lang="de">Kultur</span></a></li>
+                        <li><a href="donar.html" class="hover:text-yellow-400 transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Donar</span><span data-lang="en">Donate</span><span data-lang="de">Spenden</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Nuestra Casa</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Our Home</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Unser Zuhause</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-andes-red"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-blue"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-green"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium">+51 987 654 321</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> Asociación Pacai Cusco. <span data-lang="es">Hecho con el corazón.</span><span data-lang="en">Made with heart.</span><span data-lang="de">Mit Herz gemacht.</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-yellow-400 footer-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        (function() {
+            'use strict';
+
+            AOS.init({ duration: 700, once: true, offset: 40 });
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ===== SCROLL =====
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // ===== MENÚ MÓVIL =====
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // ===== SELECTOR DE IDIOMAS =====
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+            function setLanguage(langCode) {
+                currentLang = langCode;
+                localStorage.setItem('pacai_lang', langCode);
+
+                const labels = { 'es': '🇪🇸 ES', 'en': '🇬🇧 EN', 'de': '🇩🇪 DE' };
+                currentLangLabel.textContent = labels[langCode] || '🇪🇸 ES';
+
+                langOptions.forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                });
+
+                document.querySelectorAll('[data-lang]').forEach(function(el) {
+                    el.style.display = el.getAttribute('data-lang') === langCode ? 'block' : 'none';
+                });
+
+                langDropdown.classList.remove('open');
+                document.documentElement.lang = langCode;
+            }
+
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('open');
+            });
+
+            langOptions.forEach(function(opt) {
+                opt.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    setLanguage(opt.dataset.langCode);
+                });
+            });
+
+            setLanguage(currentLang);
+
+            console.log('🌈 Pacai Cusco · Fundador');
+            console.log('🩺 Dr. Karl Welte · Pionero en leucemia infantil.');
+
+        })();
+    </script>
+
+</body>
+</html>
