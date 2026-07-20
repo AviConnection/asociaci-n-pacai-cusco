@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Programas · Asociación Pacai Cusco</title>
+
+    <!-- Meta para SEO -->
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de">
+    <link rel="alternate" hreflang="x-default" href="https://asociacionpacaicusco.com">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-4deg)' },
+                            '50%': { transform: 'rotate(4deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+        .text-glow-color {
+            text-shadow: 0 0 30px rgba(255, 193, 7, 0.5);
+        }
+        .btn-glow {
+            box-shadow: 0 0 25px rgba(255, 193, 7, 0.5);
+            transition: all 0.3s ease;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 50px rgba(255, 193, 7, 0.8);
+            transform: translateY(-5px) scale(1.03);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #FF9800, #E53935);
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #E53935;
+        }
+
+        /* Scroll horizontal oculto */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Efecto 3D en tarjetas */
+        .card-3d {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform-style: preserve-3d;
+            perspective: 800px;
+        }
+        .card-3d:hover {
+            transform: translateY(-12px) rotateX(3deg) rotateY(3deg) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Botón Donar */
+        .btn-donate {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-donate:hover {
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 14px 45px rgba(229, 57, 53, 0.6);
+        }
+
+        /* ===== SELECTOR DE IDIOMAS ===== */
+        .lang-selector {
+            position: relative;
+            z-index: 100;
+        }
+        .lang-selector button {
+            background: transparent;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 60px;
+            padding: 4px 12px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-selector button:hover {
+            border-color: #FF9800;
+            background: rgba(255, 152, 0, 0.08);
+        }
+        .lang-selector .dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+            padding: 6px;
+            min-width: 130px;
+            opacity: 0;
+            transform: translateY(-8px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .lang-selector .dropdown.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        .lang-selector .dropdown button {
+            background: transparent;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 6px 14px;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #374151;
+            transition: all 0.2s ease;
+        }
+        .lang-selector .dropdown button:hover {
+            background: #FFF8F0;
+            color: #FF9800;
+        }
+        .lang-selector .dropdown button.active {
+            background: #FF9800;
+            color: white;
+        }
+
+        /* Ocultar/mostrar contenido por idioma */
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
+
+        /* ===== MENÚ MÓVIL ===== */
+        #mobileMenu {
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        #mobileMenu.open {
+            transform: translateX(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-buttons a {
+                width: 100%;
+                justify-content: center;
+            }
+            .grid-programas {
+                grid-template-columns: 1fr !important;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr !important;
+                text-align: center;
+            }
+            .footer-grid .social-icons {
+                justify-content: center;
+            }
+            .tagline-mobile {
+                display: none !important;
+            }
+            .program-hero h1 {
+                font-size: 2rem !important;
+            }
+            .grid-botones-programas {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-programas {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-impacto {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .nav-desktop {
+                display: none !important;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            .hide-on-mobile {
+                display: none !important;
+            }
+            .show-on-mobile {
+                display: flex !important;
+            }
+            .logo-img {
+                width: 48px !important;
+                height: 48px !important;
+            }
+            .logo-text {
+                font-size: 0.9rem !important;
+            }
+            .tagline-text {
+                font-size: 0.5rem !important;
+            }
+            .program-hero h1 {
+                font-size: 2.5rem !important;
+            }
+            .program-hero .subtitle {
+                font-size: 1rem !important;
+            }
+            .grid-testimonios {
+                grid-template-columns: 1fr !important;
+            }
+            .grid-equipo {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-botones-programas {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .grid-programas {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-impacto {
+                grid-template-columns: 1fr 1fr !important;
+            }
+            .grid-botones-programas {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        /* Utilidades responsive */
+        .hide-on-mobile {
+            display: block;
+        }
+        .show-on-mobile {
+            display: none;
+        }
+
+        /* ===== REDUCED MOTION ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ============================================================ */
+        /* ===== NAVBAR MEJORADA ===== */
+        /* ============================================================ */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            height: 76px;
+            overflow: visible;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        }
+
+        #navbar.scrolled {
+            height: 64px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+            border-bottom-color: rgba(0, 0, 0, 0.04);
+        }
+
+        /* ===== LOGO EN NAVBAR ===== */
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            margin-top: -30px;
+            margin-bottom: -30px;
+        }
+
+        #navbar.scrolled .nav-logo-img {
+            width: 90px;
+            height: 90px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+
+        @media (max-width: 640px) {
+            #navbar {
+                height: 62px;
+            }
+            #navbar.scrolled {
+                height: 54px;
+            }
+            .nav-logo-img {
+                width: 90px;
+                height: 90px;
+                margin-top: -25px;
+                margin-bottom: -25px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 70px;
+                height: 70px;
+                margin-top: -18px;
+                margin-bottom: -18px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #navbar {
+                height: 54px;
+            }
+            #navbar.scrolled {
+                height: 48px;
+            }
+            .nav-logo-img {
+                width: 75px;
+                height: 75px;
+                margin-top: -20px;
+                margin-bottom: -20px;
+            }
+            #navbar.scrolled .nav-logo-img {
+                width: 60px;
+                height: 60px;
+                margin-top: -15px;
+                margin-bottom: -15px;
+            }
+        }
+
+        /* ===== LOGO TEXTO ===== */
+        .logo-text {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        #navbar.scrolled .logo-text {
+            font-size: 0.9rem !important;
+        }
+
+        @media (min-width: 1024px) {
+            #navbar.scrolled .logo-text {
+                font-size: 1.1rem !important;
+            }
+        }
+
+        /* ===== ENLACES DE NAVEGACIÓN ===== */
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            padding: 0.4rem 0;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2.5px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #FF9800, #E53935);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #FF9800;
+        }
+
+        .nav-link[href="programas.html"]:hover {
+            color: #2196F3;
+        }
+        .nav-link[href="programas.html"]::after {
+            background: linear-gradient(90deg, #2196F3, #009688);
+        }
+
+        .nav-link[href="cultura.html"]:hover {
+            color: #9C27B0;
+        }
+        .nav-link[href="cultura.html"]::after {
+            background: linear-gradient(90deg, #9C27B0, #E91E63);
+        }
+
+        /* ===== BOTÓN DONAR EN NAVBAR ===== */
+        .nav-donate-btn {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(229, 57, 53, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-donate-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 8px 30px rgba(229, 57, 53, 0.5);
+        }
+
+        #navbar.scrolled .nav-donate-btn {
+            padding: 0.35rem 1rem;
+            font-size: 0.7rem;
+        }
+
+        /* ===== CONTENEDOR DE LA BARRA ===== */
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+        }
+
+        @media (min-width: 640px) {
+            .navbar-inner {
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+        }
+
+        /* ===== SCROLL PADDING ===== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 80px;
+            }
+        }
+
+        /* ===== FOOTER - LOGO SIN CÍRCULO ===== */
+        .footer-logo-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        @media (max-width: 640px) {
+            .footer-logo-img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .footer-heart {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* ===== ESTILOS PARA LA PÁGINA DE PROGRAMAS ===== */
+        .program-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .program-icon {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .program-card:hover .program-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #E53935, #FF9800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            border: 3px solid #FF9800;
+            background: white;
+            position: relative;
+            z-index: 2;
+        }
+        .timeline-dot.active {
+            background: #FF9800;
+            border-color: #FF9800;
+        }
+        .timeline-line {
+            width: 2px;
+            background: linear-gradient(180deg, #FF9800, #E53935);
+            flex-shrink: 0;
+            margin: 0 7px;
+        }
+
+        /* ===== BOTONES DE PROGRAMAS (estilo WordPress) ===== */
+        .btn-programa {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: none;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-programa:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-programa .icono {
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-programa:hover .icono {
+            transform: scale(1.2);
+        }
+
+        /* ===== MEJORAS EN TARJETAS DE PROGRAMAS ===== */
+        .programa-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .programa-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2196F3, #009688);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .programa-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .programa-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .programa-card .programa-icono {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .programa-card:hover .programa-icono {
+            transform: scale(1.1) rotate(-8deg);
+        }
+
+        .programa-card .programa-tag {
+            display: inline-block;
+            padding: 0.2rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased overflow-x-hidden bg-slate-50 selection:bg-andes-orange selection:text-white relative">
+
+    <!-- ============================================================ -->
+    <!-- ===== BARRA DE NAVEGACIÓN ===== -->
+    <!-- ============================================================ -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-gradient-to-r from-andes-red via-andes-yellow to-andes-blue z-[60]"></div>
+
+    <nav id="navbar" class="transition-all duration-300">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+            <div class="navbar-inner">
+
+                <!-- === LOGO + NOMBRE (IZQUIERDA) === -->
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                    <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                    alt="Logo Pacai Cusco"
+                    class="nav-logo-img">
+                    <div>
+                        <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i</span>
+                            <span class="text-andes-blue ml-0.5">Cusco</span>
+                        </div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="es">🌾 Esperanza Andina</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="en">🌾 Andean Hope</div>
+                        <div class="tagline-text tagline-mobile text-[8px] sm:text-[10px] md:text-xs font-bold text-andes-orange/70 tracking-widest transition-opacity duration-300" data-lang="de">🌾 Andine Hoffnung</div>
+                    </div>
+                </a>
+
+                <!-- === MENÚ CENTRAL (DESKTOP) === -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-7 text-gray-600 text-xs xl:text-sm">
+                    <a href="index.html" class="nav-link" data-lang="es">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="en">Pacai</a>
+                    <a href="index.html" class="nav-link" data-lang="de">Pacai</a>
+
+                    <a href="programas.html" class="nav-link text-andes-blue font-bold" data-lang="es">Programas de Pacai</a>
+                    <a href="programas.html" class="nav-link text-andes-blue font-bold" data-lang="en">Pacai Programs</a>
+                    <a href="programas.html" class="nav-link text-andes-blue font-bold" data-lang="de">Pacai Programme</a>
+
+                    <a href="cultura.html" class="nav-link" data-lang="es">Cultura y Recreación</a>
+                    <a href="cultura.html" class="nav-link" data-lang="en">Culture</a>
+                    <a href="cultura.html" class="nav-link" data-lang="de">Kultur</a>
+
+                    <a href="donar.html" class="nav-donate-btn" data-lang="es">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donar
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="en">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Donate
+                    </a>
+                    <a href="donar.html" class="nav-donate-btn" data-lang="de">
+                        <i class="fa-solid fa-heart animate-pulse text-xs"></i> Spenden
+                    </a>
+                </div>
+
+                <!-- === SELECTOR DE IDIOMAS + MENÚ MÓVIL (DERECHA) === -->
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                    <div class="lang-selector">
+                        <button id="langToggle" class="text-[10px] sm:text-xs font-bold text-gray-700 border-2 border-gray-200 hover:border-andes-orange rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all">
+                            <i class="fa-solid fa-globe text-andes-orange text-[8px] sm:text-xs"></i>
+                            <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                            <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                        </button>
+                        <div id="langDropdown" class="dropdown">
+                            <button class="lang-option active" data-lang-code="es">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang-code="en">🇬🇧 English</button>
+                            <button class="lang-option" data-lang-code="de">🇩🇪 Deutsch</button>
+                        </div>
+                    </div>
+
+                    <button id="mobileMenuBtn" class="lg:hidden text-gray-700 text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 hover:text-andes-orange transition-colors" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MENÚ MÓVIL ===== -->
+    <div id="mobileMenu" class="fixed inset-0 bg-white/98 backdrop-blur-2xl z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden">
+        <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-gray-600 hover:text-andes-red transition-colors p-2" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="flex flex-col items-center gap-4 text-xl font-display font-extrabold text-gray-800 px-4">
+            <a href="index.html" class="mobile-link hover:text-andes-orange transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-house text-andes-orange"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-andes-orange transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-house text-andes-orange"></i> Pacai</a>
+            <a href="index.html" class="mobile-link hover:text-andes-orange transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-house text-andes-orange"></i> Pacai</a>
+
+            <a href="programas.html" class="mobile-link hover:text-andes-blue transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-ribbon text-andes-blue"></i> Programas de Pacai</a>
+            <a href="programas.html" class="mobile-link hover:text-andes-blue transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-ribbon text-andes-blue"></i> Pacai Programs</a>
+            <a href="programas.html" class="mobile-link hover:text-andes-blue transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-ribbon text-andes-blue"></i> Pacai Programme</a>
+
+            <a href="cultura.html" class="mobile-link hover:text-andes-purple transition-colors flex items-center gap-2" data-lang="es"><i class="fa-solid fa-palette text-andes-purple"></i> Cultura y Recreación</a>
+            <a href="cultura.html" class="mobile-link hover:text-andes-purple transition-colors flex items-center gap-2" data-lang="en"><i class="fa-solid fa-palette text-andes-purple"></i> Culture</a>
+            <a href="cultura.html" class="mobile-link hover:text-andes-purple transition-colors flex items-center gap-2" data-lang="de"><i class="fa-solid fa-palette text-andes-purple"></i> Kultur</a>
+
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="es"><i class="fa-solid fa-heart animate-pulse"></i> Donar</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="en"><i class="fa-solid fa-heart animate-pulse"></i> Donate</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2" data-lang="de"><i class="fa-solid fa-heart animate-pulse"></i> Spenden</a>
+        </div>
+
+        <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm hover:bg-blue-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-sm hover:bg-pink-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-sm hover:bg-green-600 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== HERO DE PROGRAMAS ===== -->
+    <!-- ============================================================ -->
+    <section class="program-hero relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="videos/pacai hero.mp4" onerror="this.src='https://cdn.pixabay.com/video/2023/10/22/186064-876938927_large.mp4'" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-30 text-center">
+            <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-4 sm:mb-6 border border-white/40 shadow-lg" data-aos="fade-down">
+                <i class="fa-solid fa-ribbon text-andes-yellow text-base sm:text-xl"></i>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="es">Programas de Pacai</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="en">Pacai Programs</span>
+                <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-lang="de">Pacai Programme</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[1.1] text-white mb-4 drop-shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                <span data-lang="es">Programas que <span class="text-transparent bg-clip-text bg-gradient-to-r from-andes-yellow via-andes-orange to-andes-red text-glow-color">transforman vidas</span></span>
+                <span data-lang="en">Programs that <span class="text-transparent bg-clip-text bg-gradient-to-r from-andes-yellow via-andes-orange to-andes-red text-glow-color">transform lives</span></span>
+                <span data-lang="de">Programme, die <span class="text-transparent bg-clip-text bg-gradient-to-r from-andes-yellow via-andes-orange to-andes-red text-glow-color">Leben verändern</span></span>
+            </h1>
+
+            <p class="subtitle text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-2" data-aos="fade-up" data-aos-delay="400">
+                <span data-lang="es">En los pasillos del <strong class="text-andes-yellow">Hospital Antonio Lorena</strong> y el <strong class="text-andes-yellow">Hospital Regional del Cusco</strong>, acompañamos a <strong class="text-andes-yellow">65 valientes guerreros oncopediátricos</strong> en su lucha diaria contra el cáncer infantil.</span>
+                <span data-lang="en">In the halls of <strong class="text-andes-yellow">Hospital Antonio Lorena</strong> and <strong class="text-andes-yellow">Hospital Regional del Cusco</strong>, we accompany <strong class="text-andes-yellow">65 brave warriors</strong> in their daily fight against childhood cancer.</span>
+                <span data-lang="de">In den Gängen des <strong class="text-andes-yellow">Hospital Antonio Lorena</strong> und des <strong class="text-andes-yellow">Hospital Regional del Cusco</strong> begleiten wir <strong class="text-andes-yellow">65 tapfere Krieger</strong> in ihrem täglichen Kampf gegen Kinderkrebs.</span>
+            </p>
+        </div>
+
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#programas-lista" class="text-white/60 hover:text-white transition-colors" aria-label="Scroll down">
+                <i class="fa-solid fa-chevron-down text-2xl sm:text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Onda separadora -->
+    <div class="relative -mt-1 z-20">
+        <svg class="w-full h-12 md:h-20 text-white fill-current drop-shadow-sm" viewBox="0 0 1440 74" xmlns="http://www.w3.org/2000/svg"><path d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,32C840,21,960,11,1080,16C1200,21,1320,43,1380,53.3L1440,64L1440,74L1380,74C1320,74,1200,74,1080,74C960,74,840,74,720,74C600,74,480,74,360,74C240,74,120,74,60,74L0,74Z"></path></svg>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: NUESTRO IMPACTO ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-red-100 text-andes-red font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-chart-simple mr-2"></i> <span data-lang="es">Nuestro Impacto</span><span data-lang="en">Our Impact</span><span data-lang="de">Unser Einfluss</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Cifras que <span class="text-andes-orange">hablan por sí solas</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Numbers that <span class="text-andes-orange">speak for themselves</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Zahlen, die <span class="text-andes-orange">für sich sprechen</span></h2>
+            </div>
+
+            <div class="grid-impacto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl text-center border-2 border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-andes-blue">65+</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="es">Niños acompañados</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="en">Children accompanied</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="de">Begleitete Kinder</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl text-center border-2 border-green-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-andes-green">6</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="es">Años de trabajo</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="en">Years of work</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="de">Jahre Arbeit</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl text-center border-2 border-purple-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="300">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-andes-purple">100%</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="es">Compromiso real</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="en">Real commitment</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="de">Echtes Engagement</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-white p-6 rounded-2xl text-center border-2 border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="400">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-andes-orange">350+</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="es">Sonrisas recuperadas</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="en">Smiles recovered</p>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-lang="de">Wiedergewonnene Lächeln</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: INTRODUCCIÓN ===== -->
+    <!-- ============================================================ -->
+    <section class="py-12 sm:py-16 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="text-center" data-aos="fade-up">
+                <span class="bg-blue-100 text-andes-blue font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-info-circle mr-2"></i> <span data-lang="es">Nuestra Misión</span><span data-lang="en">Our Mission</span><span data-lang="de">Unsere Mission</span>
+                </span>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="es">
+                    En la <strong class="text-andes-red">Asociación PACAI</strong>, nuestra misión se vive diariamente en los pasillos de los hospitales <strong class="text-andes-blue">Antonio Lorena</strong> y <strong class="text-andes-blue">Regional del Cusco</strong>. Con un promedio permanente de <strong class="text-andes-orange">65 valientes guerreros oncopediátricos</strong> bajo nuestro cuidado, hemos construido una red de soporte que trasciende lo médico para abrazar lo humano.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="en">
+                    At <strong class="text-andes-red">PACAI Association</strong>, our mission is lived daily in the halls of <strong class="text-andes-blue">Antonio Lorena</strong> and <strong class="text-andes-blue">Regional del Cusco</strong> hospitals. With a permanent average of <strong class="text-andes-orange">65 brave oncopediatric warriors</strong> under our care, we have built a support network that transcends the medical to embrace the human.
+                </p>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-lang="de">
+                    Bei der <strong class="text-andes-red">Asociación PACAI</strong> wird unsere Mission täglich in den Gängen der Krankenhäuser <strong class="text-andes-blue">Antonio Lorena</strong> und <strong class="text-andes-blue">Regional del Cusco</strong> gelebt. Mit einem ständigen Durchschnitt von <strong class="text-andes-orange">65 tapferen onkopädiatrischen Kriegern</strong> unter unserer Obhut haben wir ein Unterstützungsnetzwerk aufgebaut, das das Medizinische transzendiert, um das Menschliche zu umarmen.
+                </p>
+                <div class="mt-6 inline-flex flex-wrap items-center justify-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-4 py-2 text-sm text-yellow-700">
+                    <i class="fa-solid fa-handshake text-andes-yellow"></i>
+                    <span data-lang="es">Gracias al respaldo de la <strong>Fundación Schickedanz</strong> y nuestros aliados en Alemania</span>
+                    <span data-lang="en">Thanks to the support of the <strong>Schickedanz Foundation</strong> and our allies in Germany</span>
+                    <span data-lang="de">Dank der Unterstützung der <strong>Schickedanz-Stiftung</strong> und unserer Verbündeten in Deutschland</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: LISTA DETALLADA DE PROGRAMAS ===== -->
+    <!-- ============================================================ -->
+    <section id="programas-lista" class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-blue-100 text-andes-blue font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-list-check mr-2"></i> <span data-lang="es">Detalle de Programas</span><span data-lang="en">Program Details</span><span data-lang="de">Programmdetails</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Cada programa, <span class="text-andes-blue">una historia de esperanza</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Each program, <span class="text-andes-blue">a story of hope</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Jedes Programm, <span class="text-andes-blue">eine Geschichte der Hoffnung</span></h2>
+            </div>
+
+            <div class="grid-programas grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+
+                <!-- Programa 1: Psicología -->
+                <a href="psicologia.html" class="programa-card bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-andes-blue transition-all duration-300 group" data-aos="flip-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="programa-icono bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <span class="programa-tag bg-blue-100 text-andes-blue">🧠 Apoyo</span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="es">Acompañamiento Psicológico</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="en">Psychological Support</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="de">Psychologische Begleitung</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="es">Brindamos apoyo emocional a los niños y sus familias durante todo el proceso de tratamiento. Un psicólogo especializado los acompaña en cada etapa, fortaleciendo su bienestar mental y emocional.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="en">We provide emotional support to children and their families throughout the treatment process. A specialized psychologist accompanies them at every stage, strengthening their mental and emotional well-being.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="de">Wir bieten emotionale Unterstützung für Kinder und ihre Familien während des gesamten Behandlungsprozesses. Ein spezialisierter Psychologe begleitet sie in jeder Phase und stärkt ihr mentales und emotionales Wohlbefinden.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-andes-blue text-xs px-3 py-1 rounded-full font-semibold border border-blue-200">👨‍👩‍👧‍👦 Terapia familiar</span>
+                            <span class="bg-blue-50 text-andes-blue text-xs px-3 py-1 rounded-full font-semibold border border-blue-200">🧘 Bienestar emocional</span>
+                        </div>
+                        <span class="mt-4 inline-flex items-center gap-1 text-andes-blue font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-lang="es">Ver programa</span><span data-lang="en">View program</span><span data-lang="de">Programm ansehen</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Programa 2: Compartir -->
+                <a href="compartir.html" class="programa-card bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-andes-orange transition-all duration-300 group" data-aos="flip-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="programa-icono bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <span class="programa-tag bg-orange-100 text-andes-orange">🤝 Compartir</span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="es">Compartir</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="en">Sharing</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="de">Teilen</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="es">Espacios de encuentro donde las familias comparten experiencias, se apoyan mutuamente y encuentran consuelo en la comunidad. Juntos, la carga se hace más liviana.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="en">Meeting spaces where families share experiences, support each other, and find comfort in community. Together, the burden becomes lighter.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="de">Begegnungsräume, in denen Familien Erfahrungen austauschen, sich gegenseitig unterstützen und Trost in der Gemeinschaft finden. Gemeinsam wird die Last leichter.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-orange-50 text-andes-orange text-xs px-3 py-1 rounded-full font-semibold border border-orange-200">💬 Grupos de apoyo</span>
+                            <span class="bg-orange-50 text-andes-orange text-xs px-3 py-1 rounded-full font-semibold border border-orange-200">🤗 Contención emocional</span>
+                        </div>
+                        <span class="mt-4 inline-flex items-center gap-1 text-andes-orange font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-lang="es">Ver programa</span><span data-lang="en">View program</span><span data-lang="de">Programm ansehen</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Programa 3: Reforzamiento Pedagógico -->
+                <a href="reforzamiento pedagogico.html" class="programa-card bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-andes-green transition-all duration-300 group" data-aos="flip-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="programa-icono bg-gradient-to-br from-green-400 to-green-600 shadow-lg">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <div>
+                                <span class="programa-tag bg-green-100 text-andes-green">📚 Educación</span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="es">Reforzamiento Pedagógico</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="en">Pedagogical Support</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="de">Pädagogische Unterstützung</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="es">Acompañamos a los niños en su educación para que no pierdan el ritmo escolar durante su tratamiento. Clases personalizadas y apoyo continuo para que su futuro no se detenga.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="en">We support children in their education so they don't fall behind during treatment. Personalized classes and continuous support so their future doesn't stop.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="de">Wir unterstützen Kinder in ihrer Bildung, damit sie während der Behandlung nicht zurückfallen. Personalisierter Unterricht und kontinuierliche Unterstützung, damit ihre Zukunft nicht stillsteht.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-green-50 text-andes-green text-xs px-3 py-1 rounded-full font-semibold border border-green-200">✏️ Clases personalizadas</span>
+                            <span class="bg-green-50 text-andes-green text-xs px-3 py-1 rounded-full font-semibold border border-green-200">📖 Acompañamiento escolar</span>
+                        </div>
+                        <span class="mt-4 inline-flex items-center gap-1 text-andes-green font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-lang="es">Ver programa</span><span data-lang="en">View program</span><span data-lang="de">Programm ansehen</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Programa 4: Casa de Acogida -->
+                <a href="casa de acogida.html" class="programa-card bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-andes-purple transition-all duration-300 group" data-aos="flip-up" data-aos-delay="400">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="programa-icono bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div>
+                            <div>
+                                <span class="programa-tag bg-purple-100 text-andes-purple">🏠 Hogar</span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="es">Casa de Acogida</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="en">Host Home</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="de">Gästehaus</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="es">Un hogar temporal para las familias que vienen de comunidades lejanas. Les brindamos alojamiento, alimentación y un espacio de calidez y contención durante el tratamiento.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="en">A temporary home for families coming from remote communities. We provide lodging, food, and a warm, supportive space during treatment.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="de">Ein vorübergehendes Zuhause für Familien aus abgelegenen Gemeinden. Wir bieten Unterkunft, Verpflegung und einen warmen, unterstützenden Raum während der Behandlung.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-purple-50 text-andes-purple text-xs px-3 py-1 rounded-full font-semibold border border-purple-200">🍲 Alimentación</span>
+                            <span class="bg-purple-50 text-andes-purple text-xs px-3 py-1 rounded-full font-semibold border border-purple-200">🛏️ Alojamiento</span>
+                        </div>
+                        <span class="mt-4 inline-flex items-center gap-1 text-andes-purple font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-lang="es">Ver programa</span><span data-lang="en">View program</span><span data-lang="de">Programm ansehen</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Programa 5: Intervención Familiar -->
+                <a href="intervencion familiar.html" class="programa-card bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-andes-pink transition-all duration-300 group" data-aos="flip-up" data-aos-delay="500">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="programa-icono bg-gradient-to-br from-pink-400 to-pink-600 shadow-lg">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <div>
+                                <span class="programa-tag bg-pink-100 text-andes-pink">👨‍👩‍👧‍👦 Familia</span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="es">Intervención Familiar</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="en">Family Intervention</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="de">Familienintervention</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="es">Trabajamos con toda la familia para fortalecer su red de apoyo, mejorar la comunicación y afrontar juntos los desafíos del tratamiento. La familia es el pilar fundamental.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="en">We work with the entire family to strengthen their support network, improve communication, and face treatment challenges together. The family is the fundamental pillar.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="de">Wir arbeiten mit der gesamten Familie, um ihr Unterstützungsnetzwerk zu stärken, die Kommunikation zu verbessern und die Herausforderungen der Behandlung gemeinsam zu bewältigen. Die Familie ist die tragende Säule.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-pink-50 text-andes-pink text-xs px-3 py-1 rounded-full font-semibold border border-pink-200">💪 Fortalecimiento</span>
+                            <span class="bg-pink-50 text-andes-pink text-xs px-3 py-1 rounded-full font-semibold border border-pink-200">🤝 Comunicación</span>
+                        </div>
+                        <span class="mt-4 inline-flex items-center gap-1 text-andes-pink font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-lang="es">Ver programa</span><span data-lang="en">View program</span><span data-lang="de">Programm ansehen</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Programa 6: Apoyo Social -->
+                <a href="apoyo social.html" class="programa-card bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-andes-teal transition-all duration-300 group" data-aos="flip-up" data-aos-delay="600">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="programa-icono bg-gradient-to-br from-teal-400 to-teal-600 shadow-lg">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <span class="programa-tag bg-teal-100 text-andes-teal">🤝 Recursos</span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="es">Apoyo Social</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="en">Social Support</h3>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-gray-800 mt-1" data-lang="de">Soziale Unterstützung</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="es">Gestionamos recursos, medicamentos, traslados y todo lo necesario para que las familias puedan enfocarse en lo más importante: la salud y el bienestar de sus hijos.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="en">We manage resources, medications, transportation, and everything families need to focus on what matters most: their children's health and well-being.</p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-lang="de">Wir verwalten Ressourcen, Medikamente, Transport und alles, was Familien brauchen, um sich auf das Wichtigste zu konzentrieren: die Gesundheit und das Wohlbefinden ihrer Kinder.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-50 text-andes-teal text-xs px-3 py-1 rounded-full font-semibold border border-teal-200">🚗 Traslados</span>
+                            <span class="bg-teal-50 text-andes-teal text-xs px-3 py-1 rounded-full font-semibold border border-teal-200">💊 Medicamentos</span>
+                        </div>
+                        <span class="mt-4 inline-flex items-center gap-1 text-andes-teal font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-lang="es">Ver programa</span><span data-lang="en">View program</span><span data-lang="de">Programm ansehen</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: TESTIMONIOS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-pink-100 text-andes-pink font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-quote-right mr-2"></i> <span data-lang="es">Voces que inspiran</span><span data-lang="en">Inspiring Voices</span><span data-lang="de">Inspirierende Stimmen</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Historias de <span class="text-andes-pink">esperanza real</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Stories of <span class="text-andes-pink">real hope</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Geschichten von <span class="text-andes-pink">echter Hoffnung</span></h2>
+            </div>
+
+            <div class="grid-testimonios grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="testimonial-card bg-slate-50 p-6 rounded-2xl border-2 border-slate-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-andes-yellow/20 flex items-center justify-center text-2xl text-andes-orange">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">María</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Madre de Luis, 7 años</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Mother of Luis, 7 years old</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Mutter von Luis, 7 Jahre</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Cuando mi hijo fue diagnosticado, no sabía cómo íbamos a pagar los viajes al hospital. Pacai nos dio movilidad, medicinas y lo más importante: esperanza."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"When my son was diagnosed, I didn't know how we would pay for trips to the hospital. Pacai gave us mobility, medicines, and most importantly: hope."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Als mein Sohn diagnostiziert wurde, wusste ich nicht, wie wir die Fahrten ins Krankenhaus bezahlen sollten. Pacai gab uns Mobilität, Medikamente und vor allem: Hoffnung."</p>
+                    <div class="mt-3 flex text-andes-yellow text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="testimonial-card bg-slate-50 p-6 rounded-2xl border-2 border-slate-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-andes-blue/20 flex items-center justify-center text-2xl text-andes-blue">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Carlos</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Voluntario</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Volunteer</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Freiwilliger</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Ser parte de Pacai me ha cambiado la vida. Ver la resiliencia de estos niños te hace valorar cada instante. No doy mi tiempo, recibo mucho más a cambio."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"Being part of Pacai has changed my life. Seeing the resilience of these children makes you value every moment. I don't give my time, I receive much more in return."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Teil von Pacai zu sein, hat mein Leben verändert. Die Widerstandsfähigkeit dieser Kinder zu sehen, lässt dich jeden Moment schätzen."</p>
+                    <div class="mt-3 flex text-andes-yellow text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+
+                <div class="testimonial-card bg-slate-50 p-6 rounded-2xl border-2 border-slate-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-andes-green/20 flex items-center justify-center text-2xl text-andes-green">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Ana</h4>
+                            <p class="text-xs text-gray-500" data-lang="es">Abuela de Sofía</p>
+                            <p class="text-xs text-gray-500" data-lang="en">Grandmother of Sofía</p>
+                            <p class="text-xs text-gray-500" data-lang="de">Großmutter von Sofía</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="es">"Nunca imaginé que existiría un lugar que te abrace tanto. Nos dieron techo, comida y mucho cariño. Los talleres de arte hicieron que mi nieta volviera a reír."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="en">"I never imagined there would be a place that embraces you so much. They gave us shelter, food, and so much love."</p>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-lang="de">"Ich hätte nie gedacht, dass es einen Ort gibt, der einen so umarmt. Sie gaben uns Unterkunft, Essen und so viel Liebe."</p>
+                    <div class="mt-3 flex text-andes-yellow text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: ALIADOS ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-yellow-100 text-andes-yellow font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-handshake mr-2"></i> <span data-lang="es">Nuestros Aliados</span><span data-lang="en">Our Allies</span><span data-lang="de">Unsere Verbündeten</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">Gracias a <span class="text-andes-yellow">quienes hacen posible</span> esta misión</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">Thanks to <span class="text-andes-yellow">those who make</span> this mission possible</h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">Dank an <span class="text-andes-yellow">diejenigen, die</span> diese Mission ermöglichen</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="100">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center text-3xl text-andes-yellow mb-3">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-sm">Fundación Schickedanz</h4>
+                    <p class="text-xs text-gray-500" data-lang="es">Aliado principal</p>
+                    <p class="text-xs text-gray-500" data-lang="en">Main ally</p>
+                    <p class="text-xs text-gray-500" data-lang="de">Hauptverbündeter</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="200">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center text-3xl text-andes-blue mb-3">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="es">Aliados en Alemania</h4>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="en">Allies in Germany</h4>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="de">Verbündete in Deutschland</h4>
+                    <p class="text-xs text-gray-500" data-lang="es">Cooperación internacional</p>
+                    <p class="text-xs text-gray-500" data-lang="en">International cooperation</p>
+                    <p class="text-xs text-gray-500" data-lang="de">Internationale Zusammenarbeit</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="300">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center text-3xl text-andes-red mb-3">
+                        <i class="fa-solid fa-hospital"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="es">Hospital Antonio Lorena</h4>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="en">Hospital Antonio Lorena</h4>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="de">Krankenhaus Antonio Lorena</h4>
+                    <p class="text-xs text-gray-500" data-lang="es">Aliado estratégico</p>
+                    <p class="text-xs text-gray-500" data-lang="en">Strategic ally</p>
+                    <p class="text-xs text-gray-500" data-lang="de">Strategischer Verbündeter</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="400">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-3xl text-andes-green mb-3">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="es">Donantes y Voluntarios</h4>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="en">Donors and Volunteers</h4>
+                    <h4 class="font-bold text-gray-800 text-sm" data-lang="de">Spender und Freiwillige</h4>
+                    <p class="text-xs text-gray-500" data-lang="es">El corazón de Pacai</p>
+                    <p class="text-xs text-gray-500" data-lang="en">The heart of Pacai</p>
+                    <p class="text-xs text-gray-500" data-lang="de">Das Herz von Pacai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN: LÍNEA DE TIEMPO ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-orange-100 text-andes-orange font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-timeline mr-2"></i> <span data-lang="es">Nuestro Camino</span><span data-lang="en">Our Journey</span><span data-lang="de">Unser Weg</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="es">6 años de <span class="text-andes-orange">amor y entrega</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="en">6 years of <span class="text-andes-orange">love and dedication</span></h2>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-lang="de">6 Jahre <span class="text-andes-orange">Liebe und Hingabe</span></h2>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="100">
+                        <div class="timeline-dot active"></div>
+                        <div class="flex-1 bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-andes-orange">2020</h4>
+                            <p class="text-gray-600 text-sm" data-lang="es">Nace la Asociación Pacai Cusco con la misión de acompañar a niños con cáncer en el Hospital Antonio Lorena.</p>
+                            <p class="text-gray-600 text-sm" data-lang="en">The Asociación Pacai Cusco is born with the mission of accompanying children with cancer at Hospital Antonio Lorena.</p>
+                            <p class="text-gray-600 text-sm" data-lang="de">Die Asociación Pacai Cusco wird mit der Mission gegründet, Kinder mit Krebs im Hospital Antonio Lorena zu begleiten.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="200">
+                        <div class="timeline-dot active"></div>
+                        <div class="flex-1 bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-andes-blue">2021</h4>
+                            <p class="text-gray-600 text-sm" data-lang="es">Ampliamos nuestro alcance al Hospital Regional del Cusco y comenzamos con los primeros programas de apoyo psicológico.</p>
+                            <p class="text-gray-600 text-sm" data-lang="en">We expand our reach to the Hospital Regional del Cusco and begin the first psychological support programs.</p>
+                            <p class="text-gray-600 text-sm" data-lang="de">Wir erweitern unsere Reichweite auf das Hospital Regional del Cusco und beginnen mit den ersten Programmen zur psychologischen Unterstützung.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="300">
+                        <div class="timeline-dot active"></div>
+                        <div class="flex-1 bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-andes-green">2022</h4>
+                            <p class="text-gray-600 text-sm" data-lang="es">La Fundación Schickedanz se convierte en nuestro aliado principal, permitiendo la creación de la Casa de Acogida.</p>
+                            <p class="text-gray-600 text-sm" data-lang="en">The Schickedanz Foundation becomes our main ally, allowing the creation of the Host Home.</p>
+                            <p class="text-gray-600 text-sm" data-lang="de">Die Schickedanz-Stiftung wird unser Hauptverbündeter und ermöglicht die Schaffung des Gästehauses.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="400">
+                        <div class="timeline-dot active"></div>
+                        <div class="flex-1 bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-andes-purple">2023</h4>
+                            <p class="text-gray-600 text-sm" data-lang="es">Consolidamos nuestros 6 programas y alcanzamos el acompañamiento de más de 65 niños de manera simultánea.</p>
+                            <p class="text-gray-600 text-sm" data-lang="en">We consolidate our 6 programs and reach the accompaniment of more than 65 children simultaneously.</p>
+                            <p class="text-gray-600 text-sm" data-lang="de">Wir konsolidieren unsere 6 Programme und erreichen die gleichzeitige Begleitung von mehr als 65 Kindern.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="500">
+                        <div class="timeline-dot active"></div>
+                        <div class="flex-1 bg-slate-50 p-4 rounded-xl">
+                            <h4 class="font-bold text-andes-pink">2024</h4>
+                            <p class="text-gray-600 text-sm" data-lang="es">Seguimos creciendo y fortaleciendo nuestra red de apoyo internacional con aliados en Alemania.</p>
+                            <p class="text-gray-600 text-sm" data-lang="en">We continue to grow and strengthen our international support network with allies in Germany.</p>
+                            <p class="text-gray-600 text-sm" data-lang="de">Wir wachsen weiter und stärken unser internationales Unterstützungsnetzwerk mit Verbündeten in Deutschland.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== CTA FINAL ===== -->
+    <!-- ============================================================ -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-andes-red via-andes-orange to-andes-yellow relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white drop-shadow-lg" data-aos="fade-up">
+                <span data-lang="es">¿Quieres ser parte de <span class="text-andes-yellow">esta gran familia?</span></span>
+                <span data-lang="en">Do you want to be part of <span class="text-andes-yellow">this big family?</span></span>
+                <span data-lang="de">Möchtest du Teil <span class="text-andes-yellow">dieser großen Familie</span> sein?</span>
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="es">Tu apoyo puede cambiar la vida de un niño. Cada donación, cada hora de voluntariado, cada gesto cuenta.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="en">Your support can change a child's life. Every donation, every hour of volunteering, every gesture counts.</p>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-lang="de">Deine Unterstützung kann das Leben eines Kindes verändern. Jede Spende, jede Stunde ehrenamtlicher Arbeit, jede Geste zählt.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="donar.html" class="bg-white text-andes-red font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-heart-pulse"></i> <span data-lang="es">Donar ahora</span><span data-lang="en">Donate now</span><span data-lang="de">Jetzt spenden</span>
+                </a>
+                <a href="#programas-lista" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-andes-red transition-all duration-300 flex items-center gap-2 justify-center">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-lang="es">Volver a programas</span><span data-lang="en">Back to programs</span><span data-lang="de">Zurück zu Programmen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ===== FOOTER ===== -->
+    <!-- ============================================================ -->
+    <footer id="contacto" class="bg-slate-950 pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-8 border-andes-yellow">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo footer.jpg" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';"
+                        alt="Logo Pacai Cusco"
+                        class="footer-logo-img">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-andes-red">Pa</span>
+                            <span class="text-andes-orange">ca</span>
+                            <span class="text-andes-green">i </span>
+                            <span class="text-white ml-1">Cusco</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="es">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="en">Where hope grows and cancer declines. Together we build a future full of light and health for our children in Cusco.</p>
+                    <p class="text-gray-400 mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-lang="de">Wo Hoffnung wächst und Krebs zurückgeht. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-blue-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-pink-600 hover:-translate-y-1 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:-translate-y-1 transition-all"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Navegación</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Navigation</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Navigation</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-gray-400 font-medium text-sm sm:text-base">
+                        <li><a href="index.html" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Pacai</span><span data-lang="en">Pacai</span><span data-lang="de">Pacai</span></a></li>
+                        <li><a href="programas.html" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Programas de Pacai</span><span data-lang="en">Pacai Programs</span><span data-lang="de">Pacai Programme</span></a></li>
+                        <li><a href="cultura.html" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Cultura y Recreación</span><span data-lang="en">Culture</span><span data-lang="de">Kultur</span></a></li>
+                        <li><a href="donar.html" class="hover:text-andes-yellow transition-colors flex items-center gap-2"><i class="fa-solid fa-angle-right text-xs"></i> <span data-lang="es">Donar</span><span data-lang="en">Donate</span><span data-lang="de">Spenden</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="es">Nuestra Casa</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="en">Our Home</h4>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-lang="de">Unser Zuhause</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-gray-400 text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-andes-red"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-blue"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-andes-green"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium">+51 987 654 321</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> Asociación Pacai Cusco. <span data-lang="es">Hecho con el corazón.</span><span data-lang="en">Made with heart.</span><span data-lang="de">Mit Herz gemacht.</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-andes-red footer-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        (function() {
+            'use strict';
+
+            AOS.init({ duration: 700, once: true, offset: 40 });
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ===== SCROLL =====
+            const nav = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // ===== MENÚ MÓVIL =====
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // ===== SELECTOR DE IDIOMAS =====
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+            function setLanguage(langCode) {
+                currentLang = langCode;
+                localStorage.setItem('pacai_lang', langCode);
+
+                const labels = { 'es': '🇪🇸 ES', 'en': '🇬🇧 EN', 'de': '🇩🇪 DE' };
+                currentLangLabel.textContent = labels[langCode] || '🇪🇸 ES';
+
+                langOptions.forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                });
+
+                document.querySelectorAll('[data-lang]').forEach(function(el) {
+                    el.style.display = el.getAttribute('data-lang') === langCode ? 'block' : 'none';
+                });
+
+                langDropdown.classList.remove('open');
+                document.documentElement.lang = langCode;
+            }
+
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('open');
+            });
+
+            langOptions.forEach(function(opt) {
+                opt.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    setLanguage(opt.dataset.langCode);
+                });
+            });
+
+            setLanguage(currentLang);
+
+            console.log('🌈 Pacai Cusco · Programas');
+            console.log('💛 Acompañamos a 65 guerreros en su lucha contra el cáncer infantil.');
+
+        })();
+    </script>
+
+</body>
+</html>
