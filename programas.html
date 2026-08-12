@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Programas · Asociación Pacai Cusco</title>
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpeg" href="imágenes/logo footer.jpg">
+    <link rel="apple-touch-icon" href="imágenes/logo footer.jpg">
+    <link rel="shortcut icon" href="imágenes/logo footer.jpg">
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Conoce los 6 programas de la Asociación Pacai Cusco: acompañamiento psicológico, apoyo social, casa de acogida y más. ¡Transformamos vidas!">
+    <link rel="canonical" href="https://asociacionpacaicusco.com/programas.html">
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es/programas">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en/programas">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de/programas">
+    <link rel="alternate" hreflang="x-default" href="https://asociacionpacaicusco.com/programas">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Programas · Asociación Pacai Cusco">
+    <meta property="og:description" content="Conoce los 6 programas de la Asociación Pacai Cusco: acompañamiento psicológico, apoyo social, casa de acogida y más. ¡Transformamos vidas!">
+    <meta property="og:image" content="https://asociacionpacaicusco.com/imagenes/og-image.jpg">
+    <meta property="og:url" content="https://asociacionpacaicusco.com/programas.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@500;600;700;800&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                            indigo: '#3F51B5',
+                            amber: '#FF6F00',
+                            lime: '#C0CA33',
+                            cyan: '#00BCD4',
+                        },
+                        cream: {
+                            50: '#FFFAF0',
+                            100: '#FEF9E7',
+                            200: '#FDF6E3',
+                            300: '#F5F0E1',
+                            400: '#EDE8D9',
+                            500: '#E5DFD1',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.6s ease-out',
+                        'fade-in': 'fade-in 0.8s ease-out',
+                        'slide-right': 'slide-right 0.6s ease-out',
+                        'slide-left': 'slide-left 0.6s ease-out',
+                        'zoom-in': 'zoom-in 0.6s ease-out',
+                        'flip-in': 'flip-in 0.7s ease-out',
+                        'rotate-in': 'rotate-in 0.6s ease-out',
+                        'bounce-in': 'bounce-in 0.7s ease-out',
+                        'float-particle': 'float-particle 8s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'tilt': 'tilt 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        'bounce-gentle': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-40px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-left': {
+                            '0%': { transform: 'translateX(40px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'zoom-in': {
+                            '0%': { transform: 'scale(0.7)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        'flip-in': {
+                            '0%': { transform: 'rotateY(-90deg)', opacity: '0' },
+                            '100%': { transform: 'rotateY(0)', opacity: '1' },
+                        },
+                        'rotate-in': {
+                            '0%': { transform: 'rotate(-10deg) scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'rotate(0) scale(1)', opacity: '1' },
+                        },
+                        'bounce-in': {
+                            '0%': { transform: 'scale(0.3)', opacity: '0' },
+                            '50%': { transform: 'scale(1.1)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        'float-particle': {
+                            '0%, 100%': { transform: 'translateY(0) translateX(0) scale(1)', opacity: '0.3' },
+                            '25%': { transform: 'translateY(-60px) translateX(30px) scale(1.2)', opacity: '0.6' },
+                            '50%': { transform: 'translateY(-120px) translateX(-20px) scale(0.8)', opacity: '0.8' },
+                            '75%': { transform: 'translateY(-60px) translateX(40px) scale(1.4)', opacity: '0.5' },
+                        },
+                        'wiggle': {
+                            '0%, 100%': { transform: 'rotate(-3deg) scale(1)' },
+                            '50%': { transform: 'rotate(3deg) scale(1.02)' },
+                        },
+                        'tilt': {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(2deg)' },
+                            '75%': { transform: 'rotate(-2deg)' },
+                        },
+                        'event-pop': {
+                            '0%': { transform: 'scale(1)' },
+                            '30%': { transform: 'scale(0.92)', backgroundColor: '#f0fdf4', borderColor: '#4CAF50' },
+                            '60%': { transform: 'scale(1.05)', backgroundColor: '#ffffff' },
+                            '100%': { transform: 'scale(1)', backgroundColor: '#ffffff' },
+                        },
+                        'glow-pulse': {
+                            '0%, 100%': { boxShadow: '0 4px 20px rgba(229,57,53,0.15)' },
+                            '50%': { boxShadow: '0 4px 40px rgba(229,57,53,0.3), 0 0 60px rgba(255,152,0,0.08)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #3d3d3d;
+            background: #fdf6e3;
+            overflow-x: hidden;
+        }
+        ::selection { background: #FF9800; color: white; }
+
+        /* ===== PARTÍCULAS ===== */
+        .particle-field {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle-field .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.25;
+            animation: float-particle 12s ease-in-out infinite;
+            background: #FFB74D;
+        }
+        .particle-field .particle:nth-child(odd) { background: #FF8A65; }
+        .particle-field .particle:nth-child(3n) { background: #81D4FA; }
+        .particle-field .particle:nth-child(5n) { background: #A5D6A7; }
+        .particle-field .particle:nth-child(7n) { background: #CE93D8; }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: #fdf6e3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader-particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float-particle 8s ease-in-out infinite;
+            background: #FFB74D;
+        }
+        .preloader-particle:nth-child(odd) { background: #FF8A65; }
+        .preloader-particle:nth-child(3n) { background: #81D4FA; }
+        .preloader-particle:nth-child(5n) { background: #A5D6A7; }
+        .preloader-particle:nth-child(7n) { background: #CE93D8; }
+
+        .preloader-logo {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            animation: pulse-logo 1.8s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.06));
+        }
+        @keyframes pulse-logo {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .preloader-text {
+            font-family: 'Cinzel', serif;
+            color: #4a4a4a;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 550px;
+            min-height: 70px;
+            margin-top: 1.5rem;
+            padding: 0 1rem;
+            letter-spacing: 0.04em;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+        .preloader-text .word {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px) scale(0.9);
+            animation: word-appear 0.5s ease forwards;
+        }
+        .preloader-text .word:nth-child(1) { animation-delay: 0.05s; }
+        .preloader-text .word:nth-child(2) { animation-delay: 0.12s; }
+        .preloader-text .word:nth-child(3) { animation-delay: 0.19s; }
+        .preloader-text .word:nth-child(4) { animation-delay: 0.26s; }
+        .preloader-text .word:nth-child(5) { animation-delay: 0.33s; }
+        .preloader-text .word:nth-child(6) { animation-delay: 0.40s; }
+        .preloader-text .word:nth-child(7) { animation-delay: 0.47s; }
+        .preloader-text .word:nth-child(8) { animation-delay: 0.54s; }
+        .preloader-text .word:nth-child(9) { animation-delay: 0.61s; }
+        .preloader-text .word:nth-child(10) { animation-delay: 0.68s; }
+        .preloader-text .word:nth-child(11) { animation-delay: 0.75s; }
+        .preloader-text .word:nth-child(12) { animation-delay: 0.82s; }
+
+        @keyframes word-appear {
+            0% { opacity: 0; transform: translateY(20px) scale(0.9); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .preloader-progress {
+            width: 240px;
+            height: 4px;
+            background: rgba(0,0,0,0.06);
+            border-radius: 4px;
+            margin-top: 2rem;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+        .preloader-progress-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #FF9800, #E53935, #9C27B0, #2196F3, #4CAF50);
+            background-size: 300% 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            animation: shimmer-progress 1.5s ease-in-out infinite;
+        }
+        @keyframes shimmer-progress {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        /* ===== NAVBAR ===== */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 252, 245, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            height: 76px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        #navbar.scrolled {
+            height: 64px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            margin-top: -30px;
+            margin-bottom: -30px;
+        }
+        #navbar.scrolled .nav-logo-img {
+            width: 90px;
+            height: 90px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+        @media (max-width:640px){
+            #navbar { height: 62px; }
+            #navbar.scrolled { height: 54px; }
+            .nav-logo-img { width: 90px; height: 90px; margin-top: -25px; margin-bottom: -25px; }
+            #navbar.scrolled .nav-logo-img { width: 70px; height: 70px; margin-top: -18px; margin-bottom: -18px; }
+        }
+        @media (max-width:400px){
+            #navbar { height: 54px; }
+            #navbar.scrolled { height: 48px; }
+            .nav-logo-img { width: 75px; height: 75px; margin-top: -20px; margin-bottom: -20px; }
+            #navbar.scrolled .nav-logo-img { width: 60px; height: 60px; margin-top: -15px; margin-bottom: -15px; }
+        }
+
+        .logo-text {
+            transition: all 0.3s ease;
+        }
+        #navbar.scrolled .logo-text { font-size: 0.9rem !important; }
+        @media (min-width:1024px){ #navbar.scrolled .logo-text { font-size: 1.1rem !important; } }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+            transition: all 0.3s ease;
+        }
+        @media (min-width:640px){ .navbar-inner { gap: 1rem; padding: 0 0.5rem; } }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        @media (max-width:768px){ html { scroll-padding-top: 80px; } }
+
+        /* ===== ENLACES DEL NAVBAR ===== */
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+            color: #4a4a4a;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        .nav-link:hover {
+            color: #FF9800;
+            background: rgba(255,152,0,0.06);
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #FF9800;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .nav-link:hover::after {
+            width: 60%;
+        }
+        .nav-link.active {
+            color: #FF9800;
+        }
+        .nav-link.active::after {
+            width: 60%;
+        }
+
+        /* ===== DROPDOWN ===== */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-trigger {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            padding: 0.4rem 0.8rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #4a4a4a;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+        }
+        .dropdown-trigger:hover {
+            color: #FF9800;
+            background: rgba(255,152,0,0.06);
+            transform: translateY(-2px);
+        }
+        .dropdown-trigger .arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+        .dropdown-container:hover .dropdown-trigger .arrow {
+            transform: rotate(180deg);
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 220px;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 0.5rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.04);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px) scale(0.97);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 60;
+        }
+        .dropdown-container:hover .dropdown-menu {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+        .dropdown-menu .drop-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #4a4a4a;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .dropdown-menu .drop-item:hover {
+            background: rgba(255,152,0,0.06);
+            color: #FF9800;
+            transform: translateX(4px);
+        }
+        .dropdown-menu .drop-item .drop-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .dropdown-menu .drop-item .drop-arrow {
+            margin-left: auto;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #FF9800;
+        }
+        .dropdown-menu .drop-item:hover .drop-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+        .dropdown-menu .drop-divider {
+            height: 1px;
+            margin: 0.3rem 0.5rem;
+            background: rgba(0,0,0,0.04);
+        }
+
+        /* ===== BOTÓN DONAR (Nav) ===== */
+        .btn-donate-nav {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: #fff !important;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(229,57,53,0.12);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+        .btn-donate-nav:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(229,57,53,0.25);
+            color: #fff !important;
+        }
+
+        /* ===== BOTÓN DONAR GENÉRICO ===== */
+        .btn-donate {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            box-shadow: 0 4px 20px rgba(229,57,53,0.12);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            color: #fff !important;
+            font-weight: 700;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+        .btn-donate::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 50%, rgba(255,255,255,0.15));
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .btn-donate:hover::after {
+            transform: translateX(100%);
+        }
+        .btn-donate:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 30px rgba(229,57,53,0.25);
+        }
+
+        /* ===== TARJETAS 3D ===== */
+        .card-3d { transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1); transform-style: preserve-3d; perspective: 800px; }
+        .card-3d:hover { transform: translateY(-8px) rotateX(2deg) rotateY(2deg) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.06); }
+
+        /* ===== FOOTER VERDE CON LOGO SIN FILTRO ===== */
+        .footer-logo-img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+        @media (max-width:640px){ .footer-logo-img { width: 44px; height: 44px; } }
+
+        .footer-heart { animation: pulse 1.5s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+
+        /* ===== SELECTOR DE IDIOMAS ===== */
+        .lang-selector { position:relative; z-index:100; }
+        .lang-selector button { background:transparent; border:1px solid rgba(0,0,0,0.06); border-radius:60px; padding:4px 12px; font-weight:600; font-size:0.7rem; display:flex; align-items:center; gap:4px; transition:all 0.3s ease; cursor:pointer; color:#5a5a5a; }
+        .lang-selector button:hover { border-color:#FF9800; background:rgba(255,152,0,0.05); color:#FF9800; }
+        .lang-selector .dropdown { position:absolute; top:calc(100% + 6px); right:0; background:#fff; border-radius:1rem; box-shadow:0 20px 40px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.04); padding:6px; min-width:130px; opacity:0; transform:translateY(-8px) scale(0.95); pointer-events:none; transition:all 0.3s ease; z-index:100; }
+        .lang-selector .dropdown.open { opacity:1; transform:translateY(0) scale(1); pointer-events:all; }
+        .lang-selector .dropdown button { background:transparent; border:none; border-radius:0.75rem; padding:6px 14px; width:100%; text-align:left; font-weight:600; font-size:0.8rem; color:#5a5a5a; transition:all 0.2s ease; }
+        .lang-selector .dropdown button:hover { background:rgba(255,152,0,0.05); color:#FF9800; }
+        .lang-selector .dropdown button.active { background:#FF9800; color:white; }
+
+        /* Menú móvil */
+        #mobileMenu { transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1); background:rgba(255,252,245,0.98); backdrop-filter:blur(24px); }
+        #mobileMenu.open { transform:translateX(0); }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #fdf6e3; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #FF9800, #E53935); border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #4CAF50, #2E7D32); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width:480px){
+            .stats-grid { grid-template-columns:1fr 1fr !important; gap:0.5rem !important; }
+            .stat-card { padding:12px 8px !important; }
+            .grid-programas, .grid-cultura, .grid-calendario, .grid-secciones { grid-template-columns:1fr !important; }
+            .grid-equipo { grid-template-columns:1fr 1fr !important; }
+            .footer-grid { grid-template-columns:1fr !important; text-align:center; }
+            .dropdown-menu { min-width: 200px; left: 0; transform: translateX(0); }
+            .dropdown-container:hover .dropdown-menu { transform: translateX(0) translateY(0); }
+        }
+        @media (max-width:768px){
+            .stats-grid { grid-template-columns:1fr 1fr !important; margin-top:-30px !important; }
+            .nav-desktop { display:none !important; }
+            .hamburger { display:flex !important; }
+            .hide-on-mobile { display:none !important; }
+            .dropdown-menu { min-width: 200px; left: 0; transform: translateX(0); }
+            .dropdown-container:hover .dropdown-menu { transform: translateX(0) translateY(0); }
+        }
+        @media (prefers-reduced-motion:reduce){
+            * { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+            .particle-field { display:none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PARTÍCULAS ===== -->
+    <div class="particle-field" aria-hidden="true">
+        <div class="particle" style="left:5%; width:12px; height:12px; animation-delay:0s;"></div>
+        <div class="particle" style="left:15%; width:18px; height:18px; animation-delay:1.5s;"></div>
+        <div class="particle" style="left:25%; width:10px; height:10px; animation-delay:3s;"></div>
+        <div class="particle" style="left:35%; width:16px; height:16px; animation-delay:4.5s;"></div>
+        <div class="particle" style="left:45%; width:8px; height:8px; animation-delay:6s;"></div>
+        <div class="particle" style="left:55%; width:20px; height:20px; animation-delay:1s;"></div>
+        <div class="particle" style="left:65%; width:14px; height:14px; animation-delay:2.5s;"></div>
+        <div class="particle" style="left:75%; width:11px; height:11px; animation-delay:4s;"></div>
+        <div class="particle" style="left:85%; width:17px; height:17px; animation-delay:5.5s;"></div>
+        <div class="particle" style="left:95%; width:9px; height:9px; animation-delay:7s;"></div>
+        <div class="particle" style="left:10%; width:15px; height:15px; animation-delay:2s;"></div>
+        <div class="particle" style="left:40%; width:22px; height:22px; animation-delay:3.5s;"></div>
+        <div class="particle" style="left:70%; width:13px; height:13px; animation-delay:1.2s;"></div>
+        <div class="particle" style="left:90%; width:19px; height:19px; animation-delay:4.2s;"></div>
+    </div>
+
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader">
+        <div class="preloader-particles-container" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
+            <div class="preloader-particle" style="left:10%;top:20%;width:20px;height:20px;animation-delay:0s;"></div>
+            <div class="preloader-particle" style="left:25%;top:60%;width:12px;height:12px;animation-delay:1s;"></div>
+            <div class="preloader-particle" style="left:45%;top:15%;width:25px;height:25px;animation-delay:2s;"></div>
+            <div class="preloader-particle" style="left:65%;top:70%;width:15px;height:15px;animation-delay:3s;"></div>
+            <div class="preloader-particle" style="left:80%;top:30%;width:18px;height:18px;animation-delay:1.5s;"></div>
+            <div class="preloader-particle" style="left:15%;top:85%;width:10px;height:10px;animation-delay:2.5s;"></div>
+            <div class="preloader-particle" style="left:55%;top:50%;width:22px;height:22px;animation-delay:0.8s;"></div>
+            <div class="preloader-particle" style="left:75%;top:10%;width:14px;height:14px;animation-delay:3.5s;"></div>
+            <div class="preloader-particle" style="left:35%;top:80%;width:16px;height:16px;animation-delay:1.8s;"></div>
+            <div class="preloader-particle" style="left:92%;top:55%;width:11px;height:11px;animation-delay:2.2s;"></div>
+        </div>
+        <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';" alt="Asociación Pacai Cusco" class="preloader-logo">
+        <div class="preloader-text" id="preloaderText"></div>
+        <div class="preloader-progress"><div class="preloader-progress-bar" id="progressBar"></div></div>
+    </div>
+
+    <!-- ===== BARRA SUPERIOR ===== -->
+    <div class="fixed top-0 left-0 w-full h-1 z-[60]" style="background:linear-gradient(90deg,#FF9800,#E53935,#9C27B0,#2196F3,#4CAF50, #FF9800);background-size:300% 100%;animation:shimmer-progress 3s ease-in-out infinite;"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar" class="transition-all duration-300">
+        <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+            <div class="navbar-inner">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                    <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';" alt="Logo Pacai Cusco" class="nav-logo-img" loading="lazy">
+                    <div>
+                        <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                            <span class="text-[#E53935]">ASOCIACIÓN</span>
+                            <span class="text-[#FF9800] ml-1">PACAI</span>
+                            <span class="text-[#2196F3] ml-1">CUSCO</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Menú desktop -->
+                <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+                    <a href="index.html" class="nav-link" data-i18n="nav_pacai">PACAI</a>
+
+                    <!-- Enlace a programas.html con dropdown -->
+                    <div class="dropdown-container">
+                        <a href="programas.html" class="dropdown-trigger active" data-i18n="nav_programas">
+                            PROGRAMAS DE PACAI
+                            <span class="arrow">▼</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="programa-psicologia.html" class="drop-item">
+                                <span class="drop-icon">🧠</span> <span data-i18n="drop_psicologia">Acompañamiento Psicológico</span>
+                                <span class="drop-arrow">→</span>
+                            </a>
+                            <a href="programa-compartir.html" class="drop-item">
+                                <span class="drop-icon">🤝</span> <span data-i18n="drop_compartir">Compartir</span>
+                                <span class="drop-arrow">→</span>
+                            </a>
+                            <a href="programa-pedagogico.html" class="drop-item">
+                                <span class="drop-icon">📚</span> <span data-i18n="drop_pedagogico">Reforzamiento Pedagógico</span>
+                                <span class="drop-arrow">→</span>
+                            </a>
+                            <div class="drop-divider"></div>
+                            <a href="programa-acogida.html" class="drop-item">
+                                <span class="drop-icon">🏡</span> <span data-i18n="drop_acogida">Casa de Acogida</span>
+                                <span class="drop-arrow">→</span>
+                            </a>
+                            <a href="programa-intervencion.html" class="drop-item">
+                                <span class="drop-icon">👨‍👩‍👧‍👦</span> <span data-i18n="drop_intervencion">Intervención Familiar</span>
+                                <span class="drop-arrow">→</span>
+                            </a>
+                            <a href="programa-social.html" class="drop-item">
+                                <span class="drop-icon">🤲</span> <span data-i18n="drop_social">Apoyo Social</span>
+                                <span class="drop-arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="cultura.html" class="nav-link" data-i18n="nav_cultura">CULTURA Y RECREACIÓN</a>
+                    <a href="historias.html" class="nav-link" data-i18n="nav_historias">HISTORIAS</a>
+                    <a href="donar.html" class="btn-donate-nav" data-i18n="nav_donar"><i class="fa-solid fa-heart animate-pulse text-xs mr-1"></i> DONAR</a>
+                </div>
+
+                <!-- Selector idioma + menú móvil -->
+                <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                    <div class="lang-selector">
+                        <button id="langToggle" class="text-[10px] sm:text-xs font-bold rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all" aria-label="Seleccionar idioma">
+                            <i class="fa-solid fa-globe text-[#FF9800] text-[8px] sm:text-xs"></i>
+                            <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                            <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                        </button>
+                        <div id="langDropdown" class="dropdown" role="listbox">
+                            <button class="lang-option active" data-lang-code="es" role="option" aria-selected="true">🇪🇸 Español</button>
+                            <button class="lang-option" data-lang-code="en" role="option" aria-selected="false">🇬🇧 English</button>
+                            <button class="lang-option" data-lang-code="de" role="option" aria-selected="false">🇩🇪 Deutsch</button>
+                        </div>
+                    </div>
+                    <button id="mobileMenuBtn" class="lg:hidden text-[#5a5a5a] hover:text-[#FF9800] text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 transition-colors" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MENÚ MÓVIL ===== -->
+    <div id="mobileMenu" class="fixed inset-0 z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden" role="dialog" aria-modal="true" aria-label="Menú móvil">
+        <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-[#5a5a5a] hover:text-[#E53935] transition-colors p-2" aria-label="Cerrar menú">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="flex flex-col items-center gap-5 text-xl font-display font-extrabold text-[#3d3d3d] px-4">
+            <a href="index.html" class="mobile-link hover:text-[#FF9800] transition-colors" data-i18n="nav_pacai">PACAI</a>
+            <a href="programas.html" class="mobile-link hover:text-[#2196F3] transition-colors" data-i18n="nav_programas">PROGRAMAS DE PACAI</a>
+            <a href="galeria.html" class="mobile-link hover:text-[#9C27B0] transition-colors" data-i18n="nav_cultura">CULTURA Y RECREACIÓN</a>
+            <a href="historias.html" class="mobile-link hover:text-[#E91E63] transition-colors" data-i18n="nav_historias">HISTORIAS</a>
+            <a href="donar.html" class="mobile-link btn-donate text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2 text-lg" data-i18n="nav_donar"><i class="fa-solid fa-heart animate-pulse"></i> DONAR</a>
+        </div>
+        <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF9800] hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF9800] hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF9800] hover:text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <!-- ===== HERO CON IMAGEN DE FONDO ===== -->
+    <section id="hero" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-24 lg:pt-28">
+        <div class="absolute inset-0 z-0">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover" poster="imágenes/poster-hero.jpg">
+                <source src="videos/pacai hero.mp4" type="video/mp4">
+                <source src="https://cdn.pixabay.com/video/2023/10/22/186064-876938927_large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"></div>
+        </div>
+
+        <div class="absolute inset-0 z-10 opacity-10">
+            <div style="position:absolute; top:10%; left:5%; width:80px; height:80px; border-radius:50%; background:radial-gradient(circle, #FF9800, transparent 70%); animation: pulse 4s ease-in-out infinite;"></div>
+            <div style="position:absolute; bottom:20%; right:10%; width:60px; height:60px; border-radius:50%; background:radial-gradient(circle, #E53935, transparent 70%); animation: pulse 3.5s ease-in-out infinite 1s;"></div>
+            <div style="position:absolute; top:40%; left:80%; width:40px; height:40px; border-radius:50%; background:radial-gradient(circle, #2196F3, transparent 70%); animation: pulse 5s ease-in-out infinite 2s;"></div>
+            <div style="position:absolute; top:70%; left:20%; width:50px; height:50px; border-radius:50%; background:radial-gradient(circle, #4CAF50, transparent 70%); animation: pulse 4.5s ease-in-out infinite 1.5s;"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-20 text-center">
+            <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-full px-5 py-2 mb-6 border border-white/30 shadow-lg hover:scale-105 transition-transform duration-300">
+                    <span class="text-2xl animate-bounce-gentle">🌟</span>
+                    <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-i18n="hero_badge">PROGRAMAS PACAI</span>
+                    <span class="text-2xl animate-bounce-gentle" style="animation-delay:0.5s;">💛</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-extrabold leading-[1.1] text-white mb-4 drop-shadow-2xl" data-i18n="hero_title">
+                    Programas que <span class="bg-gradient-to-r from-[#FFC107] via-[#FF9800] to-[#E53935] bg-clip-text text-transparent" style="background-size:200% 200%; animation: shimmer-progress 4s ease-in-out infinite;">transforman vidas</span>
+                </h1>
+
+                <p class="text-sm sm:text-base md:text-lg text-white/80 mb-6 md:mb-8 font-medium max-w-2xl mx-auto drop-shadow-md leading-relaxed px-2" data-i18n="hero_subtitle">
+                    Acompañamos a <strong class="text-[#FFC107] font-bold">65 guerreros oncopediátricos</strong> en el <strong class="text-[#FFC107] font-bold">Hospital Antonio Lorena</strong> y el <strong class="text-[#FFC107] font-bold">Hospital Regional del Cusco</strong>.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full px-4 max-w-md sm:max-w-none">
+                    <a href="#programas-lista" class="bg-gradient-to-r from-[#E53935] to-[#FF9800] text-white text-sm sm:text-base md:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center justify-center gap-2 w-full sm:w-auto transform hover:scale-105 shadow-lg transition-all duration-300 hover:rotate-1" style="box-shadow:0 4px 20px rgba(229,57,53,0.2);" data-i18n="hero_btn_ver">
+                        <i class="fa-solid fa-list-check text-xl sm:text-2xl"></i> Ver programas
+                    </a>
+                    <a href="donar.html" class="bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm sm:text-base md:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full flex items-center justify-center gap-2 hover:bg-white hover:text-[#2d2d2d] transition-all duration-300 w-full sm:w-auto hover:scale-105 hover:-rotate-1" data-i18n="hero_btn_donar">
+                        <i class="fa-solid fa-heart-pulse"></i> DONAR
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+            <a href="#impacto" class="text-white/30 hover:text-white transition-colors text-3xl hover:scale-125 duration-300">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Onda separadora -->
+    <div class="relative -mt-1 z-20">
+        <svg class="w-full h-12 md:h-24 text-[#fdf6e3] fill-current drop-shadow-sm" viewBox="0 0 1440 74" xmlns="http://www.w3.org/2000/svg"><path d="M0,32L60,37.3C120,43,240,53,360,53.3C480,53,600,43,720,32C840,21,960,11,1080,16C1200,21,1320,43,1380,53.3L1440,64L1440,74L1380,74C1320,74,1200,74,1080,74C960,74,840,74,720,74C600,74,480,74,360,74C240,74,120,74,60,74L0,74Z"></path></svg>
+    </div>
+
+    <!-- ===== SECCIÓN: IMPACTO ===== -->
+    <section id="impacto" class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-red-100 text-[#E53935] font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-chart-simple mr-2"></i> <span data-i18n="impacto_badge">Nuestro Impacto</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3d3d3d] mt-4" data-i18n="impacto_title">Cifras que <span class="text-[#FF9800]">hablan por sí solas</span></h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto">
+                <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl text-center border-2 border-blue-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="100">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-[#2196F3]">65+</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-i18n="impacto_ninos">Niños acompañados</p>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl text-center border-2 border-green-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="200">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-[#4CAF50]">6</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-i18n="impacto_anios">Años de trabajo</p>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl text-center border-2 border-purple-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="300">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-[#9C27B0]">100%</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-i18n="impacto_compromiso">Compromiso real</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-white p-6 rounded-2xl text-center border-2 border-orange-100 shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="flip-up" data-aos-delay="400">
+                    <div class="text-4xl sm:text-5xl font-display font-extrabold text-[#FF9800]">350+</div>
+                    <p class="text-gray-600 font-semibold text-sm sm:text-base mt-2" data-i18n="impacto_sonrisas">Sonrisas recuperadas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: INTRODUCCIÓN ===== -->
+    <section class="py-12 sm:py-16 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <div class="text-center" data-aos="fade-up">
+                <span class="bg-blue-100 text-[#2196F3] font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-info-circle mr-2"></i> <span data-i18n="intro_badge">Nuestra Misión</span>
+                </span>
+                <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-i18n="intro_p1">
+                    En la <strong class="text-[#E53935]">Asociación PACAI</strong>, nuestra misión se vive diariamente en los pasillos de los hospitales <strong class="text-[#2196F3]">Antonio Lorena</strong> y <strong class="text-[#2196F3]">Regional del Cusco</strong>. Con un promedio permanente de <strong class="text-[#FF9800]">65 valientes guerreros oncopediátricos</strong> bajo nuestro cuidado, hemos construido una red de soporte que trasciende lo médico para abrazar lo humano.
+                </p>
+                <div class="mt-6 inline-flex flex-wrap items-center justify-center gap-2 bg-yellow-50 border border-yellow-200 rounded-full px-4 py-2 text-sm text-yellow-700">
+                    <i class="fa-solid fa-handshake text-[#FFC107]"></i>
+                    <span data-i18n="intro_aliados">Gracias al respaldo de la <strong>Fundación Schickedanz</strong> y nuestros aliados en Alemania</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: LISTA DE PROGRAMAS ===== -->
+    <section id="programas-lista" class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-blue-100 text-[#2196F3] font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-list-check mr-2"></i> <span data-i18n="programas_badge">Detalle de Programas</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3d3d3d] mt-4" data-i18n="programas_title">Cada programa, <span class="text-[#2196F3]">una historia de esperanza</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+
+                <!-- Programa 1: Psicología -->
+                <div class="bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-[#2196F3] transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-2xl text-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <span class="inline-block bg-blue-100 text-[#2196F3] text-xs font-bold px-3 py-1 rounded-full">🧠 <span data-i18n="p1_tag">Apoyo</span></span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-[#3d3d3d] mt-1" data-i18n="p1_titulo">Acompañamiento Psicológico</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-i18n="p1_desc">Brindamos apoyo emocional a los niños y sus familias durante todo el proceso de tratamiento. Un psicólogo especializado los acompaña en cada etapa, fortaleciendo su bienestar mental y emocional.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-blue-50 text-[#2196F3] text-xs px-3 py-1 rounded-full font-semibold border border-blue-200">👨‍👩‍👧‍👦 <span data-i18n="p1_tag1">Terapia familiar</span></span>
+                            <span class="bg-blue-50 text-[#2196F3] text-xs px-3 py-1 rounded-full font-semibold border border-blue-200">🧘 <span data-i18n="p1_tag2">Bienestar emocional</span></span>
+                        </div>
+                        <a href="psicologia.html" class="mt-4 inline-flex items-center gap-1 text-[#2196F3] font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-i18n="p1_btn">Ver programa</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programa 2: Compartir -->
+                <div class="bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-[#FF9800] transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center text-2xl text-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <span class="inline-block bg-orange-100 text-[#FF9800] text-xs font-bold px-3 py-1 rounded-full">🤝 <span data-i18n="p2_tag">Compartir</span></span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-[#3d3d3d] mt-1" data-i18n="p2_titulo">Compartir</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-i18n="p2_desc">Espacios de encuentro donde las familias comparten experiencias, se apoyan mutuamente y encuentran consuelo en la comunidad. Juntos, la carga se hace más liviana.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-orange-50 text-[#FF9800] text-xs px-3 py-1 rounded-full font-semibold border border-orange-200">💬 <span data-i18n="p2_tag1">Grupos de apoyo</span></span>
+                            <span class="bg-orange-50 text-[#FF9800] text-xs px-3 py-1 rounded-full font-semibold border border-orange-200">🤗 <span data-i18n="p2_tag2">Contención emocional</span></span>
+                        </div>
+                        <a href="compartir.html" class="mt-4 inline-flex items-center gap-1 text-[#FF9800] font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-i18n="p2_btn">Ver programa</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programa 3: Reforzamiento Pedagógico -->
+                <div class="bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-[#4CAF50] transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-2xl text-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <div>
+                                <span class="inline-block bg-green-100 text-[#4CAF50] text-xs font-bold px-3 py-1 rounded-full">📚 <span data-i18n="p3_tag">Educación</span></span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-[#3d3d3d] mt-1" data-i18n="p3_titulo">Reforzamiento Pedagógico</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-i18n="p3_desc">Acompañamos a los niños en su educación para que no pierdan el ritmo escolar durante su tratamiento. Clases personalizadas y apoyo continuo para que su futuro no se detenga.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-green-50 text-[#4CAF50] text-xs px-3 py-1 rounded-full font-semibold border border-green-200">✏️ <span data-i18n="p3_tag1">Clases personalizadas</span></span>
+                            <span class="bg-green-50 text-[#4CAF50] text-xs px-3 py-1 rounded-full font-semibold border border-green-200">📖 <span data-i18n="p3_tag2">Acompañamiento escolar</span></span>
+                        </div>
+                        <a href="reforzamiento pedagogico.html" class="mt-4 inline-flex items-center gap-1 text-[#4CAF50] font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-i18n="p3_btn">Ver programa</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programa 4: Casa de Acogida -->
+                <div class="bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-[#9C27B0] transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="400">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-2xl text-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-house-chimney"></i>
+                            </div>
+                            <div>
+                                <span class="inline-block bg-purple-100 text-[#9C27B0] text-xs font-bold px-3 py-1 rounded-full">🏠 <span data-i18n="p4_tag">Hogar</span></span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-[#3d3d3d] mt-1" data-i18n="p4_titulo">Casa de Acogida</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-i18n="p4_desc">Un hogar temporal para las familias que vienen de comunidades lejanas. Les brindamos alojamiento, alimentación y un espacio de calidez y contención durante el tratamiento.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-purple-50 text-[#9C27B0] text-xs px-3 py-1 rounded-full font-semibold border border-purple-200">🍲 <span data-i18n="p4_tag1">Alimentación</span></span>
+                            <span class="bg-purple-50 text-[#9C27B0] text-xs px-3 py-1 rounded-full font-semibold border border-purple-200">🛏️ <span data-i18n="p4_tag2">Alojamiento</span></span>
+                        </div>
+                        <a href="casa de acogida.html" class="mt-4 inline-flex items-center gap-1 text-[#9C27B0] font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-i18n="p4_btn">Ver programa</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programa 5: Intervención Familiar -->
+                <div class="bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-[#E91E63] transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="500">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center text-2xl text-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <div>
+                                <span class="inline-block bg-pink-100 text-[#E91E63] text-xs font-bold px-3 py-1 rounded-full">👨‍👩‍👧‍👦 <span data-i18n="p5_tag">Familia</span></span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-[#3d3d3d] mt-1" data-i18n="p5_titulo">Intervención Familiar</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-i18n="p5_desc">Trabajamos con toda la familia para fortalecer su red de apoyo, mejorar la comunicación y afrontar juntos los desafíos del tratamiento. La familia es el pilar fundamental.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-pink-50 text-[#E91E63] text-xs px-3 py-1 rounded-full font-semibold border border-pink-200">💪 <span data-i18n="p5_tag1">Fortalecimiento</span></span>
+                            <span class="bg-pink-50 text-[#E91E63] text-xs px-3 py-1 rounded-full font-semibold border border-pink-200">🤝 <span data-i18n="p5_tag2">Comunicación</span></span>
+                        </div>
+                        <a href="intervencion familiar.html" class="mt-4 inline-flex items-center gap-1 text-[#E91E63] font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-i18n="p5_btn">Ver programa</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Programa 6: Apoyo Social -->
+                <div class="bg-white rounded-3xl shadow-lg border-2 border-transparent hover:border-[#009688] transition-all duration-300 group card-3d" data-aos="flip-up" data-aos-delay="600">
+                    <div class="p-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center text-2xl text-white shadow-lg flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <span class="inline-block bg-teal-100 text-[#009688] text-xs font-bold px-3 py-1 rounded-full">🤝 <span data-i18n="p6_tag">Recursos</span></span>
+                                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-[#3d3d3d] mt-1" data-i18n="p6_titulo">Apoyo Social</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mt-3" data-i18n="p6_desc">Gestionamos recursos, medicamentos, traslados y todo lo necesario para que las familias puedan enfocarse en lo más importante: la salud y el bienestar de sus hijos.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-teal-50 text-[#009688] text-xs px-3 py-1 rounded-full font-semibold border border-teal-200">🚗 <span data-i18n="p6_tag1">Traslados</span></span>
+                            <span class="bg-teal-50 text-[#009688] text-xs px-3 py-1 rounded-full font-semibold border border-teal-200">💊 <span data-i18n="p6_tag2">Medicamentos</span></span>
+                        </div>
+                        <a href="apoyo social.html" class="mt-4 inline-flex items-center gap-1 text-[#009688] font-bold text-sm group-hover:gap-2 transition-all">
+                            <span data-i18n="p6_btn">Ver programa</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-all group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: TESTIMONIOS ===== -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-pink-100 text-[#E91E63] font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-quote-right mr-2"></i> <span data-i18n="testimonios_badge">Voces que inspiran</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3d3d3d] mt-4" data-i18n="testimonios_title">Historias de <span class="text-[#E91E63]">esperanza real</span></h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center text-2xl text-[#FF9800]">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#3d3d3d]">María</h4>
+                            <p class="text-xs text-gray-500" data-i18n="test1_rol">Madre de Luis, 7 años</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-i18n="test1_text">"Cuando mi hijo fue diagnosticado, no sabía cómo íbamos a pagar los viajes al hospital. Pacai nos dio movilidad, medicinas y lo más importante: esperanza."</p>
+                    <div class="mt-3 flex text-yellow-400 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-2xl text-[#2196F3]">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#3d3d3d]">Carlos</h4>
+                            <p class="text-xs text-gray-500" data-i18n="test2_rol">Voluntario</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-i18n="test2_text">"Ser parte de Pacai me ha cambiado la vida. Ver la resiliencia de estos niños te hace valorar cada instante. No doy mi tiempo, recibo mucho más a cambio."</p>
+                    <div class="mt-3 flex text-yellow-400 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 card-3d" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-2xl text-[#4CAF50]">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#3d3d3d]">Ana</h4>
+                            <p class="text-xs text-gray-500" data-i18n="test3_rol">Abuela de Sofía</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic text-sm leading-relaxed" data-i18n="test3_text">"Nunca imaginé que existiría un lugar que te abrace tanto. Nos dieron techo, comida y mucho cariño. Los talleres de arte hicieron que mi nieta volviera a reír."</p>
+                    <div class="mt-3 flex text-yellow-400 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: ALIADOS ===== -->
+    <section class="py-16 sm:py-20 bg-white relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-yellow-100 text-[#FFC107] font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-handshake mr-2"></i> <span data-i18n="aliados_badge">Nuestros Aliados</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3d3d3d] mt-4" data-i18n="aliados_title">Gracias a <span class="text-[#FFC107]">quienes hacen posible</span> esta misión</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <div class="bg-slate-50 p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="100">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-100 to-yellow-50 flex items-center justify-center text-3xl text-[#FFC107] mb-3">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h4 class="font-bold text-[#3d3d3d] text-sm" data-i18n="aliado1_nombre">Fundación Schickedanz</h4>
+                    <p class="text-xs text-gray-500" data-i18n="aliado1_rol">Aliado principal</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="200">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 flex items-center justify-center text-3xl text-[#2196F3] mb-3">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h4 class="font-bold text-[#3d3d3d] text-sm" data-i18n="aliado2_nombre">Aliados en Alemania</h4>
+                    <p class="text-xs text-gray-500" data-i18n="aliado2_rol">Cooperación internacional</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="300">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-red-100 to-red-50 flex items-center justify-center text-3xl text-[#E53935] mb-3">
+                        <i class="fa-solid fa-hospital"></i>
+                    </div>
+                    <h4 class="font-bold text-[#3d3d3d] text-sm" data-i18n="aliado3_nombre">Hospital Antonio Lorena</h4>
+                    <p class="text-xs text-gray-500" data-i18n="aliado3_rol">Aliado estratégico</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl shadow-md text-center hover:shadow-xl transition-all duration-300 card-3d flex flex-col items-center" data-aos="flip-up" data-aos-delay="400">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-green-100 to-green-50 flex items-center justify-center text-3xl text-[#4CAF50] mb-3">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-[#3d3d3d] text-sm" data-i18n="aliado4_nombre">Donantes y Voluntarios</h4>
+                    <p class="text-xs text-gray-500" data-i18n="aliado4_rol">El corazón de Pacai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECCIÓN: LÍNEA DE TIEMPO ===== -->
+    <section class="py-16 sm:py-20 bg-slate-50 relative">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="bg-orange-100 text-[#FF9800] font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                    <i class="fa-solid fa-timeline mr-2"></i> <span data-i18n="timeline_badge">Nuestro Camino</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-[#3d3d3d] mt-4" data-i18n="timeline_title">6 años de <span class="text-[#FF9800]">amor y entrega</span></h2>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="flex flex-col gap-6">
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="100">
+                        <div class="w-4 h-4 rounded-full bg-[#FF9800] border-2 border-white shadow-md flex-shrink-0 mt-1"></div>
+                        <div class="flex-1 bg-white p-4 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-[#FF9800]">2020</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="t2020">Nace la Asociación Pacai Cusco con la misión de acompañar a niños con cáncer en el Hospital Antonio Lorena.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="200">
+                        <div class="w-4 h-4 rounded-full bg-[#2196F3] border-2 border-white shadow-md flex-shrink-0 mt-1"></div>
+                        <div class="flex-1 bg-white p-4 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-[#2196F3]">2021</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="t2021">Ampliamos nuestro alcance al Hospital Regional del Cusco y comenzamos con los primeros programas de apoyo psicológico.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="300">
+                        <div class="w-4 h-4 rounded-full bg-[#4CAF50] border-2 border-white shadow-md flex-shrink-0 mt-1"></div>
+                        <div class="flex-1 bg-white p-4 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-[#4CAF50]">2022</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="t2022">La Fundación Schickedanz se convierte en nuestro aliado principal, permitiendo la creación de la Casa de Acogida.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="400">
+                        <div class="w-4 h-4 rounded-full bg-[#9C27B0] border-2 border-white shadow-md flex-shrink-0 mt-1"></div>
+                        <div class="flex-1 bg-white p-4 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-[#9C27B0]">2023</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="t2023">Consolidamos nuestros 6 programas y alcanzamos el acompañamiento de más de 65 niños de manera simultánea.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4" data-aos="fade-right" data-aos-delay="500">
+                        <div class="w-4 h-4 rounded-full bg-[#E91E63] border-2 border-white shadow-md flex-shrink-0 mt-1"></div>
+                        <div class="flex-1 bg-white p-4 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-[#E91E63]">2024</h4>
+                            <p class="text-gray-600 text-sm" data-i18n="t2024">Seguimos creciendo y fortaleciendo nuestra red de apoyo internacional con aliados en Alemania.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-[#E53935] via-[#FF9800] to-[#FFC107] relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48cGF0aCBkPSJNMzAgMTBsMTAgMTAgMTAgMTAtMTAgMTAtMTAgMTAtMTAtMTAtMTAtMTAgMTAtMTB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+')]"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white drop-shadow-lg" data-aos="fade-up" data-i18n="cta_title">
+                ¿Quieres ser parte de <span class="text-[#FFC107]">esta gran familia?</span>
+            </h2>
+            <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-i18n="cta_text">
+                Tu apoyo puede cambiar la vida de un niño. Cada donación, cada hora de voluntariado, cada gesto cuenta.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                <a href="donar.html" class="bg-white text-[#E53935] font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center gap-2 justify-center" data-i18n="cta_btn_donar">
+                    <i class="fa-solid fa-heart-pulse"></i> Donar ahora
+                </a>
+                <a href="#programas-lista" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-[#E53935] transition-all duration-300 flex items-center gap-2 justify-center" data-i18n="cta_btn_volver">
+                    <i class="fa-solid fa-arrow-left"></i> Volver a programas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contacto" class="bg-[#1B5E20] pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-4 border-[#4CAF50]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo footer.jpg" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';" alt="Logo Pacai Cusco" class="footer-logo-img" loading="lazy">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-[#FF8A80]">ASOCIACIÓN</span>
+                            <span class="text-[#FFCC80] ml-1">PACAI</span>
+                            <span class="text-[#81D4FA] ml-1">CUSCO</span>
+                        </div>
+                    </div>
+                    <p class="text-[#C8E6C9] mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-i18n="footer_desc">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#1877F2] hover:text-white hover:-translate-y-1 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#E4405F] hover:text-white hover:-translate-y-1 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#0A66C2] hover:text-white hover:-translate-y-1 transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#1DA1F2] hover:text-white hover:-translate-y-1 transition-all" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:text-white hover:-translate-y-1 transition-all" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-i18n="footer_nav_title">Navegación</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-[#C8E6C9] font-medium text-sm sm:text-base">
+                        <li><a href="index.html" class="hover:text-[#FFCC80] transition-colors flex items-center gap-2" data-i18n="footer_nav_pacai"><i class="fa-solid fa-angle-right text-xs text-[#FFCC80]"></i> Pacai</a></li>
+                        <li><a href="programas.html" class="hover:text-[#81D4FA] transition-colors flex items-center gap-2" data-i18n="footer_nav_programas"><i class="fa-solid fa-angle-right text-xs text-[#81D4FA]"></i> Programas de Pacai</a></li>
+                        <li><a href="cultura.html" class="hover:text-[#CE93D8] transition-colors flex items-center gap-2" data-i18n="footer_nav_cultura"><i class="fa-solid fa-angle-right text-xs text-[#CE93D8]"></i> Cultura y Recreación</a></li>
+                        <li><a href="historias.html" class="hover:text-[#FF8A80] transition-colors flex items-center gap-2" data-i18n="footer_nav_historias"><i class="fa-solid fa-angle-right text-xs text-[#FF8A80]"></i> Historias</a></li>
+                        <li><a href="donar.html" class="hover:text-[#FFCC80] transition-colors flex items-center gap-2" data-i18n="footer_nav_donar"><i class="fa-solid fa-angle-right text-xs text-[#FFCC80]"></i> Donar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-i18n="footer_casa_titulo">Nuestra Casa</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-[#C8E6C9] text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-[#FF8A80]"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1" data-i18n="footer_casa_direccion">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#81D4FA]"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all" data-i18n="footer_casa_email">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#A5D6A7]"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium" data-i18n="footer_casa_telefono">+51 987 654 321</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#FFCC80]"><i class="fa-regular fa-clock text-base sm:text-xl"></i></div>
+                            <span class="font-medium" data-i18n="footer_casa_horario">Lun - Vie: 8am - 6pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-green-700 pt-6 sm:pt-8 text-center text-[#A5D6A7] text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> <span data-i18n="footer_copyright">Asociación Pacai Cusco. Hecho con el corazón.</span> <span class="text-[#FF8A80]">❤️</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-[#FF8A80] footer-heart"></i> <span data-i18n="footer_esperanza">Esperanza que transforma</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-4 sm:right-6 z-40 bg-white text-[#3d3d3d] w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-base sm:text-xl shadow-[0_4px_15px_rgba(0,0,0,0.04)] opacity-0 translate-y-10 transition-all duration-300 focus:outline-none hover:bg-[#4CAF50] hover:text-white border border-[#f0ebe0] hover:scale-110" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== WHATSAPP FLOTANTE ===== -->
+    <a href="https://wa.me/51987654321" target="_blank" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-3xl sm:text-4xl shadow-[0_4px_20px_rgba(37,211,102,0.12)] hover:scale-110 transition-transform animate-pulse-slow border-2 border-white/20" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ===== FRASES PARA EL PRELOADER (10 frases) =====
+            const frasesBienvenida = [
+                "Bienvenido a la familia Pacai. 💛",
+                "Cada sonrisa cuenta. 🌟",
+                "Juntos somos más fuertes. 🤝",
+                "La esperanza es nuestro motor. 🌈",
+                "Tú puedes ser parte del cambio. ✨",
+                "Un pequeño gesto, una gran diferencia. 💝",
+                "Aquí el amor y la salud van de la mano. 🌸",
+                "Gracias por estar aquí. 🙏",
+                "Cada niño merece una oportunidad. 🎈",
+                "La alegría es la mejor medicina. 🎉"
+            ];
+
+            // ===== PRELOADER =====
+            function initPreloader() {
+                const preloader = document.getElementById('preloader');
+                const textContainer = document.getElementById('preloaderText');
+                const progressBar = document.getElementById('progressBar');
+
+                const frasesIndex = Math.floor(Math.random() * frasesBienvenida.length);
+                const fraseElegida = frasesBienvenida[frasesIndex];
+
+                const palabras = fraseElegida.split(' ');
+                textContainer.innerHTML = palabras.map((p, i) =>
+                    `<span class="word" style="animation-delay:${0.05 + i * 0.08}s">${p}</span>`
+                ).join(' ');
+
+                let progress = 0;
+                const maxDuration = 5000;
+                const interval = 30;
+                let startTime = Date.now();
+                let isComplete = false;
+
+                function completePreloader() {
+                    if (isComplete) return;
+                    isComplete = true;
+                    progressBar.style.width = '100%';
+                    setTimeout(() => {
+                        preloader.classList.add('hidden');
+                        setTimeout(() => {
+                            preloader.style.display = 'none';
+                        }, 800);
+                    }, 400);
+                }
+
+                const progressInterval = setInterval(() => {
+                    const elapsed = Date.now() - startTime;
+                    const timeProgress = Math.min(100, (elapsed / maxDuration) * 100);
+
+                    if (document.readyState === 'complete') {
+                        progress = Math.min(100, progress + 3);
+                    } else {
+                        progress = Math.max(timeProgress, progress + 0.5);
+                    }
+
+                    progress = Math.min(100, progress);
+                    progressBar.style.width = progress + '%';
+
+                    if (progress >= 100 || (document.readyState === 'complete' && progress > 70)) {
+                        clearInterval(progressInterval);
+                        progressBar.style.width = '100%';
+                        setTimeout(completePreloader, 300);
+                    }
+                }, interval);
+
+                if (document.readyState === 'complete') {
+                    setTimeout(() => {
+                        if (!isComplete) {
+                            progress = Math.min(100, progress + 30);
+                            progressBar.style.width = progress + '%';
+                            if (progress >= 100) {
+                                clearInterval(progressInterval);
+                                setTimeout(completePreloader, 200);
+                            }
+                        }
+                    }, 1000);
+                }
+
+                setTimeout(() => {
+                    if (!isComplete) {
+                        completePreloader();
+                    }
+                }, 6000);
+            }
+
+            // ===== NAVBAR SCROLL =====
+            function handleNavbarScroll() {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 20) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+
+            // ===== TRADUCCIONES COMPLETAS =====
+            const translations = {
+                es: {
+                    // Nav
+                    nav_pacai: "PACAI",
+                    nav_programas: "PROGRAMAS DE PACAI",
+                    nav_cultura: "CULTURA Y RECREACIÓN",
+                    nav_historias: "HISTORIAS",
+                    nav_donar: "DONAR",
+                    drop_psicologia: "Acompañamiento Psicológico",
+                    drop_compartir: "Compartir",
+                    drop_pedagogico: "Reforzamiento Pedagógico",
+                    drop_acogida: "Casa de Acogida",
+                    drop_intervencion: "Intervención Familiar",
+                    drop_social: "Apoyo Social",
+                    // Hero
+                    hero_badge: "PROGRAMAS PACAI",
+                    hero_title: "Programas que <span class=\"bg-gradient-to-r from-[#FFC107] via-[#FF9800] to-[#E53935] bg-clip-text text-transparent\" style=\"background-size:200% 200%; animation: shimmer-progress 4s ease-in-out infinite;\">transforman vidas</span>",
+                    hero_subtitle: 'Acompañamos a <strong class="text-[#FFC107] font-bold">65 guerreros oncopediátricos</strong> en el <strong class="text-[#FFC107] font-bold">Hospital Antonio Lorena</strong> y el <strong class="text-[#FFC107] font-bold">Hospital Regional del Cusco</strong>.',
+                    hero_btn_ver: "Ver programas",
+                    hero_btn_donar: "DONAR",
+                    // Impacto
+                    impacto_badge: "Nuestro Impacto",
+                    impacto_title: "Cifras que <span class=\"text-[#FF9800]\">hablan por sí solas</span>",
+                    impacto_ninos: "Niños acompañados",
+                    impacto_anios: "Años de trabajo",
+                    impacto_compromiso: "Compromiso real",
+                    impacto_sonrisas: "Sonrisas recuperadas",
+                    // Introducción
+                    intro_badge: "Nuestra Misión",
+                    intro_p1: 'En la <strong class="text-[#E53935]">Asociación PACAI</strong>, nuestra misión se vive diariamente en los pasillos de los hospitales <strong class="text-[#2196F3]">Antonio Lorena</strong> y <strong class="text-[#2196F3]">Regional del Cusco</strong>. Con un promedio permanente de <strong class="text-[#FF9800]">65 valientes guerreros oncopediátricos</strong> bajo nuestro cuidado, hemos construido una red de soporte que trasciende lo médico para abrazar lo humano.',
+                    intro_aliados: 'Gracias al respaldo de la <strong>Fundación Schickedanz</strong> y nuestros aliados en Alemania',
+                    // Programas
+                    programas_badge: "Detalle de Programas",
+                    programas_title: "Cada programa, <span class=\"text-[#2196F3]\">una historia de esperanza</span>",
+                    p1_tag: "Apoyo",
+                    p1_titulo: "Acompañamiento Psicológico",
+                    p1_desc: "Brindamos apoyo emocional a los niños y sus familias durante todo el proceso de tratamiento. Un psicólogo especializado los acompaña en cada etapa, fortaleciendo su bienestar mental y emocional.",
+                    p1_tag1: "Terapia familiar",
+                    p1_tag2: "Bienestar emocional",
+                    p1_btn: "Ver programa",
+                    p2_tag: "Compartir",
+                    p2_titulo: "Compartir",
+                    p2_desc: "Espacios de encuentro donde las familias comparten experiencias, se apoyan mutuamente y encuentran consuelo en la comunidad. Juntos, la carga se hace más liviana.",
+                    p2_tag1: "Grupos de apoyo",
+                    p2_tag2: "Contención emocional",
+                    p2_btn: "Ver programa",
+                    p3_tag: "Educación",
+                    p3_titulo: "Reforzamiento Pedagógico",
+                    p3_desc: "Acompañamos a los niños en su educación para que no pierdan el ritmo escolar durante su tratamiento. Clases personalizadas y apoyo continuo para que su futuro no se detenga.",
+                    p3_tag1: "Clases personalizadas",
+                    p3_tag2: "Acompañamiento escolar",
+                    p3_btn: "Ver programa",
+                    p4_tag: "Hogar",
+                    p4_titulo: "Casa de Acogida",
+                    p4_desc: "Un hogar temporal para las familias que vienen de comunidades lejanas. Les brindamos alojamiento, alimentación y un espacio de calidez y contención durante el tratamiento.",
+                    p4_tag1: "Alimentación",
+                    p4_tag2: "Alojamiento",
+                    p4_btn: "Ver programa",
+                    p5_tag: "Familia",
+                    p5_titulo: "Intervención Familiar",
+                    p5_desc: "Trabajamos con toda la familia para fortalecer su red de apoyo, mejorar la comunicación y afrontar juntos los desafíos del tratamiento. La familia es el pilar fundamental.",
+                    p5_tag1: "Fortalecimiento",
+                    p5_tag2: "Comunicación",
+                    p5_btn: "Ver programa",
+                    p6_tag: "Recursos",
+                    p6_titulo: "Apoyo Social",
+                    p6_desc: "Gestionamos recursos, medicamentos, traslados y todo lo necesario para que las familias puedan enfocarse en lo más importante: la salud y el bienestar de sus hijos.",
+                    p6_tag1: "Traslados",
+                    p6_tag2: "Medicamentos",
+                    p6_btn: "Ver programa",
+                    // Testimonios
+                    testimonios_badge: "Voces que inspiran",
+                    testimonios_title: "Historias de <span class=\"text-[#E91E63]\">esperanza real</span>",
+                    test1_rol: "Madre de Luis, 7 años",
+                    test1_text: "\"Cuando mi hijo fue diagnosticado, no sabía cómo íbamos a pagar los viajes al hospital. Pacai nos dio movilidad, medicinas y lo más importante: esperanza.\"",
+                    test2_rol: "Voluntario",
+                    test2_text: "\"Ser parte de Pacai me ha cambiado la vida. Ver la resiliencia de estos niños te hace valorar cada instante. No doy mi tiempo, recibo mucho más a cambio.\"",
+                    test3_rol: "Abuela de Sofía",
+                    test3_text: "\"Nunca imaginé que existiría un lugar que te abrace tanto. Nos dieron techo, comida y mucho cariño. Los talleres de arte hicieron que mi nieta volviera a reír.\"",
+                    // Aliados
+                    aliados_badge: "Nuestros Aliados",
+                    aliados_title: "Gracias a <span class=\"text-[#FFC107]\">quienes hacen posible</span> esta misión",
+                    aliado1_nombre: "Fundación Schickedanz",
+                    aliado1_rol: "Aliado principal",
+                    aliado2_nombre: "Aliados en Alemania",
+                    aliado2_rol: "Cooperación internacional",
+                    aliado3_nombre: "Hospital Antonio Lorena",
+                    aliado3_rol: "Aliado estratégico",
+                    aliado4_nombre: "Donantes y Voluntarios",
+                    aliado4_rol: "El corazón de Pacai",
+                    // Timeline
+                    timeline_badge: "Nuestro Camino",
+                    timeline_title: "6 años de <span class=\"text-[#FF9800]\">amor y entrega</span>",
+                    t2020: "Nace la Asociación Pacai Cusco con la misión de acompañar a niños con cáncer en el Hospital Antonio Lorena.",
+                    t2021: "Ampliamos nuestro alcance al Hospital Regional del Cusco y comenzamos con los primeros programas de apoyo psicológico.",
+                    t2022: "La Fundación Schickedanz se convierte en nuestro aliado principal, permitiendo la creación de la Casa de Acogida.",
+                    t2023: "Consolidamos nuestros 6 programas y alcanzamos el acompañamiento de más de 65 niños de manera simultánea.",
+                    t2024: "Seguimos creciendo y fortaleciendo nuestra red de apoyo internacional con aliados en Alemania.",
+                    // CTA
+                    cta_title: '¿Quieres ser parte de <span class="text-[#FFC107]">esta gran familia?</span>',
+                    cta_text: "Tu apoyo puede cambiar la vida de un niño. Cada donación, cada hora de voluntariado, cada gesto cuenta.",
+                    cta_btn_donar: "Donar ahora",
+                    cta_btn_volver: "Volver a programas",
+                    // Footer
+                    footer_desc: "Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.",
+                    footer_nav_title: "Navegación",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Programas de Pacai",
+                    footer_nav_cultura: "Cultura y Recreación",
+                    footer_nav_historias: "Historias",
+                    footer_nav_donar: "Donar",
+                    footer_casa_titulo: "Nuestra Casa",
+                    footer_casa_direccion: "Calle San Agustín 307,<br>Cusco, Perú",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Lun - Vie: 8am - 6pm",
+                    footer_copyright: "Asociación Pacai Cusco. Hecho con el corazón.",
+                    footer_esperanza: "Esperanza que transforma",
+                },
+                en: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PACAI PROGRAMS",
+                    nav_cultura: "CULTURE & RECREATION",
+                    nav_historias: "STORIES",
+                    nav_donar: "DONATE",
+                    drop_psicologia: "Psychological Support",
+                    drop_compartir: "Sharing",
+                    drop_pedagogico: "Pedagogical Reinforcement",
+                    drop_acogida: "Host Home",
+                    drop_intervencion: "Family Intervention",
+                    drop_social: "Social Support",
+                    hero_badge: "PACAI PROGRAMS",
+                    hero_title: "Programs that <span class=\"bg-gradient-to-r from-[#FFC107] via-[#FF9800] to-[#E53935] bg-clip-text text-transparent\" style=\"background-size:200% 200%; animation: shimmer-progress 4s ease-in-out infinite;\">transform lives</span>",
+                    hero_subtitle: 'We accompany <strong class="text-[#FFC107] font-bold">65 oncopediatric warriors</strong> at <strong class="text-[#FFC107] font-bold">Antonio Lorena Hospital</strong> and <strong class="text-[#FFC107] font-bold">Cusco Regional Hospital</strong>.',
+                    hero_btn_ver: "View programs",
+                    hero_btn_donar: "DONATE",
+                    impacto_badge: "Our Impact",
+                    impacto_title: "Numbers that <span class=\"text-[#FF9800]\">speak for themselves</span>",
+                    impacto_ninos: "Children accompanied",
+                    impacto_anios: "Years of work",
+                    impacto_compromiso: "Real commitment",
+                    impacto_sonrisas: "Smiles recovered",
+                    intro_badge: "Our Mission",
+                    intro_p1: 'At <strong class="text-[#E53935]">PACAI Association</strong>, our mission is lived daily in the halls of <strong class="text-[#2196F3]">Antonio Lorena</strong> and <strong class="text-[#2196F3]">Cusco Regional</strong> hospitals. With a permanent average of <strong class="text-[#FF9800]">65 brave oncopediatric warriors</strong> under our care, we have built a support network that transcends the medical to embrace the human.',
+                    intro_aliados: 'Thanks to the support of the <strong>Schickedanz Foundation</strong> and our allies in Germany',
+                    programas_badge: "Program Details",
+                    programas_title: "Each program, <span class=\"text-[#2196F3]\">a story of hope</span>",
+                    p1_tag: "Support",
+                    p1_titulo: "Psychological Support",
+                    p1_desc: "We provide emotional support to children and their families throughout the treatment process. A specialized psychologist accompanies them at every stage, strengthening their mental and emotional well-being.",
+                    p1_tag1: "Family therapy",
+                    p1_tag2: "Emotional wellness",
+                    p1_btn: "View program",
+                    p2_tag: "Sharing",
+                    p2_titulo: "Sharing",
+                    p2_desc: "Meeting spaces where families share experiences, support each other, and find comfort in community. Together, the burden becomes lighter.",
+                    p2_tag1: "Support groups",
+                    p2_tag2: "Emotional support",
+                    p2_btn: "View program",
+                    p3_tag: "Education",
+                    p3_titulo: "Pedagogical Support",
+                    p3_desc: "We support children in their education so they don't fall behind during treatment. Personalized classes and continuous support so their future doesn't stop.",
+                    p3_tag1: "Personalized classes",
+                    p3_tag2: "School support",
+                    p3_btn: "View program",
+                    p4_tag: "Home",
+                    p4_titulo: "Host Home",
+                    p4_desc: "A temporary home for families coming from remote communities. We provide lodging, food, and a warm, supportive space during treatment.",
+                    p4_tag1: "Food",
+                    p4_tag2: "Lodging",
+                    p4_btn: "View program",
+                    p5_tag: "Family",
+                    p5_titulo: "Family Intervention",
+                    p5_desc: "We work with the entire family to strengthen their support network, improve communication, and face treatment challenges together. The family is the fundamental pillar.",
+                    p5_tag1: "Strengthening",
+                    p5_tag2: "Communication",
+                    p5_btn: "View program",
+                    p6_tag: "Resources",
+                    p6_titulo: "Social Support",
+                    p6_desc: "We manage resources, medications, transportation, and everything families need to focus on what matters most: their children's health and well-being.",
+                    p6_tag1: "Transport",
+                    p6_tag2: "Medications",
+                    p6_btn: "View program",
+                    testimonios_badge: "Inspiring Voices",
+                    testimonios_title: "Stories of <span class=\"text-[#E91E63]\">real hope</span>",
+                    test1_rol: "Mother of Luis, 7 years old",
+                    test1_text: "\"When my son was diagnosed, I didn't know how we would pay for the trips to the hospital. Pacai gave us mobility, medicines and most importantly: hope.\"",
+                    test2_rol: "Volunteer",
+                    test2_text: "\"Being part of Pacai has changed my life. Seeing the resilience of these children makes you value every moment. I don't give my time, I receive much more in return.\"",
+                    test3_rol: "Grandmother of Sofía",
+                    test3_text: "\"I never imagined that a place like this could embrace you so much. They gave us shelter, food and lots of love. The art workshops made my granddaughter laugh again.\"",
+                    aliados_badge: "Our Allies",
+                    aliados_title: "Thanks to <span class=\"text-[#FFC107]\">those who make</span> this mission possible",
+                    aliado1_nombre: "Schickedanz Foundation",
+                    aliado1_rol: "Main ally",
+                    aliado2_nombre: "Allies in Germany",
+                    aliado2_rol: "International cooperation",
+                    aliado3_nombre: "Antonio Lorena Hospital",
+                    aliado3_rol: "Strategic ally",
+                    aliado4_nombre: "Donors and Volunteers",
+                    aliado4_rol: "The heart of Pacai",
+                    timeline_badge: "Our Journey",
+                    timeline_title: "6 years of <span class=\"text-[#FF9800]\">love and dedication</span>",
+                    t2020: "The Asociación Pacai Cusco is born with the mission of accompanying children with cancer at Hospital Antonio Lorena.",
+                    t2021: "We expand our reach to the Hospital Regional del Cusco and begin the first psychological support programs.",
+                    t2022: "The Schickedanz Foundation becomes our main ally, allowing the creation of the Host Home.",
+                    t2023: "We consolidate our 6 programs and reach the accompaniment of more than 65 children simultaneously.",
+                    t2024: "We continue to grow and strengthen our international support network with allies in Germany.",
+                    cta_title: 'Do you want to be part of <span class="text-[#FFC107]">this big family?</span>',
+                    cta_text: "Your support can change a child's life. Every donation, every hour of volunteering, every gesture counts.",
+                    cta_btn_donar: "Donate now",
+                    cta_btn_volver: "Back to programs",
+                    footer_desc: "Where hope grows and cancer decreases. Together we build a future full of light and health for our children in Cusco.",
+                    footer_nav_title: "Navigation",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Pacai Programs",
+                    footer_nav_cultura: "Culture & Recreation",
+                    footer_nav_historias: "Stories",
+                    footer_nav_donar: "Donate",
+                    footer_casa_titulo: "Our Home",
+                    footer_casa_direccion: "307 San Agustín St,<br>Cusco, Peru",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Mon - Fri: 8am - 6pm",
+                    footer_copyright: "Pacai Cusco Association. Made with heart.",
+                    footer_esperanza: "Hope that transforms",
+                },
+                de: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PACAI-PROGRAMME",
+                    nav_cultura: "KULTUR & FREIZEIT",
+                    nav_historias: "GESCHICHTEN",
+                    nav_donar: "SPENDEN",
+                    drop_psicologia: "Psychologische Begleitung",
+                    drop_compartir: "Teilen",
+                    drop_pedagogico: "Pädagogische Förderung",
+                    drop_acogida: "Gästehaus",
+                    drop_intervencion: "Familienintervention",
+                    drop_social: "Soziale Unterstützung",
+                    hero_badge: "PACAI-PROGRAMME",
+                    hero_title: "Programme, die <span class=\"bg-gradient-to-r from-[#FFC107] via-[#FF9800] to-[#E53935] bg-clip-text text-transparent\" style=\"background-size:200% 200%; animation: shimmer-progress 4s ease-in-out infinite;\">Leben verändern</span>",
+                    hero_subtitle: 'Wir begleiten <strong class="text-[#FFC107] font-bold">65 onkopädiatrische Krieger</strong> im <strong class="text-[#FFC107] font-bold">Krankenhaus Antonio Lorena</strong> und im <strong class="text-[#FFC107] font-bold">Regionalkrankenhaus Cusco</strong>.',
+                    hero_btn_ver: "Programme ansehen",
+                    hero_btn_donar: "SPENDEN",
+                    impacto_badge: "Unser Einfluss",
+                    impacto_title: "Zahlen, die <span class=\"text-[#FF9800]\">für sich sprechen</span>",
+                    impacto_ninos: "Begleitete Kinder",
+                    impacto_anios: "Jahre Arbeit",
+                    impacto_compromiso: "Echtes Engagement",
+                    impacto_sonrisas: "Wiedergewonnene Lächeln",
+                    intro_badge: "Unsere Mission",
+                    intro_p1: 'Bei der <strong class="text-[#E53935]">Asociación PACAI</strong> wird unsere Mission täglich in den Gängen der Krankenhäuser <strong class="text-[#2196F3]">Antonio Lorena</strong> und <strong class="text-[#2196F3]">Regional del Cusco</strong> gelebt. Mit einem ständigen Durchschnitt von <strong class="text-[#FF9800]">65 tapferen onkopädiatrischen Kriegern</strong> unter unserer Obhut haben wir ein Unterstützungsnetzwerk aufgebaut, das das Medizinische transzendiert, um das Menschliche zu umarmen.',
+                    intro_aliados: 'Dank der Unterstützung der <strong>Schickedanz-Stiftung</strong> und unserer Verbündeten in Deutschland',
+                    programas_badge: "Programmdetails",
+                    programas_title: "Jedes Programm, <span class=\"text-[#2196F3]\">eine Geschichte der Hoffnung</span>",
+                    p1_tag: "Unterstützung",
+                    p1_titulo: "Psychologische Begleitung",
+                    p1_desc: "Wir bieten emotionale Unterstützung für Kinder und ihre Familien während des gesamten Behandlungsprozesses. Ein spezialisierter Psychologe begleitet sie in jeder Phase und stärkt ihr mentales und emotionales Wohlbefinden.",
+                    p1_tag1: "Familientherapie",
+                    p1_tag2: "Emotionales Wohlbefinden",
+                    p1_btn: "Programm ansehen",
+                    p2_tag: "Teilen",
+                    p2_titulo: "Teilen",
+                    p2_desc: "Begegnungsräume, in denen Familien Erfahrungen austauschen, sich gegenseitig unterstützen und Trost in der Gemeinschaft finden. Gemeinsam wird die Last leichter.",
+                    p2_tag1: "Selbsthilfegruppen",
+                    p2_tag2: "Emotionale Unterstützung",
+                    p2_btn: "Programm ansehen",
+                    p3_tag: "Bildung",
+                    p3_titulo: "Pädagogische Unterstützung",
+                    p3_desc: "Wir unterstützen Kinder in ihrer Bildung, damit sie während der Behandlung nicht zurückfallen. Personalisierter Unterricht und kontinuierliche Unterstützung, damit ihre Zukunft nicht stillsteht.",
+                    p3_tag1: "Personalisierter Unterricht",
+                    p3_tag2: "Schulische Begleitung",
+                    p3_btn: "Programm ansehen",
+                    p4_tag: "Zuhause",
+                    p4_titulo: "Gästehaus",
+                    p4_desc: "Ein vorübergehendes Zuhause für Familien aus abgelegenen Gemeinden. Wir bieten Unterkunft, Verpflegung und einen warmen, unterstützenden Raum während der Behandlung.",
+                    p4_tag1: "Verpflegung",
+                    p4_tag2: "Unterkunft",
+                    p4_btn: "Programm ansehen",
+                    p5_tag: "Familie",
+                    p5_titulo: "Familienintervention",
+                    p5_desc: "Wir arbeiten mit der gesamten Familie, um ihr Unterstützungsnetzwerk zu stärken, die Kommunikation zu verbessern und die Herausforderungen der Behandlung gemeinsam zu bewältigen. Die Familie ist die tragende Säule.",
+                    p5_tag1: "Stärkung",
+                    p5_tag2: "Kommunikation",
+                    p5_btn: "Programm ansehen",
+                    p6_tag: "Ressourcen",
+                    p6_titulo: "Soziale Unterstützung",
+                    p6_desc: "Wir verwalten Ressourcen, Medikamente, Transport und alles, was Familien brauchen, um sich auf das Wichtigste zu konzentrieren: die Gesundheit und das Wohlbefinden ihrer Kinder.",
+                    p6_tag1: "Transport",
+                    p6_tag2: "Medikamente",
+                    p6_btn: "Programm ansehen",
+                    testimonios_badge: "Inspirierende Stimmen",
+                    testimonios_title: "Geschichten von <span class=\"text-[#E91E63]\">echter Hoffnung</span>",
+                    test1_rol: "Mutter von Luis, 7 Jahre",
+                    test1_text: "\"Als mein Sohn diagnostiziert wurde, wusste ich nicht, wie wir die Fahrten ins Krankenhaus bezahlen sollten. Pacai gab uns Mobilität, Medikamente und vor allem: Hoffnung.\"",
+                    test2_rol: "Freiwilliger",
+                    test2_text: "\"Teil von Pacai zu sein, hat mein Leben verändert. Die Widerstandsfähigkeit dieser Kinder zu sehen, lässt dich jeden Moment schätzen. Ich gebe nicht meine Zeit, ich bekomme viel mehr zurück.\"",
+                    test3_rol: "Großmutter von Sofía",
+                    test3_text: "\"Ich hätte nie gedacht, dass es einen Ort gibt, der einen so umarmt. Sie gaben uns Unterkunft, Essen und so viel Liebe. Die Kunstworkshops brachten meine Enkelin zum Lachen.\"",
+                    aliados_badge: "Unsere Verbündeten",
+                    aliados_title: "Dank an <span class=\"text-[#FFC107]\">diejenigen, die</span> diese Mission ermöglichen",
+                    aliado1_nombre: "Schickedanz-Stiftung",
+                    aliado1_rol: "Hauptverbündeter",
+                    aliado2_nombre: "Verbündete in Deutschland",
+                    aliado2_rol: "Internationale Zusammenarbeit",
+                    aliado3_nombre: "Krankenhaus Antonio Lorena",
+                    aliado3_rol: "Strategischer Verbündeter",
+                    aliado4_nombre: "Spender und Freiwillige",
+                    aliado4_rol: "Das Herz von Pacai",
+                    timeline_badge: "Unser Weg",
+                    timeline_title: "6 Jahre <span class=\"text-[#FF9800]\">Liebe und Hingabe</span>",
+                    t2020: "Die Asociación Pacai Cusco wird mit der Mission gegründet, Kinder mit Krebs im Hospital Antonio Lorena zu begleiten.",
+                    t2021: "Wir erweitern unsere Reichweite auf das Hospital Regional del Cusco und beginnen mit den ersten Programmen zur psychologischen Unterstützung.",
+                    t2022: "Die Schickedanz-Stiftung wird unser Hauptverbündeter und ermöglicht die Schaffung des Gästehauses.",
+                    t2023: "Wir konsolidieren unsere 6 Programme und erreichen die gleichzeitige Begleitung von mehr als 65 Kindern.",
+                    t2024: "Wir wachsen weiter und stärken unser internationales Unterstützungsnetzwerk mit Verbündeten in Deutschland.",
+                    cta_title: 'Möchtest du Teil <span class="text-[#FFC107]">dieser großen Familie</span> sein?',
+                    cta_text: "Deine Unterstützung kann das Leben eines Kindes verändern. Jede Spende, jede Stunde ehrenamtlicher Arbeit, jede Geste zählt.",
+                    cta_btn_donar: "Jetzt spenden",
+                    cta_btn_volver: "Zurück zu Programmen",
+                    footer_desc: "Wo die Hoffnung wächst und der Krebs abnimmt. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.",
+                    footer_nav_title: "Navigation",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Pacai-Programme",
+                    footer_nav_cultura: "Kultur & Freizeit",
+                    footer_nav_historias: "Geschichten",
+                    footer_nav_donar: "Spenden",
+                    footer_casa_titulo: "Unser Haus",
+                    footer_casa_direccion: "Calle San Agustín 307,<br>Cusco, Peru",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Mo - Fr: 8 - 18 Uhr",
+                    footer_copyright: "Verein Pacai Cusco. Mit Herz gemacht.",
+                    footer_esperanza: "Hoffnung, die verwandelt",
+                }
+            };
+
+            // ===== INICIALIZACIÓN =====
+            document.addEventListener('DOMContentLoaded', function() {
+                AOS.init({ duration: 700, once: true, offset: 40 });
+                document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+                initPreloader();
+                handleNavbarScroll();
+
+                // Botón scroll to top
+                const scrollTopBtn = document.getElementById('scrollToTopBtn');
+                window.addEventListener('scroll', function() {
+                    handleNavbarScroll();
+                    if (window.scrollY > 400) {
+                        scrollTopBtn.classList.remove('opacity-0', 'translate-y-10');
+                        scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                    } else {
+                        scrollTopBtn.classList.add('opacity-0', 'translate-y-10');
+                        scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                    }
+                });
+                scrollTopBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+                // Menú móvil
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+                function openMobileMenu() { mobileMenu.classList.remove('translate-x-full'); document.body.style.overflow = 'hidden'; }
+                function closeMobileMenu() { mobileMenu.classList.add('translate-x-full'); document.body.style.overflow = 'auto'; }
+                mobileMenuBtn.addEventListener('click', openMobileMenu);
+                closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+                mobileLinks.forEach(function(link) { link.addEventListener('click', closeMobileMenu); });
+
+                // Selector de idiomas
+                const langToggle = document.getElementById('langToggle');
+                const langDropdown = document.getElementById('langDropdown');
+                const langOptions = document.querySelectorAll('.lang-option');
+                const currentLangLabel = document.getElementById('currentLangLabel');
+                let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+                function setLanguage(langCode) {
+                    currentLang = langCode;
+                    localStorage.setItem('pacai_lang', langCode);
+                    const labels = { 'es': '🇪🇸 ES', 'en': '🇬🇧 EN', 'de': '🇩🇪 DE' };
+                    currentLangLabel.textContent = labels[langCode] || '🇪🇸 ES';
+                    langOptions.forEach(function(opt) {
+                        opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                    });
+                    langDropdown.classList.remove('open');
+                    document.documentElement.lang = langCode;
+
+                    // Aplicar traducciones a todos los elementos con data-i18n
+                    const t = translations[langCode];
+                    if (t) {
+                        document.querySelectorAll('[data-i18n]').forEach(el => {
+                            const key = el.getAttribute('data-i18n');
+                            if (t[key] !== undefined) {
+                                if (el.children.length || el.innerHTML.includes('<')) {
+                                    el.innerHTML = t[key];
+                                } else {
+                                    el.textContent = t[key];
+                                }
+                            }
+                        });
+                    }
+                }
+
+                langToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    langDropdown.classList.toggle('open');
+                });
+                document.addEventListener('click', function() { langDropdown.classList.remove('open'); });
+                langOptions.forEach(function(opt) {
+                    opt.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        setLanguage(opt.dataset.langCode);
+                    });
+                });
+
+                // Aplicar idioma inicial
+                setLanguage(currentLang);
+
+                console.log('🌈 Pacai Cusco · Programas');
+                console.log('💛 Acompañamos a 65 guerreros en su lucha contra el cáncer infantil.');
+            });
+
+        })();
+    </script>
+
+</body>
+</html>

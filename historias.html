@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Historias · Asociación Pacai Cusco</title>
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpeg" href="imágenes/logo footer.jpg">
+    <link rel="apple-touch-icon" href="imágenes/logo footer.jpg">
+    <link rel="shortcut icon" href="imágenes/logo footer.jpg">
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Comparte tu historia, experiencia o testimonio con la comunidad de Pacai Cusco. Un espacio para escuchar y ser escuchado.">
+    <link rel="canonical" href="https://asociacionpacaicusco.com/historias.html">
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es/historias.html">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en/historias.html">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de/historias.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Historias · Asociación Pacai Cusco">
+    <meta property="og:description" content="Comparte tu historia, experiencia o testimonio con la comunidad de Pacai Cusco.">
+    <meta property="og:image" content="https://asociacionpacaicusco.com/imagenes/og-image.jpg">
+    <meta property="og:url" content="https://asociacionpacaicusco.com/historias.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@500;600;700;800&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                            indigo: '#3F51B5',
+                            amber: '#FF6F00',
+                            lime: '#C0CA33',
+                            cyan: '#00BCD4',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'float-particle': 'float-particle 8s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'tilt': 'tilt 3s ease-in-out infinite',
+                        'float-emoji': 'float-emoji 7s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.6s ease-out',
+                        'zoom-in': 'zoom-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        'float-particle': {
+                            '0%, 100%': { transform: 'translateY(0) translateX(0) scale(1)', opacity: '0.3' },
+                            '25%': { transform: 'translateY(-60px) translateX(30px) scale(1.2)', opacity: '0.6' },
+                            '50%': { transform: 'translateY(-120px) translateX(-20px) scale(0.8)', opacity: '0.8' },
+                            '75%': { transform: 'translateY(-60px) translateX(40px) scale(1.4)', opacity: '0.5' },
+                        },
+                        'wiggle': {
+                            '0%, 100%': { transform: 'rotate(-2deg) scale(1)' },
+                            '50%': { transform: 'rotate(2deg) scale(1.02)' },
+                        },
+                        'tilt': {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(2deg)' },
+                            '75%': { transform: 'rotate(-2deg)' },
+                        },
+                        'float-emoji': {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg) scale(1)' },
+                            '50%': { transform: 'translateY(-30px) rotate(8deg) scale(1.1)' },
+                        },
+                        'zoom-in': {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'glow-pulse': {
+                            '0%, 100%': { boxShadow: '0 4px 20px rgba(229,57,53,0.15)' },
+                            '50%': { boxShadow: '0 4px 40px rgba(229,57,53,0.3), 0 0 60px rgba(255,152,0,0.08)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        * { box-sizing: border-box; }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #1a1a2e;
+            background: #fdf6e3;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .page-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            margin-top: 0 !important;
+        }
+
+        ::selection { background: #f97316; color: white; }
+
+        /* ===== PARTÍCULAS ===== */
+        .particle-field {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle-field .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float-particle 14s ease-in-out infinite;
+        }
+        .particle-field .particle:nth-child(1) { background: #f97316; width: 12px; height: 12px; left: 5%; animation-delay: 0s; }
+        .particle-field .particle:nth-child(2) { background: #fb923c; width: 18px; height: 18px; left: 15%; animation-delay: 1.5s; }
+        .particle-field .particle:nth-child(3) { background: #fcd34d; width: 10px; height: 10px; left: 25%; animation-delay: 3s; }
+        .particle-field .particle:nth-child(4) { background: #f59e0b; width: 16px; height: 16px; left: 35%; animation-delay: 4.5s; }
+        .particle-field .particle:nth-child(5) { background: #fb923c; width: 8px; height: 8px; left: 45%; animation-delay: 6s; }
+        .particle-field .particle:nth-child(6) { background: #f97316; width: 20px; height: 20px; left: 55%; animation-delay: 1s; }
+        .particle-field .particle:nth-child(7) { background: #fcd34d; width: 14px; height: 14px; left: 65%; animation-delay: 2.5s; }
+        .particle-field .particle:nth-child(8) { background: #f59e0b; width: 11px; height: 11px; left: 75%; animation-delay: 4s; }
+        .particle-field .particle:nth-child(9) { background: #fb923c; width: 17px; height: 17px; left: 85%; animation-delay: 5.5s; }
+        .particle-field .particle:nth-child(10) { background: #f97316; width: 9px; height: 9px; left: 95%; animation-delay: 7s; }
+        .particle-field .particle:nth-child(11) { background: #fcd34d; width: 15px; height: 15px; left: 10%; animation-delay: 2s; }
+        .particle-field .particle:nth-child(12) { background: #f59e0b; width: 22px; height: 22px; left: 40%; animation-delay: 3.5s; }
+        .particle-field .particle:nth-child(13) { background: #fb923c; width: 13px; height: 13px; left: 70%; animation-delay: 1.2s; }
+        .particle-field .particle:nth-child(14) { background: #f97316; width: 19px; height: 19px; left: 90%; animation-delay: 4.2s; }
+
+        /* ===== NAVBAR (IDÉNTICO A DONAR.HTML) ===== */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 252, 245, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            height: 76px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        #navbar.scrolled {
+            height: 64px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            margin-top: -30px;
+            margin-bottom: -30px;
+        }
+        #navbar.scrolled .nav-logo-img {
+            width: 90px;
+            height: 90px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+        @media (max-width:640px){
+            #navbar { height: 62px; }
+            #navbar.scrolled { height: 54px; }
+            .nav-logo-img { width: 90px; height: 90px; margin-top: -25px; margin-bottom: -25px; }
+            #navbar.scrolled .nav-logo-img { width: 70px; height: 70px; margin-top: -18px; margin-bottom: -18px; }
+        }
+        @media (max-width:400px){
+            #navbar { height: 54px; }
+            #navbar.scrolled { height: 48px; }
+            .nav-logo-img { width: 75px; height: 75px; margin-top: -20px; margin-bottom: -20px; }
+            #navbar.scrolled .nav-logo-img { width: 60px; height: 60px; margin-top: -15px; margin-bottom: -15px; }
+        }
+
+        .logo-text { transition: all 0.3s ease; }
+        #navbar.scrolled .logo-text { font-size: 0.9rem !important; }
+        @media (min-width:1024px){ #navbar.scrolled .logo-text { font-size: 1.1rem !important; } }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+        }
+        @media (min-width:640px){ .navbar-inner { gap: 1rem; padding: 0 0.5rem; } }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        @media (max-width:768px){ html { scroll-padding-top: 80px; } }
+
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            font-size: 0.7rem;
+            padding: 0.4rem 0.8rem;
+            color: #4a4a4a;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .nav-link:hover {
+            color: #FF9800;
+            background: rgba(255,152,0,0.06);
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #FF9800;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .nav-link:hover::after { width: 60%; }
+        .nav-link.active { color: #FF9800; }
+        .nav-link.active::after { width: 60%; }
+
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-trigger {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            padding: 0.4rem 0.8rem;
+            font-weight: 600;
+            font-size: 0.7rem;
+            color: #4a4a4a;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .dropdown-trigger:hover {
+            color: #FF9800;
+            background: rgba(255,152,0,0.06);
+            transform: translateY(-2px);
+        }
+        .dropdown-trigger .arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.5rem;
+        }
+        .dropdown-container:hover .dropdown-trigger .arrow {
+            transform: rotate(180deg);
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 220px;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 0.5rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.04);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px) scale(0.97);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 60;
+        }
+        .dropdown-container:hover .dropdown-menu {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+        .dropdown-menu .drop-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.6rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #4a4a4a;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .dropdown-menu .drop-item:hover {
+            background: rgba(255,152,0,0.06);
+            color: #FF9800;
+            transform: translateX(4px);
+        }
+        .dropdown-menu .drop-item .drop-icon { font-size: 1rem; flex-shrink: 0; }
+        .dropdown-menu .drop-item .drop-arrow { margin-left: auto; opacity: 0; transition: all 0.3s ease; color: #FF9800; }
+        .dropdown-menu .drop-item:hover .drop-arrow { opacity: 1; transform: translateX(4px); }
+        .dropdown-menu .drop-divider { height: 1px; margin: 0.3rem 0.5rem; background: rgba(0,0,0,0.04); }
+
+        .btn-donate-nav {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: #fff !important;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            box-shadow: 0 4px 15px rgba(229,57,53,0.12);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+        .btn-donate-nav:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(229,57,53,0.25);
+            color: #fff !important;
+        }
+
+        .lang-selector { position:relative; z-index:100; }
+        .lang-selector button { background:transparent; border:1px solid rgba(0,0,0,0.06); border-radius:60px; padding:4px 12px; font-weight:600; font-size:0.7rem; display:flex; align-items:center; gap:4px; transition:all 0.3s ease; cursor:pointer; color:#5a5a5a; }
+        .lang-selector button:hover { border-color:#FF9800; background:rgba(255,152,0,0.05); color:#FF9800; }
+        .lang-selector .dropdown { position:absolute; top:calc(100% + 6px); right:0; background:#fff; border-radius:1rem; box-shadow:0 20px 40px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.04); padding:6px; min-width:130px; opacity:0; transform:translateY(-8px) scale(0.95); pointer-events:none; transition:all 0.3s ease; z-index:100; }
+        .lang-selector .dropdown.open { opacity:1; transform:translateY(0) scale(1); pointer-events:all; }
+        .lang-selector .dropdown button { background:transparent; border:none; border-radius:0.75rem; padding:6px 14px; width:100%; text-align:left; font-weight:600; font-size:0.8rem; color:#5a5a5a; transition:all 0.2s ease; }
+        .lang-selector .dropdown button:hover { background:rgba(255,152,0,0.05); color:#FF9800; }
+        .lang-selector .dropdown button.active { background:#FF9800; color:white; }
+
+        #mobileMenu { transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1); background:rgba(255,252,245,0.98); backdrop-filter:blur(24px); }
+        #mobileMenu.open { transform:translateX(0); }
+
+        .footer-logo-img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+        @media (max-width:640px){ .footer-logo-img { width: 44px; height: 44px; } }
+        .footer-heart { animation: pulse 1.5s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #fdf6e3; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #FF9800, #E53935); border-radius: 6px; }
+
+        @media (max-width:480px){
+            .footer-grid { grid-template-columns:1fr !important; text-align:center; }
+            .nav-link { font-size: 0.6rem; padding: 0.2rem 0.4rem; }
+            .hero-title { font-size: 2.2rem !important; }
+        }
+        @media (max-width:768px){
+            .nav-desktop { display:none !important; }
+            .hamburger { display:flex !important; }
+            .hide-on-mobile { display:none !important; }
+            .hero-title { font-size: 3rem !important; }
+            .dropdown-menu { min-width: 200px; left: 0; transform: translateX(0); }
+            .dropdown-container:hover .dropdown-menu { transform: translateX(0) translateY(0); }
+        }
+        @media (prefers-reduced-motion:reduce){
+            * { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+            .particle-field { display:none !important; }
+        }
+
+        /* ===== HERO HISTORIAS ===== */
+        .hero-historias {
+            background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 30%, #fed7aa 60%, #fdba74 100%);
+            background-size: 400% 400%;
+            animation: gradientHistorias 12s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes gradientHistorias {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-historias::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='20' fill='rgba(255,255,255,0.05)'/%3E%3C/svg%3E") repeat;
+            background-size: 120px 120px;
+            z-index: 1;
+        }
+
+        .emoji-flotante {
+            position: absolute;
+            font-size: 3.5rem;
+            opacity: 0.15;
+            animation: float-emoji 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wave-bottom {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            line-height: 0;
+        }
+        .wave-bottom svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .form-historias {
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            border: 2px solid #fed7aa;
+            transition: all 0.3s ease;
+        }
+        .form-historias:focus-within {
+            border-color: #fb923c;
+            box-shadow: 0 10px 50px rgba(251,146,60,0.1);
+        }
+        .form-historias input,
+        .form-historias textarea {
+            background: #fdf6e3;
+            border: 2px solid #e5e7eb;
+            border-radius: 1rem;
+            padding: 0.8rem 1.2rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .form-historias input:focus,
+        .form-historias textarea:focus {
+            outline: none;
+            border-color: #fb923c;
+            box-shadow: 0 0 0 4px rgba(251,146,60,0.1);
+        }
+        .form-historias button {
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            color: white;
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(251,146,60,0.2);
+        }
+        .form-historias button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(251,146,60,0.4);
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.5rem;
+            border: 2px solid #fed7aa;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            animation: slide-up 0.6s ease-out both;
+        }
+        .story-card:hover {
+            transform: translateY(-4px);
+            border-color: #fb923c;
+            box-shadow: 0 16px 50px rgba(251,146,60,0.08);
+        }
+        .story-card .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            border-bottom: 2px solid #fef3c7;
+            padding-bottom: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+        .story-card .story-author {
+            font-weight: 700;
+            color: #1a1a2e;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .story-card .story-author .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .story-card .story-date {
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        .story-card .story-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+        .story-card .story-text {
+            color: #374151;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .story-card .story-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid #f3f4f6;
+            flex-wrap: wrap;
+        }
+        .story-card .story-actions .like-btn {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #6b7280;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.3rem 0.8rem;
+            border-radius: 40px;
+        }
+        .story-card .story-actions .like-btn:hover {
+            color: #ec407a;
+            background: rgba(236,64,122,0.05);
+        }
+        .story-card .story-actions .like-btn.liked {
+            color: #ec407a;
+        }
+        .story-card .story-actions .like-btn i {
+            font-size: 1.2rem;
+        }
+
+        .comment-section {
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 2px dashed #e5e7eb;
+        }
+        .comment-section .comment {
+            background: #fdf6e3;
+            border-radius: 1rem;
+            padding: 0.8rem 1rem;
+            margin-bottom: 0.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+        .comment-section .comment .comment-author {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1a1a2e;
+        }
+        .comment-section .comment .comment-text {
+            font-size: 0.9rem;
+            color: #374151;
+        }
+        .comment-section .comment .comment-date {
+            font-size: 0.7rem;
+            color: #9ca3af;
+            text-align: right;
+        }
+        .comment-input-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .comment-input-group input {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 60px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+        .comment-input-group input:focus {
+            outline: none;
+            border-color: #fb923c;
+            box-shadow: 0 0 0 4px rgba(251,146,60,0.1);
+        }
+        .comment-input-group button {
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            color: white;
+            border: none;
+            border-radius: 60px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .comment-input-group button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(251,146,60,0.3);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #6b7280;
+        }
+        .empty-state i {
+            font-size: 4rem;
+            color: #fed7aa;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .empty-state p {
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 640px) {
+            .story-card .story-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .comment-input-group {
+                flex-direction: column;
+            }
+            .comment-input-group button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .story-card:nth-child(1) { animation-delay: 0.05s; }
+        .story-card:nth-child(2) { animation-delay: 0.10s; }
+        .story-card:nth-child(3) { animation-delay: 0.15s; }
+        .story-card:nth-child(4) { animation-delay: 0.20s; }
+        .story-card:nth-child(5) { animation-delay: 0.25s; }
+        .story-card:nth-child(6) { animation-delay: 0.30s; }
+        .story-card:nth-child(7) { animation-delay: 0.35s; }
+        .story-card:nth-child(8) { animation-delay: 0.40s; }
+        .story-card:nth-child(9) { animation-delay: 0.45s; }
+        .story-card:nth-child(10) { animation-delay: 0.50s; }
+
+        .toast-message {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            z-index: 200;
+            opacity: 0;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+            backdrop-filter: blur(8px);
+            font-size: 0.95rem;
+        }
+        .toast-message.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PARTÍCULAS ===== -->
+    <div class="particle-field" aria-hidden="true">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- ===== BARRA SUPERIOR ===== -->
+    <div class="fixed top-0 left-0 w-full h-1 z-[60]" style="background:linear-gradient(90deg,#FF9800,#E53935,#9C27B0,#2196F3,#4CAF50,#FF9800);background-size:300% 100%;animation:shimmer-progress 3s ease-in-out infinite;"></div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast-message"></div>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="page-wrapper">
+
+        <!-- ===== NAVBAR (IDÉNTICO A DONAR.HTML) ===== -->
+        <nav id="navbar" class="transition-all duration-300">
+            <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+                <div class="navbar-inner">
+                    <a href="index.html" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                        <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';" alt="Logo Pacai Cusco" class="nav-logo-img" loading="lazy">
+                        <div>
+                            <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                                <span class="text-[#E53935]">ASOCIACIÓN</span>
+                                <span class="text-[#FF9800] ml-1">PACAI</span>
+                                <span class="text-[#2196F3] ml-1">CUSCO</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+                        <a href="index.html" class="nav-link" data-i18n="nav_pacai">PACAI</a>
+                        <div class="dropdown-container">
+                            <a href="programas.html" class="dropdown-trigger" data-i18n="nav_programas">
+                                PROGRAMAS DE PACAI
+                                <span class="arrow">▼</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="psicologia.html" class="drop-item">
+                                    <span class="drop-icon">🧠</span> <span data-i18n="drop_psicologia">Acompañamiento Psicológico</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="compartir.html" class="drop-item">
+                                    <span class="drop-icon">🤝</span> <span data-i18n="drop_compartir">Compartir</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="reforzamiento pedagogico.html" class="drop-item">
+                                    <span class="drop-icon">📚</span> <span data-i18n="drop_pedagogico">Reforzamiento Pedagógico</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <div class="drop-divider"></div>
+                                <a href="casa de acogida.html" class="drop-item">
+                                    <span class="drop-icon">🏡</span> <span data-i18n="drop_acogida">Casa de Acogida</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="intervencion familiar.html" class="drop-item">
+                                    <span class="drop-icon">👨‍👩‍👧‍👦</span> <span data-i18n="drop_intervencion">Intervención Familiar</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="apoyo social.html" class="drop-item">
+                                    <span class="drop-icon">🤲</span> <span data-i18n="drop_social">Apoyo Social</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="galeria.html" class="nav-link" data-i18n="nav_cultura">CULTURA Y RECREACIÓN</a>
+                        <a href="historias.html" class="nav-link active" data-i18n="nav_historias">HISTORIAS</a>
+                        <a href="donar.html" class="btn-donate-nav" data-i18n="nav_donar"><i class="fa-solid fa-heart animate-pulse text-xs mr-1"></i> DONAR</a>
+                    </div>
+
+                    <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                        <div class="lang-selector">
+                            <button id="langToggle" class="text-[10px] sm:text-xs font-bold rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all" aria-label="Seleccionar idioma">
+                                <i class="fa-solid fa-globe text-[#FF9800] text-[8px] sm:text-xs"></i>
+                                <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                                <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                            </button>
+                            <div id="langDropdown" class="dropdown" role="listbox">
+                                <button class="lang-option active" data-lang-code="es" role="option" aria-selected="true">🇪🇸 Español</button>
+                                <button class="lang-option" data-lang-code="en" role="option" aria-selected="false">🇬🇧 English</button>
+                                <button class="lang-option" data-lang-code="de" role="option" aria-selected="false">🇩🇪 Deutsch</button>
+                            </div>
+                        </div>
+                        <button id="mobileMenuBtn" class="lg:hidden text-[#5a5a5a] hover:text-[#FF9800] text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 transition-colors" aria-label="Abrir menú">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== MENÚ MÓVIL ===== -->
+        <div id="mobileMenu" class="fixed inset-0 z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden" role="dialog" aria-modal="true" aria-label="Menú móvil">
+            <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-[#5a5a5a] hover:text-[#E53935] transition-colors p-2" aria-label="Cerrar menú">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex flex-col items-center gap-5 text-xl font-display font-extrabold text-[#3d3d3d] px-4">
+                <a href="index.html" class="mobile-link hover:text-[#FF9800] transition-colors" data-i18n="nav_pacai">PACAI</a>
+                <a href="programas.html" class="mobile-link hover:text-[#2196F3] transition-colors" data-i18n="nav_programas">PROGRAMAS DE PACAI</a>
+                <a href="galeria.html" class="mobile-link hover:text-[#9C27B0] transition-colors" data-i18n="nav_cultura">CULTURA Y RECREACIÓN</a>
+                <a href="historias.html" class="mobile-link hover:text-[#FF9800] transition-colors text-[#FF9800]" data-i18n="nav_historias">HISTORIAS</a>
+                <a href="donar.html" class="mobile-link btn-donate-nav text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2 text-lg" data-i18n="nav_donar"><i class="fa-solid fa-heart animate-pulse"></i> DONAR</a>
+            </div>
+            <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF9800] hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF9800] hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF9800] hover:text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero-historias relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28">
+            <div class="emoji-flotante" style="top:8%; left:5%; animation-delay:0s;">📖</div>
+            <div class="emoji-flotante" style="top:20%; right:8%; animation-delay:2s;">✍️</div>
+            <div class="emoji-flotante" style="bottom:25%; left:10%; animation-delay:4s;">💬</div>
+            <div class="emoji-flotante" style="bottom:15%; right:12%; animation-delay:3s;">🌟</div>
+            <div class="emoji-flotante" style="top:50%; left:50%; animation-delay:5s;">❤️</div>
+
+            <div class="container mx-auto px-4 relative z-30 text-center">
+                <div class="inline-flex items-center gap-2 bg-white/30 backdrop-blur-md rounded-full px-4 py-1.5 sm:px-6 sm:py-2 mb-6 border border-white/40 shadow-lg" data-aos="fade-down">
+                    <i class="fa-solid fa-book-open text-white text-base sm:text-xl"></i>
+                    <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-i18n="hero_badge">Historias que inspiran</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[1.1] text-white drop-shadow-2xl" data-aos="zoom-in" data-aos-delay="200" data-i18n="hero_title">
+                    Comparte tu <br><span class="bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200 bg-clip-text text-transparent">historia</span>
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto drop-shadow-md leading-relaxed px-2 mt-4" data-aos="fade-up" data-aos-delay="400" data-i18n="hero_subtitle">
+                    <strong class="text-yellow-200">Todas las voces cuentan</strong>. Comparte tu experiencia, tu testimonio o simplemente un pensamiento. Juntos creamos una comunidad de esperanza.
+                </p>
+            </div>
+
+            <div class="wave-bottom">
+                <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,70 1440,80 L1440,80 L0,80 Z" fill="#fdf6e3" opacity="0.95"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== SECCIÓN: PUBLICAR UNA HISTORIA ===== -->
+        <!-- ============================================================ -->
+        <section class="py-8 sm:py-12 bg-[#fdf6e3]">
+            <div class="container mx-auto px-4 md:px-6 max-w-3xl">
+                <div class="text-center mb-6" data-aos="fade-up">
+                    <span class="bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                        <i class="fa-regular fa-pen-to-square mr-2"></i> <span data-i18n="form_badge">Escribe tu historia</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-gray-800 mt-2" data-i18n="form_title">
+                        Comparte tu <span class="text-orange-600">experiencia</span>
+                    </h2>
+                </div>
+
+                <div class="form-historias p-6 sm:p-8" data-aos="fade-up" data-aos-delay="100">
+                    <form id="storyForm" onsubmit="publicarHistoria(event)">
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-i18n="form_label_name">Tu nombre</label>
+                            <input type="text" id="authorName" placeholder="Ej: María" required class="w-full" data-i18n-placeholder="form_placeholder_name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-i18n="form_label_title">Título de la historia</label>
+                            <input type="text" id="storyTitle" placeholder="Ej: Mi experiencia en la casa de acogida" required class="w-full" data-i18n-placeholder="form_placeholder_title">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-bold text-gray-700 mb-1" data-i18n="form_label_story">Cuéntanos tu historia</label>
+                            <textarea id="storyText" rows="5" placeholder="Escribe aquí tu historia..." required class="w-full" data-i18n-placeholder="form_placeholder_story"></textarea>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" data-i18n="form_submit"><i class="fa-regular fa-paper-plane mr-2"></i> Publicar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== MURO DE HISTORIAS ===== -->
+        <!-- ============================================================ -->
+        <section class="py-8 sm:py-12 bg-white relative">
+            <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+                <div class="text-center mb-8" data-aos="fade-up">
+                    <span class="bg-gradient-to-r from-orange-100 to-amber-100 text-orange-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                        <i class="fa-regular fa-message mr-2"></i> <span data-i18n="wall_badge">Muro de historias</span>
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-gray-800 mt-2" data-i18n="wall_title">
+                        Lo que nuestra <span class="text-orange-600">comunidad comparte</span>
+                    </h2>
+                </div>
+
+                <div id="storiesContainer">
+                    <div class="empty-state" id="emptyState">
+                        <i class="fa-regular fa-comment-dots"></i>
+                        <p data-i18n="empty_message">Aún no hay historias. ¡Sé el primero en compartir la tuya!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- ===== FIN PAGE-WRAPPER ===== -->
+
+    <!-- ===== FOOTER CON ENLACES DE NAVEGACIÓN ===== -->
+    <footer id="contacto" class="bg-[#1B5E20] pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-4 border-[#4CAF50]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo footer.jpg" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';" alt="Logo Pacai Cusco" class="footer-logo-img" loading="lazy">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-[#FF8A80]">ASOCIACIÓN</span>
+                            <span class="text-[#FFCC80] ml-1">PACAI</span>
+                            <span class="text-[#81D4FA] ml-1">CUSCO</span>
+                        </div>
+                    </div>
+                    <p class="text-[#C8E6C9] mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-i18n="footer_desc">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#1877F2] hover:text-white hover:-translate-y-1 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#E4405F] hover:text-white hover:-translate-y-1 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#0A66C2] hover:text-white hover:-translate-y-1 transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#1DA1F2] hover:text-white hover:-translate-y-1 transition-all" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:text-white hover:-translate-y-1 transition-all" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-i18n="footer_nav_title">Navegación</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-[#C8E6C9] font-medium text-sm sm:text-base">
+                        <li><a href="index.html" class="hover:text-[#FFCC80] transition-colors flex items-center gap-2" data-i18n="footer_nav_pacai"><i class="fa-solid fa-angle-right text-xs text-[#FFCC80]"></i> Pacai</a></li>
+                        <li><a href="programas.html" class="hover:text-[#81D4FA] transition-colors flex items-center gap-2" data-i18n="footer_nav_programas"><i class="fa-solid fa-angle-right text-xs text-[#81D4FA]"></i> Programas de Pacai</a></li>
+                        <li><a href="galeria.html" class="hover:text-[#CE93D8] transition-colors flex items-center gap-2" data-i18n="footer_nav_cultura"><i class="fa-solid fa-angle-right text-xs text-[#CE93D8]"></i> Cultura y Recreación</a></li>
+                        <li><a href="historias.html" class="hover:text-[#FF8A80] transition-colors flex items-center gap-2" data-i18n="footer_nav_historias"><i class="fa-solid fa-angle-right text-xs text-[#FF8A80]"></i> Historias</a></li>
+                        <li><a href="donar.html" class="hover:text-[#FFCC80] transition-colors flex items-center gap-2" data-i18n="footer_nav_donar"><i class="fa-solid fa-angle-right text-xs text-[#FFCC80]"></i> Donar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-i18n="footer_casa_titulo">Nuestra Casa</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-[#C8E6C9] text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-[#FF8A80]"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1" data-i18n="footer_casa_direccion">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#81D4FA]"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all" data-i18n="footer_casa_email">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#A5D6A7]"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium" data-i18n="footer_casa_telefono">+51 987 654 321</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#FFCC80]"><i class="fa-regular fa-clock text-base sm:text-xl"></i></div>
+                            <span class="font-medium" data-i18n="footer_casa_horario">Lun - Vie: 8am - 6pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-green-700 pt-6 sm:pt-8 text-center text-[#A5D6A7] text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> <span data-i18n="footer_copyright">Asociación Pacai Cusco. Hecho con el corazón.</span> <span class="text-[#FF8A80]">❤️</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-[#FF8A80] footer-heart"></i> <span data-i18n="footer_esperanza">Esperanza que transforma</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BOTONES FLOTANTES ===== -->
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-4 sm:right-6 z-40 bg-white text-[#3d3d3d] w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-base sm:text-xl shadow-[0_4px_15px_rgba(0,0,0,0.04)] opacity-0 translate-y-10 transition-all duration-300 focus:outline-none hover:bg-[#4CAF50] hover:text-white border border-[#f0ebe0] hover:scale-110" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <a href="https://wa.me/51987654321" target="_blank" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-3xl sm:text-4xl shadow-[0_4px_20px_rgba(37,211,102,0.12)] hover:scale-110 transition-transform animate-pulse-slow border-2 border-white/20" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            AOS.init({ duration: 700, once: true, offset: 40 });
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ===== TOAST =====
+            const toastEl = document.getElementById('toast');
+            let toastTimeout;
+
+            function showToast(message) {
+                clearTimeout(toastTimeout);
+                toastEl.textContent = message;
+                toastEl.classList.add('show');
+                toastTimeout = setTimeout(() => {
+                    toastEl.classList.remove('show');
+                }, 3000);
+            }
+
+            // ===== STORAGE =====
+            const STORAGE_KEY = 'pacai_historias';
+
+            function getStories() {
+                try {
+                    const data = localStorage.getItem(STORAGE_KEY);
+                    return data ? JSON.parse(data) : [];
+                } catch (e) {
+                    return [];
+                }
+            }
+
+            function saveStories(stories) {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(stories));
+            }
+
+            // ===== RENDERIZAR HISTORIAS =====
+            function renderStories() {
+                const container = document.getElementById('storiesContainer');
+                const emptyState = document.getElementById('emptyState');
+                const stories = getStories();
+
+                container.innerHTML = '';
+
+                if (stories.length === 0) {
+                    container.appendChild(emptyState);
+                    return;
+                }
+
+                stories.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                stories.forEach((story, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'story-card';
+                    card.style.animationDelay = (index * 0.05) + 's';
+
+                    const initial = story.author.charAt(0).toUpperCase();
+                    const dateObj = new Date(story.date);
+                    const dateStr = dateObj.toLocaleDateString(
+                        document.documentElement.lang || 'es', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        }
+                    );
+
+                    card.innerHTML = `
+                        <div class="story-header">
+                            <div class="story-author">
+                                <div class="avatar">${escapeHtml(initial)}</div>
+                                <span>${escapeHtml(story.author)}</span>
+                            </div>
+                            <span class="story-date">${dateStr}</span>
+                        </div>
+                        <div class="story-title">${escapeHtml(story.title)}</div>
+                        <div class="story-text">${escapeHtml(story.content)}</div>
+                        <div class="story-actions">
+                            <button class="like-btn ${story.liked ? 'liked' : ''}" onclick="toggleLike('${story.id}')">
+                                <i class="${story.liked ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                                <span class="like-count">${story.likes || 0}</span>
+                            </button>
+                            <span style="color:#9ca3af; font-size:0.85rem;">
+                                <i class="fa-regular fa-comment"></i> ${(story.comments || []).length}
+                            </span>
+                        </div>
+                        <div class="comment-section">
+                            ${renderComments(story)}
+                            <div class="comment-input-group">
+                                <input type="text" placeholder="${getTranslation('comment_placeholder')}" class="comment-input" data-story-id="${story.id}">
+                                <button onclick="addComment('${story.id}', this)">${getTranslation('comment_btn')}</button>
+                            </div>
+                        </div>
+                    `;
+
+                    container.appendChild(card);
+                });
+            }
+
+            function renderComments(story) {
+                const comments = story.comments || [];
+                if (comments.length === 0) return '';
+                return comments.map(c => `
+                    <div class="comment">
+                        <div class="comment-author">${escapeHtml(c.author)}</div>
+                        <div class="comment-text">${escapeHtml(c.text)}</div>
+                        <div class="comment-date">${new Date(c.date).toLocaleDateString()}</div>
+                    </div>
+                `).join('');
+            }
+
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // ===== TRADUCCIONES PARA COMENTARIOS =====
+            function getTranslation(key) {
+                const translations = {
+                    es: {
+                        'comment_placeholder': 'Escribe un comentario...',
+                        'comment_btn': 'Comentar'
+                    },
+                    en: {
+                        'comment_placeholder': 'Write a comment...',
+                        'comment_btn': 'Comment'
+                    },
+                    de: {
+                        'comment_placeholder': 'Schreibe einen Kommentar...',
+                        'comment_btn': 'Kommentieren'
+                    }
+                };
+                const lang = document.documentElement.lang || 'es';
+                return (translations[lang] && translations[lang][key]) || translations['es'][key];
+            }
+
+            // ===== PUBLICAR HISTORIA =====
+            window.publicarHistoria = function(e) {
+                e.preventDefault();
+
+                const author = document.getElementById('authorName').value.trim();
+                const title = document.getElementById('storyTitle').value.trim();
+                const content = document.getElementById('storyText').value.trim();
+
+                if (!author || !title || !content) {
+                    showToast('Por favor, completa todos los campos.');
+                    return;
+                }
+
+                const stories = getStories();
+                const newStory = {
+                    id: Date.now().toString(36) + Math.random().toString(36).substr(2, 4),
+                    author: author,
+                    title: title,
+                    content: content,
+                    date: new Date().toISOString(),
+                    likes: 0,
+                    liked: false,
+                    comments: []
+                };
+
+                stories.push(newStory);
+                saveStories(stories);
+                renderStories();
+
+                document.getElementById('authorName').value = '';
+                document.getElementById('storyTitle').value = '';
+                document.getElementById('storyText').value = '';
+
+                const msgs = {
+                    es: '¡Historia publicada con éxito!',
+                    en: 'Story published successfully!',
+                    de: 'Geschichte erfolgreich veröffentlicht!'
+                };
+                const lang = document.documentElement.lang || 'es';
+                showToast(msgs[lang] || msgs.es);
+
+                document.getElementById('storiesContainer').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+
+            // ===== DAR LIKE =====
+            window.toggleLike = function(storyId) {
+                const stories = getStories();
+                const story = stories.find(s => s.id === storyId);
+                if (!story) return;
+
+                story.liked = !story.liked;
+                story.likes += story.liked ? 1 : -1;
+                saveStories(stories);
+                renderStories();
+            };
+
+            // ===== AÑADIR COMENTARIO =====
+            window.addComment = function(storyId, btn) {
+                const input = btn.closest('.comment-input-group').querySelector('.comment-input');
+                const text = input.value.trim();
+                if (!text) return;
+
+                const stories = getStories();
+                const story = stories.find(s => s.id === storyId);
+                if (!story) return;
+
+                let author = prompt(getTranslation('comment_name_prompt') || 'Tu nombre:');
+                if (author === null) return;
+                author = author.trim() || 'Anónimo';
+
+                story.comments = story.comments || [];
+                story.comments.push({
+                    author: author,
+                    text: text,
+                    date: new Date().toISOString()
+                });
+
+                saveStories(stories);
+                renderStories();
+
+                const msgs = {
+                    es: 'Comentario añadido.',
+                    en: 'Comment added.',
+                    de: 'Kommentar hinzugefügt.'
+                };
+                const lang = document.documentElement.lang || 'es';
+                showToast(msgs[lang] || msgs.es);
+            };
+
+            // ===== NAVBAR SCROLL =====
+            const nav = document.getElementById('navbar');
+            const scrollTopBtn = document.getElementById('scrollToTopBtn');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+                if (window.scrollY > 400) {
+                    scrollTopBtn.classList.remove('opacity-0', 'translate-y-10');
+                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'translate-y-10');
+                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ===== MENÚ MÓVIL =====
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMobileMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // ===== SELECTOR DE IDIOMAS =====
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+            const translations = {
+                es: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PROGRAMAS DE PACAI",
+                    nav_cultura: "CULTURA Y RECREACIÓN",
+                    nav_historias: "HISTORIAS",
+                    nav_donar: "DONAR",
+                    drop_psicologia: "Acompañamiento Psicológico",
+                    drop_compartir: "Compartir",
+                    drop_pedagogico: "Reforzamiento Pedagógico",
+                    drop_acogida: "Casa de Acogida",
+                    drop_intervencion: "Intervención Familiar",
+                    drop_social: "Apoyo Social",
+                    hero_badge: "Historias que inspiran",
+                    hero_title: "Comparte tu <br><span class=\"bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200 bg-clip-text text-transparent\">historia</span>",
+                    hero_subtitle: '<strong class="text-yellow-200">Todas las voces cuentan</strong>. Comparte tu experiencia, tu testimonio o simplemente un pensamiento. Juntos creamos una comunidad de esperanza.',
+                    form_badge: "Escribe tu historia",
+                    form_title: "Comparte tu <span class=\"text-orange-600\">experiencia</span>",
+                    form_label_name: "Tu nombre",
+                    form_placeholder_name: "Ej: María",
+                    form_label_title: "Título de la historia",
+                    form_placeholder_title: "Ej: Mi experiencia en la casa de acogida",
+                    form_label_story: "Cuéntanos tu historia",
+                    form_placeholder_story: "Escribe aquí tu historia...",
+                    form_submit: "Publicar",
+                    wall_badge: "Muro de historias",
+                    wall_title: "Lo que nuestra <span class=\"text-orange-600\">comunidad comparte</span>",
+                    empty_message: "Aún no hay historias. ¡Sé el primero en compartir la tuya!",
+                    comment_placeholder: "Escribe un comentario...",
+                    comment_btn: "Comentar",
+                    comment_name_prompt: "Tu nombre:",
+                    footer_desc: "Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.",
+                    footer_nav_title: "Navegación",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Programas de Pacai",
+                    footer_nav_cultura: "Cultura y Recreación",
+                    footer_nav_historias: "Historias",
+                    footer_nav_donar: "Donar",
+                    footer_casa_titulo: "Nuestra Casa",
+                    footer_casa_direccion: "Calle San Agustín 307,<br>Cusco, Perú",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Lun - Vie: 8am - 6pm",
+                    footer_copyright: "Asociación Pacai Cusco. Hecho con el corazón.",
+                    footer_esperanza: "Esperanza que transforma",
+                },
+                en: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PACAI PROGRAMS",
+                    nav_cultura: "CULTURE & RECREATION",
+                    nav_historias: "STORIES",
+                    nav_donar: "DONATE",
+                    drop_psicologia: "Psychological Support",
+                    drop_compartir: "Sharing",
+                    drop_pedagogico: "Pedagogical Support",
+                    drop_acogida: "Host Home",
+                    drop_intervencion: "Family Intervention",
+                    drop_social: "Social Support",
+                    hero_badge: "Inspiring Stories",
+                    hero_title: "Share your <br><span class=\"bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200 bg-clip-text text-transparent\">story</span>",
+                    hero_subtitle: '<strong class="text-yellow-200">Every voice matters</strong>. Share your experience, your testimony, or just a thought. Together we create a community of hope.',
+                    form_badge: "Write your story",
+                    form_title: "Share your <span class=\"text-orange-600\">experience</span>",
+                    form_label_name: "Your name",
+                    form_placeholder_name: "e.g. Maria",
+                    form_label_title: "Story title",
+                    form_placeholder_title: "e.g. My experience at the host home",
+                    form_label_story: "Tell us your story",
+                    form_placeholder_story: "Write your story here...",
+                    form_submit: "Publish",
+                    wall_badge: "Story wall",
+                    wall_title: "What our <span class=\"text-orange-600\">community shares</span>",
+                    empty_message: "No stories yet. Be the first to share yours!",
+                    comment_placeholder: "Write a comment...",
+                    comment_btn: "Comment",
+                    comment_name_prompt: "Your name:",
+                    footer_desc: "Where hope grows and cancer declines. Together we build a future full of light and health for our children in Cusco.",
+                    footer_nav_title: "Navigation",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Pacai Programs",
+                    footer_nav_cultura: "Culture & Recreation",
+                    footer_nav_historias: "Stories",
+                    footer_nav_donar: "Donate",
+                    footer_casa_titulo: "Our Home",
+                    footer_casa_direccion: "307 San Agustín St,<br>Cusco, Peru",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Mon - Fri: 8am - 6pm",
+                    footer_copyright: "Pacai Cusco Association. Made with heart.",
+                    footer_esperanza: "Hope that transforms",
+                },
+                de: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PACAI-PROGRAMME",
+                    nav_cultura: "KULTUR & FREIZEIT",
+                    nav_historias: "GESCHICHTEN",
+                    nav_donar: "SPENDEN",
+                    drop_psicologia: "Psychologische Begleitung",
+                    drop_compartir: "Teilen",
+                    drop_pedagogico: "Pädagogische Unterstützung",
+                    drop_acogida: "Gästehaus",
+                    drop_intervencion: "Familienintervention",
+                    drop_social: "Soziale Unterstützung",
+                    hero_badge: "Inspirierende Geschichten",
+                    hero_title: "Teile deine <br><span class=\"bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200 bg-clip-text text-transparent\">Geschichte</span>",
+                    hero_subtitle: '<strong class="text-yellow-200">Jede Stimme zählt</strong>. Teile deine Erfahrung, dein Zeugnis oder einfach einen Gedanken. Zusammen schaffen wir eine Gemeinschaft der Hoffnung.',
+                    form_badge: "Schreibe deine Geschichte",
+                    form_title: "Teile deine <span class=\"text-orange-600\">Erfahrung</span>",
+                    form_label_name: "Dein Name",
+                    form_placeholder_name: "z.B. Maria",
+                    form_label_title: "Titel der Geschichte",
+                    form_placeholder_title: "z.B. Meine Erfahrung im Gästehaus",
+                    form_label_story: "Erzähle uns deine Geschichte",
+                    form_placeholder_story: "Schreibe hier deine Geschichte...",
+                    form_submit: "Veröffentlichen",
+                    wall_badge: "Geschichtenwand",
+                    wall_title: "Was unsere <span class=\"text-orange-600\">Gemeinschaft teilt</span>",
+                    empty_message: "Noch keine Geschichten. Sei der Erste, der deine teilt!",
+                    comment_placeholder: "Schreibe einen Kommentar...",
+                    comment_btn: "Kommentieren",
+                    comment_name_prompt: "Dein Name:",
+                    footer_desc: "Wo Hoffnung wächst und Krebs zurückgeht. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.",
+                    footer_nav_title: "Navigation",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Pacai-Programme",
+                    footer_nav_cultura: "Kultur & Freizeit",
+                    footer_nav_historias: "Geschichten",
+                    footer_nav_donar: "Spenden",
+                    footer_casa_titulo: "Unser Haus",
+                    footer_casa_direccion: "Calle San Agustín 307,<br>Cusco, Peru",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Mo - Fr: 8 - 18 Uhr",
+                    footer_copyright: "Verein Pacai Cusco. Mit Herz gemacht.",
+                    footer_esperanza: "Hoffnung, die verwandelt",
+                }
+            };
+
+            function applyTranslations(lang) {
+                const t = translations[lang];
+                if (!t) return;
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (t[key] !== undefined) {
+                        if (el.children.length || el.innerHTML.includes('<')) {
+                            el.innerHTML = t[key];
+                        } else {
+                            el.textContent = t[key];
+                        }
+                    }
+                });
+
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    if (t[key] !== undefined) {
+                        el.placeholder = t[key];
+                    }
+                });
+
+                const labels = { es: '🇪🇸 ES', en: '🇬🇧 EN', de: '🇩🇪 DE' };
+                currentLangLabel.textContent = labels[lang] || '🇪🇸 ES';
+                document.documentElement.lang = lang;
+            }
+
+            function setLanguage(langCode) {
+                currentLang = langCode;
+                localStorage.setItem('pacai_lang', langCode);
+                applyTranslations(langCode);
+                langOptions.forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                });
+                langDropdown.classList.remove('open');
+                renderStories();
+            }
+
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('open');
+            });
+            langOptions.forEach(function(opt) {
+                opt.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    setLanguage(opt.dataset.langCode);
+                });
+            });
+
+            setLanguage(currentLang);
+            renderStories();
+
+            console.log('🌈 Pacai Cusco · Historias interactivas (navbar igual a donar.html)');
+            console.log('📖 Comparte tu historia y lee las de otros.');
+
+        })();
+    </script>
+
+</body>
+</html>
