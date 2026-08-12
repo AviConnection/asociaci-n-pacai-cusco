@@ -1,0 +1,1717 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Voluntariado · Asociación Pacai Cusco</title>
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/jpeg" href="imágenes/logo footer.jpg">
+    <link rel="apple-touch-icon" href="imágenes/logo footer.jpg">
+    <link rel="shortcut icon" href="imágenes/logo footer.jpg">
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Únete al voluntariado de Pacai Cusco. Personas de todo el mundo comparten su tiempo y cariño con niños con cáncer en Cusco.">
+    <link rel="canonical" href="https://asociacionpacaicusco.com/voluntariado.html">
+    <link rel="alternate" hreflang="es" href="https://asociacionpacaicusco.com/es/voluntariado.html">
+    <link rel="alternate" hreflang="en" href="https://asociacionpacaicusco.com/en/voluntariado.html">
+    <link rel="alternate" hreflang="de" href="https://asociacionpacaicusco.com/de/voluntariado.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Voluntariado · Asociación Pacai Cusco">
+    <meta property="og:description" content="Únete al voluntariado de Pacai Cusco. Personas de todo el mundo comparten su tiempo y cariño con niños con cáncer en Cusco.">
+    <meta property="og:image" content="https://asociacionpacaicusco.com/imagenes/og-image.jpg">
+    <meta property="og:url" content="https://asociacionpacaicusco.com/voluntariado.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Quicksand:wght@500;600;700;800&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        display: ['Quicksand', 'sans-serif'],
+                        cinzel: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        andes: {
+                            red: '#E53935',
+                            orange: '#FF9800',
+                            yellow: '#FFC107',
+                            green: '#4CAF50',
+                            blue: '#2196F3',
+                            purple: '#9C27B0',
+                            pink: '#E91E63',
+                            teal: '#009688',
+                            indigo: '#3F51B5',
+                            amber: '#FF6F00',
+                            lime: '#C0CA33',
+                            cyan: '#00BCD4',
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'spin-slow': 'spin 10s linear infinite',
+                        'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.6s ease-out',
+                        'fade-in': 'fade-in 0.8s ease-out',
+                        'slide-right': 'slide-right 0.6s ease-out',
+                        'slide-left': 'slide-left 0.6s ease-out',
+                        'zoom-in': 'zoom-in 0.6s ease-out',
+                        'flip-in': 'flip-in 0.7s ease-out',
+                        'rotate-in': 'rotate-in 0.6s ease-out',
+                        'bounce-in': 'bounce-in 0.7s ease-out',
+                        'float-particle': 'float-particle 8s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'tilt': 'tilt 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-25px) rotate(3deg)' },
+                        },
+                        'bounce-gentle': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-40px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-left': {
+                            '0%': { transform: 'translateX(40px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'zoom-in': {
+                            '0%': { transform: 'scale(0.7)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        'flip-in': {
+                            '0%': { transform: 'rotateY(-90deg)', opacity: '0' },
+                            '100%': { transform: 'rotateY(0)', opacity: '1' },
+                        },
+                        'rotate-in': {
+                            '0%': { transform: 'rotate(-10deg) scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'rotate(0) scale(1)', opacity: '1' },
+                        },
+                        'bounce-in': {
+                            '0%': { transform: 'scale(0.3)', opacity: '0' },
+                            '50%': { transform: 'scale(1.1)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        'float-particle': {
+                            '0%, 100%': { transform: 'translateY(0) translateX(0) scale(1)', opacity: '0.3' },
+                            '25%': { transform: 'translateY(-60px) translateX(30px) scale(1.2)', opacity: '0.6' },
+                            '50%': { transform: 'translateY(-120px) translateX(-20px) scale(0.8)', opacity: '0.8' },
+                            '75%': { transform: 'translateY(-60px) translateX(40px) scale(1.4)', opacity: '0.5' },
+                        },
+                        'wiggle': {
+                            '0%, 100%': { transform: 'rotate(-3deg) scale(1)' },
+                            '50%': { transform: 'rotate(3deg) scale(1.02)' },
+                        },
+                        'tilt': {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '25%': { transform: 'rotate(2deg)' },
+                            '75%': { transform: 'rotate(-2deg)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ===== ESTILOS GLOBALES ===== */
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #2d2d2d;
+            background: #fdf6e3;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .page-wrapper {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .page-wrapper > section:last-of-type {
+            flex: 1;
+        }
+        footer {
+            flex-shrink: 0;
+            margin-top: 0 !important;
+            width: 100%;
+            position: relative;
+        }
+
+        ::selection { background: #FF6F00; color: white; }
+
+        /* ===== PARTÍCULAS ===== */
+        .particle-field {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle-field .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: float-particle 14s ease-in-out infinite;
+            background: #FFB74D;
+        }
+        .particle-field .particle:nth-child(odd) { background: #FF8A65; }
+        .particle-field .particle:nth-child(3n) { background: #81D4FA; }
+        .particle-field .particle:nth-child(5n) { background: #A5D6A7; }
+        .particle-field .particle:nth-child(7n) { background: #CE93D8; }
+
+        /* ===== NAVBAR ===== */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(255, 252, 245, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            height: 76px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        #navbar.scrolled {
+            height: 64px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .nav-logo-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            margin-top: -30px;
+            margin-bottom: -30px;
+        }
+        #navbar.scrolled .nav-logo-img {
+            width: 90px;
+            height: 90px;
+            margin-top: -20px;
+            margin-bottom: -20px;
+        }
+        @media (max-width:640px){
+            #navbar { height: 62px; }
+            #navbar.scrolled { height: 54px; }
+            .nav-logo-img { width: 90px; height: 90px; margin-top: -25px; margin-bottom: -25px; }
+            #navbar.scrolled .nav-logo-img { width: 70px; height: 70px; margin-top: -18px; margin-bottom: -18px; }
+        }
+        @media (max-width:400px){
+            #navbar { height: 54px; }
+            #navbar.scrolled { height: 48px; }
+            .nav-logo-img { width: 75px; height: 75px; margin-top: -20px; margin-bottom: -20px; }
+            #navbar.scrolled .nav-logo-img { width: 60px; height: 60px; margin-top: -15px; margin-bottom: -15px; }
+        }
+
+        .logo-text { transition: all 0.3s ease; }
+        #navbar.scrolled .logo-text { font-size: 0.9rem !important; }
+        @media (min-width:1024px){ #navbar.scrolled .logo-text { font-size: 1.1rem !important; } }
+
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            gap: 0.5rem;
+            padding: 0 0.25rem;
+        }
+        @media (min-width:640px){ .navbar-inner { gap: 1rem; padding: 0 0.5rem; } }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        @media (max-width:768px){ html { scroll-padding-top: 80px; } }
+
+        /* ===== ENLACES DEL NAVBAR ===== */
+        .nav-link {
+            position: relative;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+            color: #4a4a4a;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+        .nav-link:hover {
+            color: #FF6F00;
+            background: rgba(255,111,0,0.06);
+            transform: translateY(-2px);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: #FF6F00;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+        .nav-link:hover::after { width: 60%; }
+        .nav-link.active { color: #FF6F00; }
+        .nav-link.active::after { width: 60%; }
+
+        /* ===== DROPDOWN ===== */
+        .dropdown-container {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-trigger {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            padding: 0.4rem 0.8rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: #4a4a4a;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            letter-spacing: 0.02em;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+        }
+        .dropdown-trigger:hover {
+            color: #FF6F00;
+            background: rgba(255,111,0,0.06);
+            transform: translateY(-2px);
+        }
+        .dropdown-trigger .arrow {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+        .dropdown-container:hover .dropdown-trigger .arrow {
+            transform: rotate(180deg);
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            min-width: 220px;
+            background: #fff;
+            border-radius: 1rem;
+            padding: 0.5rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.04);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px) scale(0.97);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 60;
+        }
+        .dropdown-container:hover .dropdown-menu {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0) scale(1);
+        }
+        .dropdown-menu .drop-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #4a4a4a;
+            border-radius: 0.75rem;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .dropdown-menu .drop-item:hover {
+            background: rgba(255,111,0,0.06);
+            color: #FF6F00;
+            transform: translateX(4px);
+        }
+        .dropdown-menu .drop-item .drop-icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .dropdown-menu .drop-item .drop-arrow {
+            margin-left: auto;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: #FF6F00;
+        }
+        .dropdown-menu .drop-item:hover .drop-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+        .dropdown-menu .drop-divider {
+            height: 1px;
+            margin: 0.3rem 0.5rem;
+            background: rgba(0,0,0,0.04);
+        }
+
+        /* ===== BOTÓN DONAR (Nav) ===== */
+        .btn-donate-nav {
+            background: linear-gradient(135deg, #FF9800, #E53935);
+            color: #fff !important;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 15px rgba(229,57,53,0.12);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+        .btn-donate-nav:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(229,57,53,0.25);
+            color: #fff !important;
+        }
+
+        /* ===== SELECTOR DE IDIOMAS ===== */
+        .lang-selector { position:relative; z-index:100; }
+        .lang-selector button { background:transparent; border:1px solid rgba(0,0,0,0.06); border-radius:60px; padding:4px 12px; font-weight:600; font-size:0.7rem; display:flex; align-items:center; gap:4px; transition:all 0.3s ease; cursor:pointer; color:#5a5a5a; }
+        .lang-selector button:hover { border-color:#FF6F00; background:rgba(255,111,0,0.05); color:#FF6F00; }
+        .lang-selector .dropdown { position:absolute; top:calc(100% + 6px); right:0; background:#fff; border-radius:1rem; box-shadow:0 20px 40px rgba(0,0,0,0.06); border:1px solid rgba(0,0,0,0.04); padding:6px; min-width:130px; opacity:0; transform:translateY(-8px) scale(0.95); pointer-events:none; transition:all 0.3s ease; z-index:100; }
+        .lang-selector .dropdown.open { opacity:1; transform:translateY(0) scale(1); pointer-events:all; }
+        .lang-selector .dropdown button { background:transparent; border:none; border-radius:0.75rem; padding:6px 14px; width:100%; text-align:left; font-weight:600; font-size:0.8rem; color:#5a5a5a; transition:all 0.2s ease; }
+        .lang-selector .dropdown button:hover { background:rgba(255,111,0,0.05); color:#FF6F00; }
+        .lang-selector .dropdown button.active { background:#FF6F00; color:white; }
+
+        /* Menú móvil */
+        #mobileMenu { transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1); background:rgba(255,252,245,0.98); backdrop-filter:blur(24px); }
+        #mobileMenu.open { transform:translateX(0); }
+
+        /* ===== FOOTER ===== */
+        .footer-logo-img {
+            width: 56px;
+            height: 56px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+        }
+        @media (max-width:640px){ .footer-logo-img { width: 44px; height: 44px; } }
+        .footer-heart { animation: pulse 1.5s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.2)} }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #fdf6e3; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #FF6F00, #E65100); border-radius: 6px; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width:480px){
+            .footer-grid { grid-template-columns:1fr !important; text-align:center; }
+            .nav-link { font-size: 0.7rem; padding: 0.2rem 0.4rem; }
+        }
+        @media (max-width:768px){
+            .nav-desktop { display:none !important; }
+            .hamburger { display:flex !important; }
+            .hide-on-mobile { display:none !important; }
+        }
+        @media (prefers-reduced-motion:reduce){
+            * { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+            .particle-field { display:none !important; }
+        }
+
+        /* ============================================================ */
+        /* ===== ESTILOS PROPIOS DE VOLUNTARIADO ===== */
+        /* ============================================================ */
+
+        .hero-voluntariado {
+            background: linear-gradient(135deg, #1a0a00 0%, #3d1a00 30%, #6d2f00 60%, #bf4300 100%);
+            background-size: 400% 400%;
+            animation: gradientMove 12s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .hero-voluntariado::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ccircle cx='30' cy='30' r='20' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") repeat;
+            background-size: 120px 120px;
+            z-index: 1;
+        }
+
+        .floating-particle-warm {
+            position: absolute;
+            border-radius: 50%;
+            animation: floatParticleWarm 14s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+        @keyframes floatParticleWarm {
+            0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.2; }
+            50% { transform: translateY(-100px) scale(1.8) rotate(180deg); opacity: 0.5; }
+            100% { transform: translateY(0) scale(1) rotate(360deg); opacity: 0.2; }
+        }
+
+        .wave-bottom {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            line-height: 0;
+        }
+        .wave-bottom svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Tarjetas de valores */
+        .valor-card {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 1.5rem;
+        }
+        .valor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6F00, #FF9800, #FFC107);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .valor-card:hover::before { transform: scaleX(1); }
+        .valor-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            border-color: #FF6F00;
+            box-shadow: 0 20px 50px rgba(255,111,0,0.12);
+        }
+        .valor-card .icono-wrapper {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .valor-card:hover .icono-wrapper { transform: scale(1.15) rotate(-8deg); }
+
+        /* Tarjeta de voluntario */
+        .voluntario-card {
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: #fff;
+            border: 2px solid rgba(255,111,0,0.08);
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+        .voluntario-card:hover {
+            transform: translateY(-8px);
+            border-color: #FF6F00;
+            box-shadow: 0 20px 50px rgba(255,111,0,0.1);
+        }
+        .voluntario-card .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #FF6F00;
+            transition: all 0.4s ease;
+        }
+        .voluntario-card:hover .avatar {
+            transform: scale(1.05);
+            border-color: #FF9800;
+        }
+        .voluntario-card .flag {
+            font-size: 1.8rem;
+        }
+
+        /* Galería */
+        .galeria-item {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            aspect-ratio: 1/1;
+            cursor: pointer;
+        }
+        .galeria-item img {
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .galeria-item:hover img { transform: scale(1.08); }
+        .galeria-item .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(255,111,0,0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+        }
+        .galeria-item:hover .overlay { opacity: 1; }
+        .galeria-item .overlay span {
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+        .galeria-item:hover .overlay span { transform: translateY(0); }
+
+        /* Modal */
+        #imageModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #imageModal.open {
+            display: flex;
+            opacity: 1;
+        }
+        #imageModal .modal-content {
+            max-width: 85vw;
+            max-height: 85vh;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        #imageModal .modal-content img {
+            width: 100%;
+            height: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            display: block;
+        }
+        #imageModal .modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            padding: 0.5rem;
+            z-index: 10;
+        }
+        #imageModal .modal-close:hover { opacity: 1; transform: rotate(90deg) scale(1.1); }
+        @media (max-width:768px){
+            #imageModal .modal-close { top: -40px; font-size: 2rem; }
+        }
+
+        /* Testimonios carrusel */
+        .testimonios-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
+        }
+        .testimonio-slide {
+            flex: 0 0 100%;
+            padding: 2rem 2.5rem;
+            background: #fff;
+            border-radius: 2rem;
+            border: 2px solid rgba(255,111,0,0.08);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        .testimonio-slide .quote-icon {
+            font-size: 2.5rem;
+            color: #FF6F00;
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+        .testimonio-slide .testimonio-texto {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .testimonio-slide .testimonio-autor {
+            font-weight: 700;
+            color: #2d2d2d;
+            margin-top: 0.75rem;
+        }
+        .testimonio-slide .testimonio-rol {
+            font-size: 0.8rem;
+            color: #8a8a8a;
+        }
+        .testimonio-slide .estrellas { color: #FFC107; margin-bottom: 0.5rem; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        .carousel-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-dots .dot.active {
+            background: #FF6F00;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(255,111,0,0.2);
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid rgba(255,111,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #5a5a5a;
+        }
+        .carousel-btn:hover {
+            background: #FF6F00;
+            color: white;
+            border-color: transparent;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 8px 30px rgba(255,111,0,0.2);
+        }
+        .carousel-btn.prev { left: 0.5rem; }
+        .carousel-btn.next { right: 0.5rem; }
+        @media (max-width:768px){
+            .carousel-btn { width: 34px; height: 34px; font-size: 0.9rem; }
+            .carousel-btn.prev { left: 0.25rem; }
+            .carousel-btn.next { right: 0.25rem; }
+            .testimonio-slide { padding: 1.5rem; }
+            .testimonio-slide .testimonio-texto { font-size: 0.9rem; }
+        }
+
+        .bg-pattern-hearts {
+            background-image: radial-gradient(circle, rgba(255,111,0,0.06) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== PARTÍCULAS ===== -->
+    <div class="particle-field" aria-hidden="true">
+        <div class="particle" style="left:5%; width:12px; height:12px; animation-delay:0s;"></div>
+        <div class="particle" style="left:15%; width:18px; height:18px; animation-delay:1.5s;"></div>
+        <div class="particle" style="left:25%; width:10px; height:10px; animation-delay:3s;"></div>
+        <div class="particle" style="left:35%; width:16px; height:16px; animation-delay:4.5s;"></div>
+        <div class="particle" style="left:45%; width:8px; height:8px; animation-delay:6s;"></div>
+        <div class="particle" style="left:55%; width:20px; height:20px; animation-delay:1s;"></div>
+        <div class="particle" style="left:65%; width:14px; height:14px; animation-delay:2.5s;"></div>
+        <div class="particle" style="left:75%; width:11px; height:11px; animation-delay:4s;"></div>
+        <div class="particle" style="left:85%; width:17px; height:17px; animation-delay:5.5s;"></div>
+        <div class="particle" style="left:95%; width:9px; height:9px; animation-delay:7s;"></div>
+        <div class="particle" style="left:10%; width:15px; height:15px; animation-delay:2s;"></div>
+        <div class="particle" style="left:40%; width:22px; height:22px; animation-delay:3.5s;"></div>
+        <div class="particle" style="left:70%; width:13px; height:13px; animation-delay:1.2s;"></div>
+        <div class="particle" style="left:90%; width:19px; height:19px; animation-delay:4.2s;"></div>
+    </div>
+
+    <!-- ===== BARRA SUPERIOR ===== -->
+    <div class="fixed top-0 left-0 w-full h-1 z-[60]" style="background:linear-gradient(90deg,#FF6F00,#FF9800,#FFC107,#FF6F00);background-size:300% 100%;animation:shimmer-progress 3s ease-in-out infinite;"></div>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="page-wrapper">
+
+        <!-- ===== NAVBAR ===== -->
+        <nav id="navbar" class="transition-all duration-300">
+            <div class="container mx-auto px-3 sm:px-4 md:px-6 h-full">
+                <div class="navbar-inner">
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center gap-2 sm:gap-3 hover:scale-[1.02] transition-transform duration-300 cursor-pointer group flex-shrink-0">
+                        <img src="imágenes/logo.png" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';" alt="Logo Pacai Cusco" class="nav-logo-img" loading="lazy">
+                        <div>
+                            <div class="logo-text font-display font-extrabold text-sm sm:text-base md:text-xl lg:text-2xl flex tracking-tight">
+                                <span class="text-[#E53935]">ASOCIACIÓN</span>
+                                <span class="text-[#FF9800] ml-1">PACAI</span>
+                                <span class="text-[#2196F3] ml-1">CUSCO</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Menú desktop -->
+                    <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+                        <a href="index.html" class="nav-link" data-i18n="nav_pacai">PACAI</a>
+
+                        <div class="dropdown-container">
+                            <a href="programas.html" class="dropdown-trigger" data-i18n="nav_programas">
+                                PROGRAMAS DE PACAI
+                                <span class="arrow">▼</span>
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="psicologia.html" class="drop-item">
+                                    <span class="drop-icon">🧠</span> <span data-i18n="drop_psicologia">Acompañamiento Psicológico</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="compartir.html" class="drop-item">
+                                    <span class="drop-icon">🤝</span> <span data-i18n="drop_compartir">Compartir</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="reforzamiento pedagogico.html" class="drop-item">
+                                    <span class="drop-icon">📚</span> <span data-i18n="drop_pedagogico">Reforzamiento Pedagógico</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <div class="drop-divider"></div>
+                                <a href="casa de acogida.html" class="drop-item">
+                                    <span class="drop-icon">🏡</span> <span data-i18n="drop_acogida">Casa de Acogida</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="intervencion familiar.html" class="drop-item">
+                                    <span class="drop-icon">👨‍👩‍👧‍👦</span> <span data-i18n="drop_intervencion">Intervención Familiar</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                                <a href="apoyo social.html" class="drop-item">
+                                    <span class="drop-icon">🤲</span> <span data-i18n="drop_social">Apoyo Social</span>
+                                    <span class="drop-arrow">→</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="galeria.html" class="nav-link" data-i18n="nav_cultura">CULTURA Y RECREACIÓN</a>
+                        <a href="historias.html" class="nav-link" data-i18n="nav_historias">HISTORIAS</a>
+                        <a href="donar.html" class="btn-donate-nav" data-i18n="nav_donar"><i class="fa-solid fa-heart animate-pulse text-xs mr-1"></i> DONAR</a>
+                    </div>
+
+                    <!-- Selector idioma + menú móvil -->
+                    <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+                        <div class="lang-selector">
+                            <button id="langToggle" class="text-[10px] sm:text-xs font-bold rounded-full px-1.5 sm:px-2.5 py-0.5 sm:py-1 flex items-center gap-0.5 sm:gap-1 transition-all" aria-label="Seleccionar idioma">
+                                <i class="fa-solid fa-globe text-[#FF6F00] text-[8px] sm:text-xs"></i>
+                                <span id="currentLangLabel" class="text-[8px] sm:text-[10px]">🇪🇸 ES</span>
+                                <i class="fa-solid fa-chevron-down text-[6px] sm:text-[8px] opacity-50"></i>
+                            </button>
+                            <div id="langDropdown" class="dropdown" role="listbox">
+                                <button class="lang-option active" data-lang-code="es" role="option" aria-selected="true">🇪🇸 Español</button>
+                                <button class="lang-option" data-lang-code="en" role="option" aria-selected="false">🇬🇧 English</button>
+                                <button class="lang-option" data-lang-code="de" role="option" aria-selected="false">🇩🇪 Deutsch</button>
+                            </div>
+                        </div>
+                        <button id="mobileMenuBtn" class="lg:hidden text-[#5a5a5a] hover:text-[#FF6F00] text-xl sm:text-2xl focus:outline-none p-0.5 sm:p-1 transition-colors" aria-label="Abrir menú">
+                            <i class="fa-solid fa-bars-staggered"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ===== MENÚ MÓVIL ===== -->
+        <div id="mobileMenu" class="fixed inset-0 z-[70] flex flex-col justify-center translate-x-full transition-transform duration-500 lg:hidden" role="dialog" aria-modal="true" aria-label="Menú móvil">
+            <button id="closeMobileMenuBtn" class="absolute top-4 right-4 text-3xl text-[#5a5a5a] hover:text-[#E53935] transition-colors p-2" aria-label="Cerrar menú">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="flex flex-col items-center gap-5 text-xl font-display font-extrabold text-[#3d3d3d] px-4">
+                <a href="index.html" class="mobile-link hover:text-[#FF6F00] transition-colors" data-i18n="nav_pacai">PACAI</a>
+                <a href="programas.html" class="mobile-link hover:text-[#2196F3] transition-colors" data-i18n="nav_programas">PROGRAMAS DE PACAI</a>
+                <a href="galeria.html" class="mobile-link hover:text-[#9C27B0] transition-colors" data-i18n="nav_cultura">CULTURA Y RECREACIÓN</a>
+                <a href="historias.html" class="mobile-link hover:text-[#E91E63] transition-colors" data-i18n="nav_historias">HISTORIAS</a>
+                <a href="donar.html" class="mobile-link btn-donate-nav text-white px-8 py-3 rounded-full shadow-xl mt-2 flex items-center gap-2 text-lg" data-i18n="nav_donar"><i class="fa-solid fa-heart animate-pulse"></i> DONAR</a>
+            </div>
+            <div class="absolute bottom-8 left-0 w-full flex justify-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF6F00] hover:text-white transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF6F00] hover:text-white transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-[#f5f0e1] text-[#5a5a5a] flex items-center justify-center text-sm hover:bg-[#FF6F00] hover:text-white transition-colors" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero-voluntariado relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-28">
+            <!-- Partículas cálidas -->
+            <div class="floating-particle-warm" style="width:60px;height:60px;top:10%;left:5%;background:rgba(255,152,0,0.2);animation-delay:0s;"></div>
+            <div class="floating-particle-warm" style="width:40px;height:40px;top:20%;right:10%;background:rgba(255,193,7,0.2);animation-delay:2s;"></div>
+            <div class="floating-particle-warm" style="width:80px;height:80px;bottom:20%;left:15%;background:rgba(255,111,0,0.2);animation-delay:4s;"></div>
+            <div class="floating-particle-warm" style="width:30px;height:30px;bottom:30%;right:20%;background:rgba(255,152,0,0.2);animation-delay:6s;"></div>
+            <div class="floating-particle-warm" style="width:50px;height:50px;top:50%;left:50%;background:rgba(255,193,7,0.2);animation-delay:3s;"></div>
+
+            <div class="container mx-auto px-4 relative z-30 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold leading-[1.1] text-white mb-4 drop-shadow-2xl" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="bg-gradient-to-r from-yellow-200 via-orange-200 to-amber-200 bg-clip-text text-transparent" data-i18n="hero_title">Voluntariado que transforma</span>
+                </h1>
+
+                <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md leading-relaxed px-2" data-aos="fade-up" data-aos-delay="400" data-i18n="hero_subtitle">
+                    <strong class="text-yellow-200">Personas del Perú y del mundo</strong> uniendo sus manos para llevar <strong class="text-yellow-200">esperanza y alegría</strong> a los niños del área de oncología pediátrica en Cusco.
+                </p>
+            </div>
+
+            <!-- Ondas -->
+            <div class="wave-bottom">
+                <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,70 1440,80 L1440,80 L0,80 Z" fill="#fdf6e3" opacity="0.9"/>
+                </svg>
+            </div>
+
+            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+                <a href="#historia" class="text-white/60 hover:text-white transition-colors text-2xl sm:text-3xl">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== HISTORIA DEL VOLUNTARIADO ===== -->
+        <!-- ============================================================ -->
+        <section id="historia" class="py-16 sm:py-20 bg-white relative">
+            <div class="absolute inset-0 opacity-20 bg-pattern-hearts pointer-events-none"></div>
+            <div class="container mx-auto px-4 md:px-6 max-w-5xl relative z-10">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                        <i class="fa-solid fa-heart mr-2"></i> <span data-i18n="historia_badge">Nuestra Historia</span>
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-i18n="historia_title">
+                        Un voluntariado que <span class="text-amber-600">nace del corazón</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+                    <div class="lg:col-span-3" data-aos="fade-right">
+                        <p class="text-gray-700 text-base sm:text-lg leading-relaxed" data-i18n="historia_p1">
+                            Nuestro voluntariado nace del corazón. Personas del Perú y de distintos países llegan al Cusco para compartir su tiempo, cariño y vocación de servicio con los niños del área de oncología pediátrica. Cada visita se convierte en un espacio de <strong class="text-amber-600">sonrisas, juegos y acompañamiento</strong>, llevando esperanza y fortaleza tanto a los pequeños como a sus familias en los momentos más difíciles.
+                        </p>
+                        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mt-4" data-i18n="historia_p2">
+                            Contamos también con la valiosa participación de <strong class="text-amber-600">estudiantes de medicina de Alemania</strong>, quienes viajan periódicamente para brindar apoyo, conocimientos y, sobre todo, calidez humana, demostrando que la <strong class="text-amber-600">solidaridad no tiene fronteras</strong>.
+                        </p>
+                        <div class="mt-6 bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-6 border-2 border-amber-200">
+                            <p class="text-gray-700 text-base italic" data-i18n="historia_cita">
+                                "Gracias a ellos, transformamos cada gesto en ánimo, cada palabra en consuelo y cada día en una oportunidad para seguir luchando juntos."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2" data-aos="fade-left">
+                        <div class="grid grid-cols-2 gap-3">
+                            <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=300&h=300&fit=crop" alt="Voluntarios con niños" class="rounded-2xl shadow-lg w-full aspect-square object-cover hover:scale-105 transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=300&h=300&fit=crop" alt="Voluntarios jugando" class="rounded-2xl shadow-lg w-full aspect-square object-cover hover:scale-105 transition-transform duration-500">
+                            <img src="https://images.unsplash.com/photo-1542810634-71277d95dc8c?w=300&h=300&fit=crop" alt="Sonrisas" class="rounded-2xl shadow-lg w-full aspect-square object-cover hover:scale-105 transition-transform duration-500 col-span-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== VALORES ===== -->
+        <!-- ============================================================ -->
+        <section id="valores" class="py-16 sm:py-20 bg-[#fdf6e3] relative">
+            <div class="absolute inset-0 opacity-10 bg-pattern-hearts pointer-events-none"></div>
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                        <i class="fa-solid fa-gem mr-2"></i> <span data-i18n="valores_badge">Nuestros Valores</span>
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-i18n="valores_title">
+                        Lo que nos <span class="text-amber-600">mueve</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <div class="valor-card p-6 text-center" data-aos="flip-up" data-aos-delay="100">
+                        <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-2xl text-amber-600 mx-auto mb-4">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="font-display font-extrabold text-lg text-gray-800 mb-2" data-i18n="valor1_titulo">Amor Incondicional</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="valor1_texto">Cada voluntario entrega su cariño sin esperar nada a cambio, solo la sonrisa de un niño.</p>
+                    </div>
+
+                    <div class="valor-card p-6 text-center" data-aos="flip-up" data-aos-delay="200">
+                        <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-2xl text-amber-600 mx-auto mb-4">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="font-display font-extrabold text-lg text-gray-800 mb-2" data-i18n="valor2_titulo">Solidaridad</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="valor2_texto">Personas de todo el mundo se unen para apoyar una misma causa: la esperanza de los niños.</p>
+                    </div>
+
+                    <div class="valor-card p-6 text-center" data-aos="flip-up" data-aos-delay="300">
+                        <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-2xl text-amber-600 mx-auto mb-4">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                        <h3 class="font-display font-extrabold text-lg text-gray-800 mb-2" data-i18n="valor3_titulo">Alegría</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="valor3_texto">Convertimos cada visita en un momento de juego, risas y felicidad para los pequeños guerreros.</p>
+                    </div>
+
+                    <div class="valor-card p-6 text-center" data-aos="flip-up" data-aos-delay="400">
+                        <div class="icono-wrapper w-16 h-16 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-2xl text-amber-600 mx-auto mb-4">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+                        <h3 class="font-display font-extrabold text-lg text-gray-800 mb-2" data-i18n="valor4_titulo">Sin Fronteras</h3>
+                        <p class="text-gray-600 text-sm" data-i18n="valor4_texto">La solidaridad no conoce límites. Voluntarios de Alemania, Perú y más países nos apoyan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== VOLUNTARIOS DESTACADOS ===== -->
+        <!-- ============================================================ -->
+        <section id="voluntarios" class="py-16 sm:py-20 bg-white relative">
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                        <i class="fa-solid fa-users mr-2"></i> <span data-i18n="voluntarios_badge">Nuestros Voluntarios</span>
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-i18n="voluntarios_title">
+                        Personas que <span class="text-amber-600">marcan la diferencia</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <div class="voluntario-card p-6 text-center" data-aos="flip-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Voluntario" class="avatar mx-auto">
+                        <h4 class="font-display font-extrabold text-lg text-gray-800 mt-3">Juan Carlos</h4>
+                        <p class="text-amber-600 font-semibold text-sm" data-i18n="vol1_rol">Voluntario · Perú</p>
+                        <div class="flag mt-1">🇵🇪</div>
+                        <p class="text-gray-600 text-sm mt-2" data-i18n="vol1_texto">"Cada sonrisa de un niño es la mejor recompensa. Aquí aprendí que el amor es la mejor medicina."</p>
+                    </div>
+
+                    <div class="voluntario-card p-6 text-center" data-aos="flip-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Voluntaria" class="avatar mx-auto">
+                        <h4 class="font-display font-extrabold text-lg text-gray-800 mt-3">María Elena</h4>
+                        <p class="text-amber-600 font-semibold text-sm" data-i18n="vol2_rol">Voluntaria · Perú</p>
+                        <div class="flag mt-1">🇵🇪</div>
+                        <p class="text-gray-600 text-sm mt-2" data-i18n="vol2_texto">"Compartir mi tiempo con estos pequeños guerreros me ha enseñado el verdadero significado de la fortaleza."</p>
+                    </div>
+
+                    <div class="voluntario-card p-6 text-center" data-aos="flip-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Voluntario alemán" class="avatar mx-auto">
+                        <h4 class="font-display font-extrabold text-lg text-gray-800 mt-3">Klaus Schmidt</h4>
+                        <p class="text-amber-600 font-semibold text-sm" data-i18n="vol3_rol">Estudiante de Medicina · Alemania</p>
+                        <div class="flag mt-1">🇩🇪</div>
+                        <p class="text-gray-600 text-sm mt-2" data-i18n="vol3_texto">"La medicina es ciencia, pero también es humanidad. En Cusco aprendí que la esperanza es el mejor tratamiento."</p>
+                    </div>
+
+                    <div class="voluntario-card p-6 text-center" data-aos="flip-up" data-aos-delay="400">
+                        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=150&h=150&fit=crop&crop=face" alt="Voluntaria" class="avatar mx-auto">
+                        <h4 class="font-display font-extrabold text-lg text-gray-800 mt-3">Ana Torres</h4>
+                        <p class="text-amber-600 font-semibold text-sm" data-i18n="vol4_rol">Voluntaria · España</p>
+                        <div class="flag mt-1">🇪🇸</div>
+                        <p class="text-gray-600 text-sm mt-2" data-i18n="vol4_texto">"Dejar mi país para venir a Cusco fue la mejor decisión. Aquí encontré una familia y un propósito."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== VOLUNTARIOS INTERNACIONALES (Alemania) ===== -->
+        <!-- ============================================================ -->
+        <section class="py-16 sm:py-20 bg-gradient-to-br from-amber-600 via-orange-600 to-red-700 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image:url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E'); background-size:200px 200px;"></div>
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center max-w-4xl mx-auto" data-aos="fade-up">
+                    <div class="text-6xl sm:text-7xl mb-4">🇩🇪</div>
+                    <span class="bg-white/20 backdrop-blur-sm text-white font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block border border-white/30">
+                        <i class="fa-solid fa-plane mr-2"></i> <span data-i18n="internacional_badge">Solidaridad sin Fronteras</span>
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white mt-4" data-i18n="internacional_title">
+                        Estudiantes de Medicina <span class="text-yellow-200">de Alemania</span>
+                    </h2>
+                    <p class="text-white/90 text-base sm:text-lg leading-relaxed mt-4 max-w-3xl mx-auto" data-i18n="internacional_texto">
+                        Cada año, estudiantes de medicina de Alemania viajan a Cusco para compartir sus conocimientos y, sobre todo, su <strong class="text-yellow-200">calidez humana</strong>. Aprenden de los niños y sus familias, y llevan consigo una experiencia que transforma sus vidas para siempre.
+                    </p>
+                    <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+                        <span class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full border border-white/20 text-sm font-semibold">🩺 Apoyo médico</span>
+                        <span class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full border border-white/20 text-sm font-semibold">❤️ Calidez humana</span>
+                        <span class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full border border-white/20 text-sm font-semibold">🤝 Intercambio cultural</span>
+                        <span class="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full border border-white/20 text-sm font-semibold">🌟 Esperanza sin fronteras</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== TESTIMONIOS ===== -->
+        <!-- ============================================================ -->
+        <section class="py-16 sm:py-20 bg-[#fdf6e3] relative">
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                        <i class="fa-solid fa-quote-right mr-2"></i> <span data-i18n="testimonios_badge">Voces del Corazón</span>
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-i18n="testimonios_title">
+                        Lo que dicen <span class="text-amber-600">nuestros voluntarios</span>
+                    </h2>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto">
+                    <div class="testimonios-track" id="testimoniosTrack">
+                        <div class="testimonio-slide">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                            <p class="testimonio-texto">"Ser voluntario en Pacai me ha enseñado que el amor no tiene barreras. Cada niño es un héroe y yo solo soy un acompañante en su historia."</p>
+                            <div class="testimonio-autor">— Laura, Voluntaria de Argentina</div>
+                            <div class="estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                        <div class="testimonio-slide">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                            <p class="testimonio-texto">"Llegué a Cusco para enseñar y terminé aprendiendo. Los niños me dieron lecciones de vida que llevaré en el corazón para siempre."</p>
+                            <div class="testimonio-autor">— Thomas, Estudiante de Medicina de Alemania</div>
+                            <div class="estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                        <div class="testimonio-slide">
+                            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                            <p class="testimonio-texto">"Cada sonrisa que veo en el hospital es un recordatorio de por qué estoy aquí. Pacai me dio un propósito y una familia."</p>
+                            <div class="testimonio-autor">— Sofía, Voluntaria de Perú</div>
+                            <div class="estrellas"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn prev" id="testimonioPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="carousel-btn next" id="testimonioNext"><i class="fa-solid fa-chevron-right"></i></button>
+
+                    <div class="carousel-dots" id="testimonioDots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== GALERÍA ===== -->
+        <!-- ============================================================ -->
+        <section class="py-16 sm:py-20 bg-white relative">
+            <div class="container mx-auto px-4 md:px-6 relative z-10">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 font-extrabold tracking-widest uppercase text-xs px-4 py-2 rounded-full inline-block">
+                        <i class="fa-solid fa-images mr-2"></i> <span data-i18n="galeria_badge">Galería</span>
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-gray-800 mt-4" data-i18n="galeria_title">
+                        Momentos de <span class="text-amber-600">amor y alegría</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="100" onclick="abrirModal('https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=400&h=400&fit=crop" alt="Voluntarios con niños" loading="lazy">
+                        <div class="overlay"><span>Compartiendo alegría</span></div>
+                    </div>
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="200" onclick="abrirModal('https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400&h=400&fit=crop" alt="Voluntarios jugando" loading="lazy">
+                        <div class="overlay"><span>Juegos y risas</span></div>
+                    </div>
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="300" onclick="abrirModal('https://images.unsplash.com/photo-1542810634-71277d95dc8c?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1542810634-71277d95dc8c?w=400&h=400&fit=crop" alt="Niños sonriendo" loading="lazy">
+                        <div class="overlay"><span>Sonrisas que sanan</span></div>
+                    </div>
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="400" onclick="abrirModal('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=400&h=400&fit=crop" alt="Voluntarios en el hospital" loading="lazy">
+                        <div class="overlay"><span>Esperanza compartida</span></div>
+                    </div>
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="500" onclick="abrirModal('https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&h=400&fit=crop" alt="Arte con niños" loading="lazy">
+                        <div class="overlay"><span>Arte y creatividad</span></div>
+                    </div>
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="600" onclick="abrirModal('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=400&fit=crop" alt="Música" loading="lazy">
+                        <div class="overlay"><span>Música que une</span></div>
+                    </div>
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="700" onclick="abrirModal('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=400&fit=crop" alt="Atención médica" loading="lazy">
+                        <div class="overlay"><span>Cuidado y calidez</span></div>
+                    </div>
+                    <div class="galeria-item" data-aos="zoom-in" data-aos-delay="800" onclick="abrirModal('https://images.unsplash.com/photo-1608686207856-001b95cf60ca?w=600&h=600&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?w=400&h=400&fit=crop" alt="Celebración" loading="lazy">
+                        <div class="overlay"><span>Celebrando la vida</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- ===== CTA FINAL - CÓMO AYUDAR ===== -->
+        <!-- ============================================================ -->
+        <section id="como-ayudar" class="py-16 sm:py-20 bg-gradient-to-br from-amber-600 via-orange-600 to-red-700 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image:url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='rgba(255,255,255,0.3)'/%3E%3C/svg%3E'); background-size:200px 200px;"></div>
+            <div class="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-md rounded-full px-5 py-2 mb-6 border border-white/30 shadow-lg" data-aos="fade-down">
+                    <i class="fa-solid fa-hand-holding-heart text-white text-base sm:text-xl"></i>
+                    <span class="text-white font-bold text-xs sm:text-sm md:text-base tracking-widest uppercase" data-i18n="cta_badge">ÚNETE A NOSOTROS</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold text-white drop-shadow-lg" data-aos="fade-up" data-i18n="cta_title">
+                    ¿Quieres ser parte de <span class="text-yellow-300">esta gran familia?</span>
+                </h2>
+
+                <p class="text-white/90 text-base sm:text-lg max-w-2xl mx-auto mt-4 mb-8" data-aos="fade-up" data-aos-delay="200" data-i18n="cta_texto">
+                    Tu tiempo, tu cariño y tu vocación de servicio pueden transformar la vida de un niño. <strong class="text-yellow-200">Cada gesto cuenta, cada sonrisa importa.</strong>
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-white hover:bg-white/20 transition-all duration-300">
+                        <div class="text-3xl mb-2">🌍</div>
+                        <h4 class="font-bold" data-i18n="cta_opcion1_titulo">Desde cualquier país</h4>
+                        <p class="text-sm text-white/70" data-i18n="cta_opcion1_texto">Voluntarios de todo el mundo son bienvenidos</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-white hover:bg-white/20 transition-all duration-300">
+                        <div class="text-3xl mb-2">🕐</div>
+                        <h4 class="font-bold" data-i18n="cta_opcion2_titulo">Tu tiempo</h4>
+                        <p class="text-sm text-white/70" data-i18n="cta_opcion2_texto">Puedes ayudar con el tiempo que tengas disponible</p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4 text-white hover:bg-white/20 transition-all duration-300">
+                        <div class="text-3xl mb-2">❤️</div>
+                        <h4 class="font-bold" data-i18n="cta_opcion3_titulo">Tu corazón</h4>
+                        <p class="text-sm text-white/70" data-i18n="cta_opcion3_texto">Lo más importante es tu disposición a dar amor</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                    <a href="https://wa.me/51987654321?text=Hola,%20quiero%20ser%20voluntario%20en%20Pacai" target="_blank" class="bg-white text-amber-700 font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center gap-2 justify-center" data-i18n="cta_btn_whatsapp">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Contactar por WhatsApp
+                    </a>
+                    <a href="mailto:voluntariado@asociacionpacaicusco.com" class="bg-white/20 backdrop-blur-sm border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white hover:text-amber-700 transition-all duration-300 flex items-center gap-2 justify-center" data-i18n="cta_btn_email">
+                        <i class="fa-solid fa-envelope"></i> Enviar Correo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- ===== FIN PAGE-WRAPPER ===== -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contacto" class="bg-[#1B5E20] pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 text-white relative border-t-4 border-[#4CAF50]">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="footer-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-16">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-6">
+                        <img src="imágenes/logo footer.jpg" onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/3386/3386928.png';" alt="Logo Pacai Cusco" class="footer-logo-img" loading="lazy">
+                        <div class="font-display font-extrabold text-xl sm:text-2xl tracking-tight">
+                            <span class="text-[#FF8A80]">ASOCIACIÓN</span>
+                            <span class="text-[#FFCC80] ml-1">PACAI</span>
+                            <span class="text-[#81D4FA] ml-1">CUSCO</span>
+                        </div>
+                    </div>
+                    <p class="text-[#C8E6C9] mb-4 sm:mb-6 max-w-md text-sm sm:text-base leading-relaxed" data-i18n="footer_desc">Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#1877F2] hover:text-white hover:-translate-y-1 transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#E4405F] hover:text-white hover:-translate-y-1 transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#0A66C2] hover:text-white hover:-translate-y-1 transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#1DA1F2] hover:text-white hover:-translate-y-1 transition-all" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://wa.me/51987654321" target="_blank" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 text-[#C8E6C9] flex items-center justify-center text-base sm:text-xl hover:bg-[#25D366] hover:text-white hover:-translate-y-1 transition-all" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-i18n="footer_nav_title">Navegación</h4>
+                    <ul class="space-y-3 sm:space-y-4 text-[#C8E6C9] font-medium text-sm sm:text-base">
+                        <li><a href="index.html" class="hover:text-[#FFCC80] transition-colors flex items-center gap-2" data-i18n="footer_nav_pacai"><i class="fa-solid fa-angle-right text-xs text-[#FFCC80]"></i> Pacai</a></li>
+                        <li><a href="programas.html" class="hover:text-[#81D4FA] transition-colors flex items-center gap-2" data-i18n="footer_nav_programas"><i class="fa-solid fa-angle-right text-xs text-[#81D4FA]"></i> Programas de Pacai</a></li>
+                        <li><a href="galeria.html" class="hover:text-[#CE93D8] transition-colors flex items-center gap-2" data-i18n="footer_nav_cultura"><i class="fa-solid fa-angle-right text-xs text-[#CE93D8]"></i> Cultura y Recreación</a></li>
+                        <li><a href="historias.html" class="hover:text-[#FF8A80] transition-colors flex items-center gap-2" data-i18n="footer_nav_historias"><i class="fa-solid fa-angle-right text-xs text-[#FF8A80]"></i> Historias</a></li>
+                        <li><a href="donar.html" class="hover:text-[#FFCC80] transition-colors flex items-center gap-2" data-i18n="footer_nav_donar"><i class="fa-solid fa-angle-right text-xs text-[#FFCC80]"></i> Donar</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4 sm:mb-6 uppercase tracking-widest text-xs sm:text-sm" data-i18n="footer_casa_titulo">Nuestra Casa</h4>
+                    <ul class="space-y-4 sm:space-y-5 text-[#C8E6C9] text-sm sm:text-base">
+                        <li class="flex items-start gap-3 sm:gap-4">
+                            <div class="text-[#FF8A80]"><i class="fa-solid fa-location-dot text-base sm:text-xl"></i></div>
+                            <span class="mt-0.5 sm:mt-1" data-i18n="footer_casa_direccion">Calle San Agustín 307,<br>Cusco, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#81D4FA]"><i class="fa-solid fa-envelope text-base sm:text-xl"></i></div>
+                            <a href="mailto:info@asociacionpacaicusco.com" class="hover:text-white transition-colors font-medium break-all" data-i18n="footer_casa_email">info@asociacionpacaicusco.com</a>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#A5D6A7]"><i class="fa-solid fa-phone text-base sm:text-xl"></i></div>
+                            <span class="font-medium" data-i18n="footer_casa_telefono">+51 987 654 321</span>
+                        </li>
+                        <li class="flex items-center gap-3 sm:gap-4">
+                            <div class="text-[#FFCC80]"><i class="fa-regular fa-clock text-base sm:text-xl"></i></div>
+                            <span class="font-medium" data-i18n="footer_casa_horario">Lun - Vie: 8am - 6pm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-green-700 pt-6 sm:pt-8 text-center text-[#A5D6A7] text-xs sm:text-sm flex flex-col sm:flex-row justify-between items-center font-medium gap-3 sm:gap-0">
+                <p>&copy; <span id="currentYear"></span> <span data-i18n="footer_copyright">Asociación Pacai Cusco. Hecho con el corazón.</span> <span class="text-[#FF8A80]">❤️</span></p>
+                <p class="flex items-center gap-2"><i class="fa-solid fa-heart text-[#FF8A80] footer-heart"></i> <span data-i18n="footer_esperanza">Esperanza que transforma</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MODAL PARA AMPLIAR IMÁGENES ===== -->
+    <div id="imageModal">
+        <button class="modal-close" id="modalClose"><i class="fa-solid fa-times"></i></button>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="Imagen ampliada">
+        </div>
+    </div>
+
+    <!-- ===== BOTÓN VOLVER ARRIBA ===== -->
+    <button id="scrollToTopBtn" class="fixed bottom-24 right-4 sm:right-6 z-40 bg-white text-[#3d3d3d] w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-base sm:text-xl shadow-[0_4px_15px_rgba(0,0,0,0.04)] opacity-0 translate-y-10 transition-all duration-300 focus:outline-none hover:bg-[#FF6F00] hover:text-white border border-[#f0ebe0] hover:scale-110" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- ===== WHATSAPP FLOTANTE ===== -->
+    <a href="https://wa.me/51987654321" target="_blank" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-3xl sm:text-4xl shadow-[0_4px_20px_rgba(37,211,102,0.12)] hover:scale-110 transition-transform animate-pulse-slow border-2 border-white/20" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- ============================================================ -->
+    <!-- ===== SCRIPTS ===== -->
+    <!-- ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        (function() {
+            'use strict';
+
+            AOS.init({ duration: 700, once: true, offset: 40 });
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // ===== TESTIMONIOS CARRUSEL =====
+            let testimonioIndex = 0;
+            const track = document.getElementById('testimoniosTrack');
+            const dotsContainer = document.getElementById('testimonioDots');
+            const totalSlides = document.querySelectorAll('.testimonio-slide').length;
+
+            function goToTestimonio(index) {
+                testimonioIndex = index;
+                track.style.transform = `translateX(-${index * 100}%)`;
+                document.querySelectorAll('#testimonioDots .dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === index);
+                });
+            }
+
+            function nextTestimonio() {
+                goToTestimonio((testimonioIndex + 1) % totalSlides);
+            }
+
+            function prevTestimonio() {
+                goToTestimonio((testimonioIndex - 1 + totalSlides) % totalSlides);
+            }
+
+            // Crear dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                dot.dataset.index = i;
+                dot.addEventListener('click', () => goToTestimonio(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            document.getElementById('testimonioPrev').addEventListener('click', prevTestimonio);
+            document.getElementById('testimonioNext').addEventListener('click', nextTestimonio);
+
+            // ===== MODAL =====
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const closeModal = document.getElementById('modalClose');
+
+            function abrirModal(src) {
+                modalImg.src = src;
+                modal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function cerrarModal() {
+                modal.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            closeModal.addEventListener('click', cerrarModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) cerrarModal();
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') cerrarModal();
+            });
+
+            window.abrirModal = abrirModal;
+
+            // ===== NAVBAR SCROLL =====
+            const nav = document.getElementById('navbar');
+            const scrollTopBtn = document.getElementById('scrollToTopBtn');
+
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 20) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+                if (window.scrollY > 400) {
+                    scrollTopBtn.classList.remove('opacity-0', 'translate-y-10');
+                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.add('opacity-0', 'translate-y-10');
+                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                }
+            });
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // ===== MENÚ MÓVIL =====
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = 'auto';
+            }
+
+            mobileMenuBtn.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            mobileLinks.forEach(function(link) {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+            // ===== SELECTOR DE IDIOMAS =====
+            const langToggle = document.getElementById('langToggle');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const currentLangLabel = document.getElementById('currentLangLabel');
+            let currentLang = localStorage.getItem('pacai_lang') || 'es';
+
+            const translations = {
+                es: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PROGRAMAS DE PACAI",
+                    nav_cultura: "CULTURA Y RECREACIÓN",
+                    nav_historias: "HISTORIAS",
+                    nav_donar: "DONAR",
+                    drop_psicologia: "Acompañamiento Psicológico",
+                    drop_compartir: "Compartir",
+                    drop_pedagogico: "Reforzamiento Pedagógico",
+                    drop_acogida: "Casa de Acogida",
+                    drop_intervencion: "Intervención Familiar",
+                    drop_social: "Apoyo Social",
+                    hero_title: "Voluntariado que transforma",
+                    hero_subtitle: '<strong class="text-yellow-200">Personas del Perú y del mundo</strong> uniendo sus manos para llevar <strong class="text-yellow-200">esperanza y alegría</strong> a los niños del área de oncología pediátrica en Cusco.',
+                    historia_badge: "Nuestra Historia",
+                    historia_title: "Un voluntariado que <span class=\"text-amber-600\">nace del corazón</span>",
+                    historia_p1: 'Nuestro voluntariado nace del corazón. Personas del Perú y de distintos países llegan al Cusco para compartir su tiempo, cariño y vocación de servicio con los niños del área de oncología pediátrica. Cada visita se convierte en un espacio de <strong class="text-amber-600">sonrisas, juegos y acompañamiento</strong>, llevando esperanza y fortaleza tanto a los pequeños como a sus familias en los momentos más difíciles.',
+                    historia_p2: 'Contamos también con la valiosa participación de <strong class="text-amber-600">estudiantes de medicina de Alemania</strong>, quienes viajan periódicamente para brindar apoyo, conocimientos y, sobre todo, calidez humana, demostrando que la <strong class="text-amber-600">solidaridad no tiene fronteras</strong>.',
+                    historia_cita: '"Gracias a ellos, transformamos cada gesto en ánimo, cada palabra en consuelo y cada día en una oportunidad para seguir luchando juntos."',
+                    valores_badge: "Nuestros Valores",
+                    valores_title: "Lo que nos <span class=\"text-amber-600\">mueve</span>",
+                    valor1_titulo: "Amor Incondicional",
+                    valor1_texto: "Cada voluntario entrega su cariño sin esperar nada a cambio, solo la sonrisa de un niño.",
+                    valor2_titulo: "Solidaridad",
+                    valor2_texto: "Personas de todo el mundo se unen para apoyar una misma causa: la esperanza de los niños.",
+                    valor3_titulo: "Alegría",
+                    valor3_texto: "Convertimos cada visita en un momento de juego, risas y felicidad para los pequeños guerreros.",
+                    valor4_titulo: "Sin Fronteras",
+                    valor4_texto: "La solidaridad no conoce límites. Voluntarios de Alemania, Perú y más países nos apoyan.",
+                    voluntarios_badge: "Nuestros Voluntarios",
+                    voluntarios_title: "Personas que <span class=\"text-amber-600\">marcan la diferencia</span>",
+                    vol1_rol: "Voluntario · Perú",
+                    vol1_texto: '"Cada sonrisa de un niño es la mejor recompensa. Aquí aprendí que el amor es la mejor medicina."',
+                    vol2_rol: "Voluntaria · Perú",
+                    vol2_texto: '"Compartir mi tiempo con estos pequeños guerreros me ha enseñado el verdadero significado de la fortaleza."',
+                    vol3_rol: "Estudiante de Medicina · Alemania",
+                    vol3_texto: '"La medicina es ciencia, pero también es humanidad. En Cusco aprendí que la esperanza es el mejor tratamiento."',
+                    vol4_rol: "Voluntaria · España",
+                    vol4_texto: '"Dejar mi país para venir a Cusco fue la mejor decisión. Aquí encontré una familia y un propósito."',
+                    internacional_badge: "Solidaridad sin Fronteras",
+                    internacional_title: 'Estudiantes de Medicina <span class="text-yellow-200">de Alemania</span>',
+                    internacional_texto: 'Cada año, estudiantes de medicina de Alemania viajan a Cusco para compartir sus conocimientos y, sobre todo, su <strong class="text-yellow-200">calidez humana</strong>. Aprenden de los niños y sus familias, y llevan consigo una experiencia que transforma sus vidas para siempre.',
+                    testimonios_badge: "Voces del Corazón",
+                    testimonios_title: "Lo que dicen <span class=\"text-amber-600\">nuestros voluntarios</span>",
+                    galeria_badge: "Galería",
+                    galeria_title: "Momentos de <span class=\"text-amber-600\">amor y alegría</span>",
+                    cta_badge: "ÚNETE A NOSOTROS",
+                    cta_title: '¿Quieres ser parte de <span class="text-yellow-300">esta gran familia?</span>',
+                    cta_texto: 'Tu tiempo, tu cariño y tu vocación de servicio pueden transformar la vida de un niño. <strong class="text-yellow-200">Cada gesto cuenta, cada sonrisa importa.</strong>',
+                    cta_opcion1_titulo: "Desde cualquier país",
+                    cta_opcion1_texto: "Voluntarios de todo el mundo son bienvenidos",
+                    cta_opcion2_titulo: "Tu tiempo",
+                    cta_opcion2_texto: "Puedes ayudar con el tiempo que tengas disponible",
+                    cta_opcion3_titulo: "Tu corazón",
+                    cta_opcion3_texto: "Lo más importante es tu disposición a dar amor",
+                    cta_btn_whatsapp: "Contactar por WhatsApp",
+                    cta_btn_email: "Enviar Correo",
+                    footer_desc: "Donde la esperanza crece y el cáncer decrece. Juntos construimos un futuro lleno de luz y salud para nuestros niños en Cusco.",
+                    footer_nav_title: "Navegación",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Programas de Pacai",
+                    footer_nav_cultura: "Cultura y Recreación",
+                    footer_nav_historias: "Historias",
+                    footer_nav_donar: "Donar",
+                    footer_casa_titulo: "Nuestra Casa",
+                    footer_casa_direccion: "Calle San Agustín 307,<br>Cusco, Perú",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Lun - Vie: 8am - 6pm",
+                    footer_copyright: "Asociación Pacai Cusco. Hecho con el corazón.",
+                    footer_esperanza: "Esperanza que transforma",
+                },
+                en: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PACAI PROGRAMS",
+                    nav_cultura: "CULTURE & RECREATION",
+                    nav_historias: "STORIES",
+                    nav_donar: "DONATE",
+                    drop_psicologia: "Psychological Support",
+                    drop_compartir: "Sharing",
+                    drop_pedagogico: "Pedagogical Reinforcement",
+                    drop_acogida: "Host Home",
+                    drop_intervencion: "Family Intervention",
+                    drop_social: "Social Support",
+                    hero_title: "Volunteering that transforms",
+                    hero_subtitle: '<strong class="text-yellow-200">People from Peru and the world</strong> joining hands to bring <strong class="text-yellow-200">hope and joy</strong> to children in pediatric oncology in Cusco.',
+                    historia_badge: "Our Story",
+                    historia_title: "Volunteering that <span class=\"text-amber-600\">comes from the heart</span>",
+                    historia_p1: 'Our volunteering comes from the heart. People from Peru and different countries come to Cusco to share their time, love and service vocation with children in pediatric oncology. Each visit becomes a space of <strong class="text-amber-600">smiles, games and companionship</strong>, bringing hope and strength to both the little ones and their families in the most difficult moments.',
+                    historia_p2: 'We also have the valuable participation of <strong class="text-amber-600">medical students from Germany</strong>, who travel periodically to provide support, knowledge and, above all, human warmth, demonstrating that <strong class="text-amber-600">solidarity has no borders</strong>.',
+                    historia_cita: '"Thanks to them, we transform every gesture into encouragement, every word into comfort and every day into an opportunity to keep fighting together."',
+                    valores_badge: "Our Values",
+                    valores_title: "What <span class=\"text-amber-600\">moves us</span>",
+                    valor1_titulo: "Unconditional Love",
+                    valor1_texto: "Every volunteer gives their love without expecting anything in return, just a child's smile.",
+                    valor2_titulo: "Solidarity",
+                    valor2_texto: "People from all over the world come together to support one cause: the hope of children.",
+                    valor3_titulo: "Joy",
+                    valor3_texto: "We turn every visit into a moment of play, laughter and happiness for the little warriors.",
+                    valor4_titulo: "Without Borders",
+                    valor4_texto: "Solidarity knows no limits. Volunteers from Germany, Peru and more countries support us.",
+                    voluntarios_badge: "Our Volunteers",
+                    voluntarios_title: "People who <span class=\"text-amber-600\">make a difference</span>",
+                    vol1_rol: "Volunteer · Peru",
+                    vol1_texto: '"Every child\'s smile is the best reward. Here I learned that love is the best medicine."',
+                    vol2_rol: "Volunteer · Peru",
+                    vol2_texto: '"Sharing my time with these little warriors has taught me the true meaning of strength."',
+                    vol3_rol: "Medical Student · Germany",
+                    vol3_texto: '"Medicine is science, but it is also humanity. In Cusco I learned that hope is the best treatment."',
+                    vol4_rol: "Volunteer · Spain",
+                    vol4_texto: '"Leaving my country to come to Cusco was the best decision. Here I found a family and a purpose."',
+                    internacional_badge: "Solidarity Without Borders",
+                    internacional_title: 'Medical Students <span class="text-yellow-200">from Germany</span>',
+                    internacional_texto: 'Every year, medical students from Germany travel to Cusco to share their knowledge and, above all, their <strong class="text-yellow-200">human warmth</strong>. They learn from the children and their families, and carry with them an experience that transforms their lives forever.',
+                    testimonios_badge: "Voices from the Heart",
+                    testimonios_title: "What our volunteers <span class=\"text-amber-600\">say</span>",
+                    galeria_badge: "Gallery",
+                    galeria_title: "Moments of <span class=\"text-amber-600\">love and joy</span>",
+                    cta_badge: "JOIN US",
+                    cta_title: 'Do you want to be part of <span class="text-yellow-300">this big family?</span>',
+                    cta_texto: 'Your time, your love and your service vocation can transform a child\'s life. <strong class="text-yellow-200">Every gesture counts, every smile matters.</strong>',
+                    cta_opcion1_titulo: "From any country",
+                    cta_opcion1_texto: "Volunteers from all over the world are welcome",
+                    cta_opcion2_titulo: "Your time",
+                    cta_opcion2_texto: "You can help with the time you have available",
+                    cta_opcion3_titulo: "Your heart",
+                    cta_opcion3_texto: "The most important thing is your willingness to give love",
+                    cta_btn_whatsapp: "Contact via WhatsApp",
+                    cta_btn_email: "Send Email",
+                    footer_desc: "Where hope grows and cancer decreases. Together we build a future full of light and health for our children in Cusco.",
+                    footer_nav_title: "Navigation",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Pacai Programs",
+                    footer_nav_cultura: "Culture & Recreation",
+                    footer_nav_historias: "Stories",
+                    footer_nav_donar: "Donate",
+                    footer_casa_titulo: "Our Home",
+                    footer_casa_direccion: "307 San Agustín St,<br>Cusco, Peru",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Mon - Fri: 8am - 6pm",
+                    footer_copyright: "Pacai Cusco Association. Made with heart.",
+                    footer_esperanza: "Hope that transforms",
+                },
+                de: {
+                    nav_pacai: "PACAI",
+                    nav_programas: "PACAI-PROGRAMME",
+                    nav_cultura: "KULTUR & FREIZEIT",
+                    nav_historias: "GESCHICHTEN",
+                    nav_donar: "SPENDEN",
+                    drop_psicologia: "Psychologische Begleitung",
+                    drop_compartir: "Teilen",
+                    drop_pedagogico: "Pädagogische Förderung",
+                    drop_acogida: "Gästehaus",
+                    drop_intervencion: "Familienintervention",
+                    drop_social: "Soziale Unterstützung",
+                    hero_title: "Freiwilligenarbeit, die verwandelt",
+                    hero_subtitle: '<strong class="text-yellow-200">Menschen aus Peru und der ganzen Welt</strong> vereinen ihre Hände, um <strong class="text-yellow-200">Hoffnung und Freude</strong> zu den Kindern in der pädiatrischen Onkologie in Cusco zu bringen.',
+                    historia_badge: "Unsere Geschichte",
+                    historia_title: "Freiwilligenarbeit, die <span class=\"text-amber-600\">aus dem Herzen kommt</span>",
+                    historia_p1: 'Unsere Freiwilligenarbeit kommt aus dem Herzen. Menschen aus Peru und verschiedenen Ländern kommen nach Cusco, um ihre Zeit, Liebe und Dienstbereitschaft mit Kindern in der pädiatrischen Onkologie zu teilen. Jeder Besuch wird zu einem Raum voller <strong class="text-amber-600">Lächeln, Spiele und Begleitung</strong>, die Hoffnung und Kraft für die Kleinen und ihre Familien in den schwierigsten Momenten bringt.',
+                    historia_p2: 'Wir haben auch die wertvolle Teilnahme von <strong class="text-amber-600">Medizinstudenten aus Deutschland</strong>, die regelmäßig reisen, um Unterstützung, Wissen und vor allem menschliche Wärme zu bieten und zu zeigen, dass <strong class="text-amber-600">Solidarität keine Grenzen kennt</strong>.',
+                    historia_cita: '"Dank ihnen verwandeln wir jede Geste in Ermutigung, jedes Wort in Trost und jeden Tag in eine Gelegenheit, gemeinsam weiterzukämpfen."',
+                    valores_badge: "Unsere Werte",
+                    valores_title: "Was uns <span class=\"text-amber-600\">bewegt</span>",
+                    valor1_titulo: "Bedingungslose Liebe",
+                    valor1_texto: "Jeder Freiwillige gibt seine Liebe ohne Gegenleistung, nur für das Lächeln eines Kindes.",
+                    valor2_titulo: "Solidarität",
+                    valor2_texto: "Menschen aus aller Welt vereinen sich für eine Sache: die Hoffnung der Kinder.",
+                    valor3_titulo: "Freude",
+                    valor3_texto: "Wir verwandeln jeden Besuch in einen Moment voller Spiele, Lachen und Glück für die kleinen Kämpfer.",
+                    valor4_titulo: "Ohne Grenzen",
+                    valor4_texto: "Solidarität kennt keine Grenzen. Freiwillige aus Deutschland, Peru und vielen anderen Ländern unterstützen uns.",
+                    voluntarios_badge: "Unsere Freiwilligen",
+                    voluntarios_title: "Menschen, die <span class=\"text-amber-600\">den Unterschied machen</span>",
+                    vol1_rol: "Freiwilliger · Peru",
+                    vol1_texto: '"Jedes Lächeln eines Kindes ist die beste Belohnung. Hier habe ich gelernt, dass Liebe die beste Medizin ist."',
+                    vol2_rol: "Freiwillige · Peru",
+                    vol2_texto: '"Meine Zeit mit diesen kleinen Kämpfern zu teilen, hat mich gelehrt, was wahre Stärke bedeutet."',
+                    vol3_rol: "Medizinstudent · Deutschland",
+                    vol3_texto: '"Medizin ist Wissenschaft, aber auch Menschlichkeit. In Cusco habe ich gelernt, dass Hoffnung die beste Behandlung ist."',
+                    vol4_rol: "Freiwillige · Spanien",
+                    vol4_texto: '"Mein Land zu verlassen, um nach Cusco zu kommen, war die beste Entscheidung. Hier habe ich eine Familie und einen Sinn gefunden."',
+                    internacional_badge: "Solidarität ohne Grenzen",
+                    internacional_title: 'Medizinstudenten <span class="text-yellow-200">aus Deutschland</span>',
+                    internacional_texto: 'Jedes Jahr reisen Medizinstudenten aus Deutschland nach Cusco, um ihr Wissen und vor allem ihre <strong class="text-yellow-200">menschliche Wärme</strong> zu teilen. Sie lernen von den Kindern und ihren Familien und nehmen eine Erfahrung mit, die ihr Leben für immer verändert.',
+                    testimonios_badge: "Stimmen aus dem Herzen",
+                    testimonios_title: "Was unsere Freiwilligen <span class=\"text-amber-600\">sagen</span>",
+                    galeria_badge: "Galerie",
+                    galeria_title: "Momente der <span class=\"text-amber-600\">Liebe und Freude</span>",
+                    cta_badge: "KOMM ZU UNS",
+                    cta_title: 'Möchtest du Teil <span class="text-yellow-300">dieser großen Familie</span> sein?',
+                    cta_texto: 'Deine Zeit, deine Liebe und deine Dienstbereitschaft können das Leben eines Kindes verändern. <strong class="text-yellow-200">Jede Geste zählt, jedes Lächeln ist wichtig.</strong>',
+                    cta_opcion1_titulo: "Aus jedem Land",
+                    cta_opcion1_texto: "Freiwillige aus aller Welt sind willkommen",
+                    cta_opcion2_titulo: "Deine Zeit",
+                    cta_opcion2_texto: "Du kannst mit der Zeit helfen, die du zur Verfügung hast",
+                    cta_opcion3_titulo: "Dein Herz",
+                    cta_opcion3_texto: "Das Wichtigste ist deine Bereitschaft, Liebe zu geben",
+                    cta_btn_whatsapp: "Kontakt per WhatsApp",
+                    cta_btn_email: "E-Mail senden",
+                    footer_desc: "Wo die Hoffnung wächst und der Krebs abnimmt. Gemeinsam bauen wir eine Zukunft voller Licht und Gesundheit für unsere Kinder in Cusco.",
+                    footer_nav_title: "Navigation",
+                    footer_nav_pacai: "Pacai",
+                    footer_nav_programas: "Pacai-Programme",
+                    footer_nav_cultura: "Kultur & Freizeit",
+                    footer_nav_historias: "Geschichten",
+                    footer_nav_donar: "Spenden",
+                    footer_casa_titulo: "Unser Haus",
+                    footer_casa_direccion: "Calle San Agustín 307,<br>Cusco, Peru",
+                    footer_casa_email: "info@asociacionpacaicusco.com",
+                    footer_casa_telefono: "+51 987 654 321",
+                    footer_casa_horario: "Mo - Fr: 8 - 18 Uhr",
+                    footer_copyright: "Verein Pacai Cusco. Mit Herz gemacht.",
+                    footer_esperanza: "Hoffnung, die verwandelt",
+                }
+            };
+
+            function applyTranslations(lang) {
+                const t = translations[lang];
+                if (!t) return;
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (t[key] !== undefined) {
+                        if (el.children.length || el.innerHTML.includes('<')) {
+                            el.innerHTML = t[key];
+                        } else {
+                            el.textContent = t[key];
+                        }
+                    }
+                });
+
+                const labels = { es: '🇪🇸 ES', en: '🇬🇧 EN', de: '🇩🇪 DE' };
+                currentLangLabel.textContent = labels[lang] || '🇪🇸 ES';
+                document.documentElement.lang = lang;
+            }
+
+            function setLanguage(langCode) {
+                currentLang = langCode;
+                localStorage.setItem('pacai_lang', langCode);
+                applyTranslations(langCode);
+                langOptions.forEach(function(opt) {
+                    opt.classList.toggle('active', opt.dataset.langCode === langCode);
+                });
+                langDropdown.classList.remove('open');
+            }
+
+            langToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                langDropdown.classList.toggle('open');
+            });
+            document.addEventListener('click', function() {
+                langDropdown.classList.remove('open');
+            });
+            langOptions.forEach(function(opt) {
+                opt.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    setLanguage(opt.dataset.langCode);
+                });
+            });
+
+            setLanguage(currentLang);
+
+            console.log('🤝 Pacai Cusco · Voluntariado');
+            console.log('❤️ Personas de todo el mundo unidas por la esperanza de los niños.');
+            console.log('🌐 Disponible en Español, Inglés y Alemán.');
+
+        })();
+    </script>
+
+</body>
+</html>
